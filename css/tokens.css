@@ -16,6 +16,23 @@
   --radius: 8px;
   --measure: 70ch;
   --nav-width: 16rem;
+  --ig-band-full: #ece7f7;
+  --ig-line-full: #54389a;
+  --ig-band-portfolio: #e7edfb;
+  --ig-line-portfolio: #2f4fa6;
+  --ig-band-solution: #e3f3ef;
+  --ig-line-solution: #136556;
+  --ig-band-essential: #fcefdf;
+  --ig-line-essential: #8a4504;
+  --ig-band-team: #f7e1c6;
+  --ig-line-event: #9b1c4b;
+  --ig-tab-text: #ffffff;
+  --ig-node: #ffffff;
+  --ig-node-hover: #fff4cc;
+  --ig-node-text: #1a2233;
+  --ig-pill: #0b5cad;
+  --ig-pill-hover: #084a8c;
+  --ig-pill-text: #ffffff;
   --font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 @media (prefers-color-scheme: dark) {
@@ -28,6 +45,23 @@
     --accent: #7ab8ff;
     --accent-contrast: #0b1220;
     --focus: #fbbf24;
+    --ig-band-full: #231c38;
+    --ig-line-full: #c3b0f5;
+    --ig-band-portfolio: #1a2340;
+    --ig-line-portfolio: #9db6ff;
+    --ig-band-solution: #11302a;
+    --ig-line-solution: #6fd6c0;
+    --ig-band-essential: #2e200d;
+    --ig-line-essential: #f2b56b;
+    --ig-band-team: #44300f;
+    --ig-line-event: #ff9cc0;
+    --ig-tab-text: #0b1220;
+    --ig-node: #11151c;
+    --ig-node-hover: #2a3345;
+    --ig-node-text: #e8ecf3;
+    --ig-pill: #7ab8ff;
+    --ig-pill-hover: #a8d0ff;
+    --ig-pill-text: #0b1220;
   }
 }
 :root[data-theme="dark"] {
@@ -39,4 +73,21 @@
   --accent: #7ab8ff;
   --accent-contrast: #0b1220;
   --focus: #fbbf24;
+  --ig-band-full: #231c38;
+  --ig-line-full: #c3b0f5;
+  --ig-band-portfolio: #1a2340;
+  --ig-line-portfolio: #9db6ff;
+  --ig-band-solution: #11302a;
+  --ig-line-solution: #6fd6c0;
+  --ig-band-essential: #2e200d;
+  --ig-line-essential: #f2b56b;
+  --ig-band-team: #44300f;
+  --ig-line-event: #ff9cc0;
+  --ig-tab-text: #0b1220;
+  --ig-node: #11151c;
+  --ig-node-hover: #2a3345;
+  --ig-node-text: #e8ecf3;
+  --ig-pill: #7ab8ff;
+  --ig-pill-hover: #a8d0ff;
+  --ig-pill-text: #0b1220;
 }

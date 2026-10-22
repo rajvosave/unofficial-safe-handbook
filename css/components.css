@@ -36,3 +36,59 @@ main { flex: 1 1 20rem; min-width: 0; padding: var(--space-3) var(--gutter) var(
 @media (max-width: 720px) {
   #nav { flex-basis: 100%; }
 }
+
+/* ---- Home infographic ---- */
+main.wide { max-width: 75rem; }
+main.wide .home > :not(#infographic) { max-width: var(--measure); }
+.infographic { position: relative; margin: var(--space-4) 0; container-type: inline-size; }
+.ig-scroll { overflow-x: auto; overflow-y: hidden; border-radius: var(--radius); }
+.ig-scroll svg { display: block; width: 100%; height: auto; min-width: 720px; font-family: var(--font); }
+.ig-hint { display: none; margin: 0 0 var(--space-2); color: var(--text-muted); font-size: 0.9rem; }
+@container (max-width: 719px) { .ig-hint { display: block; } }
+
+.ig-band { stroke-width: 2; }
+.ig-band-full { fill: var(--ig-band-full); stroke: var(--ig-line-full); }
+.ig-band-portfolio { fill: var(--ig-band-portfolio); stroke: var(--ig-line-portfolio); }
+.ig-band-solution { fill: var(--ig-band-solution); stroke: var(--ig-line-solution); }
+.ig-band-essential { fill: var(--ig-band-essential); stroke: var(--ig-line-essential); }
+.ig-band-team { fill: var(--ig-band-team); stroke: none; }
+.ig-chevron { fill: none; stroke: var(--ig-line-portfolio); stroke-width: 3; opacity: 0.6; }
+.ig-cadence { fill: none; stroke: var(--ig-line-event); stroke-width: 3; opacity: 0.5; }
+.ig-heading { fill: var(--ig-line-essential); font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+
+.hotspot { cursor: pointer; outline: none; }
+.hs-hit { fill: transparent; }
+.hs-shape { fill: var(--ig-node); stroke-width: 2.5; transition: fill 0.15s; }
+.ig-label { fill: var(--ig-node-text); font-weight: 600; pointer-events: none; }
+.ig-label-strong { font-weight: 700; }
+.hs-portfolio .hs-shape { stroke: var(--ig-line-portfolio); }
+.hs-solution .hs-shape { stroke: var(--ig-line-solution); }
+.hs-essential .hs-shape, .hs-team .hs-shape { stroke: var(--ig-line-essential); }
+.hs-event .hs-shape { stroke: var(--ig-line-event); }
+.hotspot:hover .hs-shape, .hotspot:focus .hs-shape { fill: var(--ig-node-hover); }
+.ig-car { fill: none; stroke: currentColor; stroke-width: 2; opacity: 0.55; }
+.hs-solution .ig-car { color: var(--ig-line-solution); }
+.hs-essential .ig-car { color: var(--ig-line-essential); }
+
+.hs-tab .hs-shape, .hs-full .hs-shape { stroke: none; }
+.hs-tab .ig-label, .hs-full .ig-label { fill: var(--ig-tab-text); }
+.hs-full .hs-shape { fill: var(--ig-line-full); }
+.hs-tab.hs-portfolio .hs-shape { fill: var(--ig-line-portfolio); }
+.hs-tab.hs-solution .hs-shape { fill: var(--ig-line-solution); }
+.hs-tab.hs-essential .hs-shape { fill: var(--ig-line-essential); }
+.hs-tab:hover .hs-shape, .hs-tab:focus .hs-shape, .hs-full:hover .hs-shape, .hs-full:focus .hs-shape { opacity: 0.85; }
+
+.hs-competency .hs-shape { fill: var(--ig-pill); stroke: none; }
+.hs-competency .ig-label { fill: var(--ig-pill-text); }
+.hs-competency:hover .hs-shape, .hs-competency:focus .hs-shape { fill: var(--ig-pill-hover); }
+
+.hotspot:focus-visible .hs-shape { stroke: var(--focus); stroke-width: 6; opacity: 1; }
+
+.ig-tooltip {
+  position: absolute; z-index: 5; max-width: min(20rem, 100%);
+  padding: var(--space-2) var(--space-3); border-radius: var(--radius);
+  background: var(--surface); color: var(--text); border: 1px solid var(--border);
+  box-shadow: 0 4px 16px rgb(0 0 0 / 0.2); font-size: 0.95rem; line-height: 1.4;
+}
+.ig-tooltip[hidden] { display: none; }
+.ig-tooltip strong { display: block; margin-bottom: var(--space-1); }

@@ -4,6 +4,7 @@ import { findTopic } from './topics.js';
 import en from '../content/en.js';
 import hr from '../content/hr.js';
 import { buildNavModel, topicTitle, renderTopic, renderNotFound, renderHome } from './render.js';
+import { mountInfographic } from './infographic.js';
 
 const i18n = createI18n({ dicts: { en, hr }, defaultLang: 'en' });
 const { t } = i18n;
@@ -66,9 +67,16 @@ function renderPage(focus) {
     title = `${t('ui.notFound.title')} | ${t('app.title')}`;
   }
   app.replaceChildren(view);
+  const isHome = currentRoute.route === '/';
+  app.classList.toggle('wide', isHome);
+  if (isHome) mountInfographic($('infographic'), t, navigateTo);
   document.title = title;
   renderNav();
   if (focus) app.focus();
+}
+
+function navigateTo(route) {
+  location.hash = `#${route}`;
 }
 
 function setTheme(theme) {

@@ -122,10 +122,10 @@ export const topicsBySection = (section) => TOPICS.filter((t) => t.section === s
 export const roleEvents = {
   team: ['pi-planning', 'iteration-planning', 'daily-standup', 'iteration-review-retro', 'system-demo', 'inspect-adapt'],
   rte: ['pi-planning', 'art-sync', 'po-sync', 'system-demo', 'inspect-adapt'],
-  'product-owner': ['iteration-planning', 'po-sync', 'iteration-review-retro', 'system-demo', 'pi-planning', 'art-sync'],
+  'product-owner': ['iteration-planning', 'po-sync', 'iteration-review-retro', 'system-demo', 'pi-planning', 'art-sync', 'inspect-adapt'],
   'product-management': ['pi-planning', 'po-sync', 'system-demo', 'inspect-adapt'],
   'system-architect': ['pi-planning', 'system-demo', 'inspect-adapt', 'art-sync'],
-  'scrum-master': ['iteration-planning', 'daily-standup', 'iteration-review-retro', 'art-sync', 'pi-planning', 'inspect-adapt'],
+  'scrum-master': ['iteration-planning', 'daily-standup', 'iteration-review-retro', 'art-sync', 'pi-planning', 'inspect-adapt', 'system-demo'],
   'business-owners': ['pi-planning', 'system-demo', 'inspect-adapt'],
   'epic-owners': ['pi-planning', 'inspect-adapt'],
   lpm: ['pi-planning', 'inspect-adapt'],

@@ -94,3 +94,21 @@ test('glossary and sources declare items', () => {
   assert.ok(findTopic('/reference/glossary').items.length >= 25);
   assert.ok(findTopic('/reference/sources').items.length >= 6);
 });
+
+const EXPECTED_ATTENDEES = {
+  'pi-planning': ['team', 'rte', 'product-owner', 'scrum-master', 'product-management', 'system-architect', 'business-owners', 'epic-owners', 'lpm'],
+  'iteration-planning': ['team', 'product-owner', 'scrum-master'],
+  'daily-standup': ['team', 'scrum-master'],
+  'iteration-review-retro': ['team', 'product-owner', 'scrum-master'],
+  'system-demo': ['team', 'rte', 'product-owner', 'scrum-master', 'product-management', 'system-architect', 'business-owners'],
+  'inspect-adapt': ['team', 'rte', 'product-owner', 'scrum-master', 'product-management', 'system-architect', 'business-owners', 'epic-owners', 'lpm'],
+  'art-sync': ['rte', 'product-owner', 'scrum-master', 'system-architect'],
+  'po-sync': ['rte', 'product-owner', 'product-management'],
+};
+
+test('roleEvents matches the explicit attendance table for each event', () => {
+  for (const ev of EVENT_IDS) {
+    const actual = Object.entries(roleEvents).filter(([, evs]) => evs.includes(ev)).map(([r]) => r).sort();
+    assert.deepEqual(actual, [...EXPECTED_ATTENDEES[ev]].sort(), `attendees of ${ev}`);
+  }
+});

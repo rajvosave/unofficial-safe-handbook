@@ -109,13 +109,13 @@ export default {
     'Key stakeholders accountable for the business value the ART delivers.',
   'infographic.pi-planning.label': 'PI Planning',
   'infographic.pi-planning.desc':
-    'A regular face-to-face event where the whole train agrees on what to deliver in the next increment.',
+    'A regular face-to-face event where the whole train agrees on what to deliver in the next Planning Interval.',
   'infographic.system-demo.label': 'System Demo',
   'infographic.system-demo.desc':
     'Shows the integrated work of all teams to stakeholders, usually every iteration.',
   'infographic.inspect-adapt.label': 'Inspect & Adapt',
   'infographic.inspect-adapt.desc':
-    'At the end of each increment the train reviews results and picks improvements to make.',
+    'At the end of each Planning Interval the train reviews results and picks improvements to make.',
   'infographic.agile-teams.label': 'Agile Teams',
   'infographic.agile-teams.desc':
     'Small cross-functional teams that define, build and test value in short iterations.',
@@ -230,7 +230,7 @@ export default {
   'topic.principles.item.decentralize.title':
     'Decentralize decision-making',
   'topic.principles.item.decentralize.body':
-    'Push decisions to the people closest to the work, since they usually have the freshest information and can act on it fastest. Keep only a few decisions central: the strategic ones that are made rarely, are hard to undo, or are clearly better made once for everyone. Everything else should be decided locally and quickly.',
+    'Push decisions to the people closest to the work, since they usually have the freshest information and can act on it fastest. Keep a decision central only when it ticks all three boxes: it comes up rarely, its effects last a long time, and making it once for everyone saves a great deal. Every other decision should be made locally and quickly.',
   'topic.principles.item.organize-value.title':
     'Organize around value',
   'topic.principles.item.organize-value.body':
@@ -284,7 +284,7 @@ export default {
   'topic.product-management.who':
     'Product Management partners with the RTE and System Architect in leading the train, with Business Owners on strategy, and with Product Owners for day-to-day detail. In a Large Solution it also coordinates with Solution Management.',
   'topic.product-management.cadence':
-    'Prepares features before each Planning Interval, presents at PI Planning, meets Product Owners in the PO sync, and joins system demos and Inspect and Adapt.',
+    'Prepares features before each Planning Interval, presents at PI Planning, meets Product Owners in the PO sync as part of the ART Sync, and joins system demos and Inspect and Adapt.',
   'topic.system-architect.title':
     'System Architect',
   'topic.system-architect.summary':
@@ -308,9 +308,9 @@ export default {
   'topic.business-owners.title':
     'Business Owners',
   'topic.business-owners.summary':
-    'The senior sponsors who fund a train, judge whether it delivers value and sign off on its direction.',
+    'The senior sponsors of a train who judge whether it delivers value and sign off on its direction.',
   'topic.business-owners.what':
-    'Business Owners are the senior stakeholders behind an Agile Release Train. They typically sponsor and fund its work and decide whether what the train produces is worth what it costs, so they sign off on direction and outcomes and make sure the train stays within the rules the organization has to follow. Many come from business, operations or technology leadership; some are customers or key internal sponsors.\n\nResponsibilities:\n\n- Take part in PI Planning, give business context and review the draft plans.\n\n- Assign business value to the PI objectives so everyone sees what matters most.\n\n- Take part in the confidence vote and agree to the plan, or request changes.\n\n- Attend system demos and give feedback on whether the solution fits business needs.\n\n- Join Inspect and Adapt, and help remove organizational impediments.\n\nCommon anti-patterns:\n\n- Appearing only at the end of an increment, then changing priorities.\n\n- Treating PI objectives as a commitment to extract from teams rather than a shared forecast.\n\n- Delegating the role so far down that nobody present can make decisions.',
+    'Business Owners are the senior stakeholders behind an Agile Release Train. They typically sponsor its work and decide whether what the train produces is worth what it costs, so they sign off on direction and outcomes and make sure the train stays within the rules the organization has to follow. Many come from business, operations or technology leadership; some are customers or key internal sponsors.\n\nResponsibilities:\n\n- Take part in PI Planning, give business context and review the draft plans.\n\n- Assign business value to the PI objectives so everyone sees what matters most.\n\n- Take part in the confidence vote and agree to the plan, or request changes.\n\n- Attend system demos and give feedback on whether the solution fits business needs.\n\n- Join Inspect and Adapt, and help remove organizational impediments.\n\nCommon anti-patterns:\n\n- Appearing only at the end of a Planning Interval, then changing priorities.\n\n- Treating PI objectives as a commitment to extract from teams rather than a shared forecast.\n\n- Delegating the role so far down that nobody present can make decisions.',
   'topic.business-owners.who':
     'Business Owners work most directly with Product Management, the RTE and the System Architect, and meet the teams chiefly through PI Planning and demos.',
   'topic.business-owners.cadence':
@@ -359,7 +359,7 @@ export default {
   'topic.pi-planning.summary':
     'The two-day, face-to-face (or fully virtual) planning event where every team on a train plans the next Planning Interval together.',
   'topic.pi-planning.what':
-    'PI Planning is the heartbeat of an Agile Release Train. Once per Planning Interval, everyone on the train gathers to agree what will be built next and to expose the dependencies and risks that would otherwise surface late. The point is shared understanding and commitment, not producing a document.\n\nThe flow, in prose. Day one opens with the business context, where a senior leader explains where the organization stands and what matters most. Product Management then presents the product or solution vision and the top features, and the System Architect shares the architecture vision and the development practices the train will rely on. After a short planning-context briefing from the RTE, teams split into breakouts. Each team estimates its capacity, pulls in features, drafts stories and iteration-level plans, notes dependencies and writes draft PI Objectives. The day ends with a review of the draft plans, followed by a management review where leaders adjust scope, resolve problems and decide what to change overnight.\n\nDay two starts with any changes in direction. Teams hold a second round of breakouts to refine their plans, with business value assigned to their objectives by Business Owners. A final plan review follows, then the train works through its risks and sorts each one as resolved, owned, accepted or mitigated (ROAM). The train votes on its confidence in the plan, and if confidence is low, teams rework until it is acceptable. A short retrospective closes the event.\n\nCommon anti-patterns: skipping the preparation, treating the objectives as a contract, letting leaders dictate team plans, or holding the event without the people who can make decisions.',
+    'PI Planning is the event the rest of a train\'s rhythm is built around. Once per Planning Interval, everyone on the train gathers to agree what will be built next and to expose the dependencies and risks that would otherwise surface late. The point is shared understanding and commitment, not producing a document.\n\nThe flow, in prose. Day one opens with the business context, where a senior leader explains where the organization stands and what matters most. Product Management then presents the product or solution vision and the top features, and the System Architect shares the architecture vision and the development practices the train will rely on. After a short planning-context briefing from the RTE, teams split into breakouts. Each team estimates its capacity, pulls in features, drafts stories and iteration-level plans, notes dependencies and writes draft PI Objectives. The day ends with a review of the draft plans, followed by a management review where leaders adjust scope, resolve problems and decide what to change overnight.\n\nDay two starts with any changes in direction. Teams hold a second round of breakouts to refine their plans, with business value assigned to their objectives by Business Owners. A final plan review follows, then the train works through its risks and sorts each one as resolved, owned, accepted or mitigated (ROAM). The train votes on its confidence in the plan, and if confidence is low, teams rework until it is acceptable. A short retrospective closes the event.\n\nCommon anti-patterns: skipping the preparation, treating the objectives as a contract, letting leaders dictate team plans, or holding the event without the people who can make decisions.',
   'topic.pi-planning.who':
     'Every team on the train, including the Product Owner and Scrum Master, plus the RTE who facilitates, Product Management, the System Architect and Business Owners. Epic Owners and Lean Portfolio Management representatives often join for context.',
   'topic.pi-planning.io':
@@ -407,7 +407,7 @@ export default {
   'topic.system-demo.summary':
     'A regular demonstration of the combined, integrated work of all teams on the train.',
   'topic.system-demo.what':
-    'Individual team demos only show a slice. The system demo shows what all the teams have produced together as one integrated whole, ideally running in a production-like environment. It gives stakeholders objective evidence of progress and lets the train learn whether the integrated solution actually works.\n\nThe demo is usually run by the Product Owners and Product Management with help from the System Architect, with the RTE coordinating logistics. Presenters show new features in a realistic flow rather than slides, and stakeholders respond with feedback that feeds the ART Backlog.\n\nThe last system demo in a Planning Interval is covered in the Inspect and Adapt event as its first part, often with a broader audience.',
+    'Individual team demos only show a slice. The system demo shows what all the teams have produced together as one integrated whole, ideally running in a production-like environment. It gives stakeholders objective evidence of progress and lets the train learn whether the integrated solution actually works.\n\nThe demo is usually run by the Product Owners and Product Management with help from the System Architect, with the RTE coordinating logistics. Presenters show new features in a realistic flow rather than slides, and stakeholders respond with feedback that feeds the ART Backlog.\n\nThe final system demo of a Planning Interval is shown again as the first part of the Inspect and Adapt event, often to a broader audience.',
   'topic.system-demo.who':
     'Product Owners, Product Management, the System Architect and the RTE take the lead. Teams, Business Owners, customers and other stakeholders attend to watch and comment.',
   'topic.system-demo.io':
@@ -433,7 +433,7 @@ export default {
   'topic.art-sync.what':
     'The ART sync keeps the train aligned between PI Planning sessions. It is made up of two conversations that often run back to back: the PO sync, which concentrates on progress against objectives and scope, and a coach sync, where Scrum Masters and the RTE discuss delivery, dependencies and impediments.\n\nThe RTE facilitates. Teams report briefly on progress against their PI Objectives, raise cross-team dependencies and identify obstacles they cannot clear alone, which the RTE then follows up. The sync is also a good place to spot risks that have changed and to plan for the next system demo.\n\nKeep it short and focused on problems, not individual status reports.',
   'topic.art-sync.who':
-    'The RTE, Scrum Masters, Product Owners and the System Architect. Other specialists join when a topic calls for them.',
+    'The RTE, Scrum Masters, Product Owners, Product Management and the System Architect. Product Owners and Product Management meet in the PO Sync part; Scrum Masters and the RTE in the Coach Sync part. Other specialists join when a topic calls for them.',
   'topic.art-sync.io':
     'In: team progress, the ART planning board and the list of open risks and impediments. Out: refreshed dependencies, an escalation list and agreed follow-ups.',
   'topic.art-sync.cadence':
@@ -443,7 +443,7 @@ export default {
   'topic.po-sync.summary':
     'A focused meeting for Product Owners and Product Management to align on scope and content.',
   'topic.po-sync.what':
-    'The PO sync is where the people who own content, Product Owners and Product Management, compare notes on how the train is progressing toward its objectives. They review feature progress, discuss scope changes, prepare for upcoming events such as PI Planning, and prioritize the ART Backlog in light of new learning.\n\nThe RTE or Product Management usually facilitates. It can be a stand-alone meeting or one half of the ART sync, depending on how your train is organized.\n\nUse it to catch mismatches early, for example two teams reading the same feature differently, instead of discovering them at the system demo.',
+    'The PO sync is where the people who own content, Product Owners and Product Management, compare notes on how the train is progressing toward its objectives. They review feature progress, discuss scope changes, prepare for upcoming events such as PI Planning, and prioritize the ART Backlog in light of new learning.\n\nThe RTE or Product Management usually facilitates. It is one of the two conversations that make up the ART sync; many trains hold it right before or after the coach sync, others on a separate slot, depending on how the train is organized.\n\nUse it to catch mismatches early, for example two teams reading the same feature differently, instead of discovering them at the system demo.',
   'topic.po-sync.who':
     'Product Owners and Product Management, with the RTE. The System Architect or others join as needed.',
   'topic.po-sync.io':
@@ -515,7 +515,7 @@ export default {
   'topic.pi-objectives.summary':
     'Short, business-readable statements of what each team intends to achieve in a Planning Interval.',
   'topic.pi-objectives.what':
-    'PI Objectives summarize, in plain language, what each team plans to accomplish during a Planning Interval. They translate the team\'s stories and features into outcomes that a business person can understand and assess.\n\nEach team drafts its objectives during PI Planning and presents them to everyone. Business Owners then rate each one on a scale of business value, which signals the planned importance. Teams also estimate their confidence, and the train combines them with the ART planning board and risk list into a shared view.\n\nSome objectives are marked as stretch objectives. They are extra work beyond the capacity the team commits to, and give flexibility without putting the main plan at risk.\n\nDuring the PI the objectives are the yardstick for progress. At the end, teams and Business Owners compare planned value against actual value, and the results are reviewed at Inspect and Adapt.\n\nObjectives are a forecast, not a contract. If new information appears, adjust them openly.',
+    'PI Objectives summarize, in plain language, what each team plans to accomplish during a Planning Interval. They translate the team\'s stories and features into outcomes that a business person can understand and assess.\n\nEach team drafts its objectives during PI Planning and presents them to everyone. Business Owners then rate each one on a scale of business value, which signals the planned importance. Teams also estimate their confidence, and the train combines them with the ART planning board and risk list into a shared view.\n\nSome objectives are marked as uncommitted. They are planned into the team\'s capacity like the rest, but the team does not commit to them because they carry real uncertainty. Business Owners still assign them business value, and they give the plan room to absorb surprises without breaking commitments.\n\nDuring the PI the objectives are the yardstick for progress. At the end, teams and Business Owners compare planned value against actual value, and the results are reviewed at Inspect and Adapt.\n\nObjectives are a forecast, not a contract. If new information appears, adjust them openly.',
   'topic.pi-objectives.who':
     'Each Agile Team writes its own; Business Owners rate their value; the RTE and Product Management consolidate and track them.',
   'topic.pi-objectives.io':
@@ -761,7 +761,7 @@ export default {
   'pi.cal.lane.inspect-adapt': 'Inspect and Adapt',
   'pi.cal.lane.pi-planning': 'PI Planning (next PI)',
   'pi.cal.lane.art-sync': 'ART Sync',
-  'pi.cal.lane.po-sync': 'PO Sync',
+  'pi.cal.lane.po-sync': 'PO Sync (part of ART Sync)',
   'pi.cal.legend.dev': 'Development iteration',
   'pi.cal.legend.ip': 'Innovation and Planning (IP) iteration',
   'pi.cal.legend.marker': 'Team or train event; select it to open its page',

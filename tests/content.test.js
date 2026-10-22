@@ -7,10 +7,24 @@ import { OUTPUTS } from '../js/visuals/pi-planning.js';
 
 const src = readFileSync(new URL('../content/en.js', import.meta.url), 'utf8');
 
+const RETIRED = /program increment|program backlog|program board|program kanban|stretch objective/i;
+
+test('the retired-term check catches every listed term', () => {
+  for (const s of ['a Program Increment', 'stretch objectives', 'the program board']) assert.match(s, RETIRED, s);
+});
+
 test('no English string uses a retired SAFe term', () => {
-  for (const [k, v] of Object.entries(en)) {
-    assert.doesNotMatch(v, /program increment|program backlog|program board|program kanban/i, k);
+  for (const [k, v] of Object.entries(en)) assert.doesNotMatch(v, RETIRED, k);
+});
+
+test('no English string calls a Planning Interval an increment on its own', () => {
+  for (const k of ['infographic.pi-planning.desc', 'infographic.inspect-adapt.desc', 'topic.business-owners.what']) {
+    assert.doesNotMatch(en[k], /\bincrement\b/i, k);
   }
+});
+
+test('the PI calendar labels the PO Sync as part of the ART Sync', () => {
+  assert.match(en['pi.cal.lane.po-sync'], /part of ART Sync/);
 });
 
 test('English strings use US spelling for common -ise/-our/-re words', () => {

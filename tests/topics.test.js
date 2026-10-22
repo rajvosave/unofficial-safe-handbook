@@ -104,7 +104,7 @@ const EXPECTED_ATTENDEES = {
   'iteration-review-retro': ['team', 'product-owner', 'scrum-master'],
   'system-demo': ['team', 'rte', 'product-owner', 'scrum-master', 'product-management', 'system-architect', 'business-owners'],
   'inspect-adapt': ['team', 'rte', 'product-owner', 'scrum-master', 'product-management', 'system-architect', 'business-owners', 'epic-owners', 'lpm'],
-  'art-sync': ['rte', 'product-owner', 'scrum-master', 'system-architect'],
+  'art-sync': ['rte', 'product-owner', 'product-management', 'scrum-master', 'system-architect'],
   'po-sync': ['rte', 'product-owner', 'product-management'],
 };
 

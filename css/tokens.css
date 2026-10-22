@@ -7,6 +7,7 @@
   --accent: #0b5cad;
   --accent-contrast: #ffffff;
   --focus: #b45309;
+  --control-border: #5f6f86;
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 1rem;
@@ -114,21 +115,18 @@
     --accent: #7ab8ff;
     --accent-contrast: #0b1220;
     --focus: #fbbf24;
+    --control-border: #7d8aa0;
     --ig-band-full: #231c38;
     --ig-line-full: #c3b0f5;
-  --ig-line-full-hover: #ddd2fb;
     --ig-line-full-hover: #ddd2fb;
     --ig-band-portfolio: #1a2340;
     --ig-line-portfolio: #9db6ff;
-  --ig-line-portfolio-hover: #c3d2ff;
     --ig-line-portfolio-hover: #c3d2ff;
     --ig-band-solution: #11302a;
     --ig-line-solution: #6fd6c0;
-  --ig-line-solution-hover: #a3e8d9;
     --ig-line-solution-hover: #a3e8d9;
     --ig-band-essential: #2e200d;
     --ig-line-essential: #f2b56b;
-  --ig-line-essential-hover: #f8d2a1;
     --ig-line-essential-hover: #f8d2a1;
     --ig-band-team: #44300f;
     --ig-line-event: #ff9cc0;
@@ -215,6 +213,7 @@
   --accent: #7ab8ff;
   --accent-contrast: #0b1220;
   --focus: #fbbf24;
+  --control-border: #7d8aa0;
   --ig-band-full: #231c38;
   --ig-line-full: #c3b0f5;
   --ig-line-full-hover: #ddd2fb;

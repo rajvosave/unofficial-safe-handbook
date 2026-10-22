@@ -41,12 +41,12 @@ test('related ids exist and never self-reference', () => {
   }
 });
 
-test('every titleKey/summaryKey exists in content/en.js', { skip: process.env.CHECK_CONTENT !== '1' && 'set CHECK_CONTENT=1 to enable' }, async () => {
+test('every titleKey/summaryKey exists in content/en.js', async () => {
   const mod = await import('../content/en.js');
   const en = mod.default ?? mod.en ?? mod;
   for (const t of TOPICS) {
     for (const k of [t.titleKey, t.summaryKey]) {
-      assert.ok(k in en, `topic ${t.id} is missing content key ${k}`);
+      assert.ok(typeof en[k] === 'string' && en[k].trim(), `topic ${t.id} is missing content key ${k}`);
     }
   }
 });
@@ -70,21 +70,23 @@ test('each of the 9 role ids lists at least one event', () => {
   }
 });
 
-test('every topic has .what content in content/en.js', { skip: process.env.CHECK_CONTENT !== '1' && 'set CHECK_CONTENT=1 to enable' }, async () => {
+test('every topic has .what content in content/en.js', async () => {
   const mod = await import('../content/en.js');
   const en = mod.default ?? mod.en ?? mod;
   for (const t of TOPICS) {
-    assert.ok(`topic.${t.id}.what` in en, `topic ${t.id} is missing topic.${t.id}.what`);
+    const v = en[`topic.${t.id}.what`];
+    assert.ok(typeof v === 'string' && v.trim(), `topic ${t.id} is missing topic.${t.id}.what`);
   }
 });
 
-test('every item slug has title and body keys', { skip: process.env.CHECK_CONTENT !== '1' && 'set CHECK_CONTENT=1 to enable' }, async () => {
+test('every item slug has title and body keys', async () => {
   const mod = await import('../content/en.js');
   const en = mod.default ?? mod.en ?? mod;
   for (const t of TOPICS.filter((x) => x.items)) {
     for (const slug of t.items) {
       for (const part of ['title', 'body']) {
-        assert.ok(`topic.${t.id}.item.${slug}.${part}` in en, `topic ${t.id} item ${slug} missing ${part}`);
+        const v = en[`topic.${t.id}.item.${slug}.${part}`];
+        assert.ok(typeof v === 'string' && v.trim(), `topic ${t.id} item ${slug} missing ${part}`);
       }
     }
   }

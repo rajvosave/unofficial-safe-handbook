@@ -8,7 +8,7 @@
 .header-tools { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; }
 input[type="search"], select, button {
   font: inherit; color: var(--text); background: var(--bg);
-  border: 1px solid var(--border); border-radius: var(--radius);
+  border: 1px solid var(--control-border); border-radius: var(--radius);
   padding: var(--space-2) var(--space-3); min-height: 2.5rem;
 }
 input[type="search"] { min-width: 0; width: 14rem; max-width: 100%; }

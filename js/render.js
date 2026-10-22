@@ -53,6 +53,22 @@ export function visibleItems(topic, t) {
     });
 }
 
+// External link model for an item's optional `.url` key. Only https URLs are
+// accepted; the visible text is the address without the scheme.
+export function externalLink(url, t) {
+  if (typeof url !== 'string') return null;
+  let u;
+  try { u = new URL(url); } catch { return null; }
+  if (u.protocol !== 'https:') return null;
+  const text = `${u.host}${u.pathname}`.replace(/\/$/, '');
+  return { href: u.href, text, note: t('ui.newTab') };
+}
+
+export function itemLink(topic, id, t) {
+  const key = `topic.${topic.id}.item.${id}.url`;
+  return has(t, key) ? externalLink(t(key), t) : null;
+}
+
 export function relatedLinks(topic, t) {
   return (topic.related ?? [])
     .map((id) => TOPICS.find((x) => x.id === id))
@@ -92,6 +108,15 @@ export function renderTopic(topic, t, navigate = () => {}) {
       for (const item of visibleItems(topic, t)) {
         section.append(el('h3', { id: itemAnchor(item.id) }, item.title));
         for (const para of splitParagraphs(item.body)) section.append(el('p', {}, para));
+        const link = itemLink(topic, item.id, t);
+        if (link) {
+          section.append(el('p', {}, el(
+            'a',
+            { href: link.href, class: 'external', target: '_blank', rel: 'noopener noreferrer' },
+            link.text,
+            el('span', { class: 'visually-hidden' }, ` (${link.note})`),
+          )));
+        }
       }
     }
     article.append(section);

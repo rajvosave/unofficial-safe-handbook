@@ -2,7 +2,7 @@ export default {
   'app.title': 'SAFe 6.0 Handbook',
   'footer.disclaimer':
     'Unofficial guide. Not affiliated with or endorsed by Scaled Agile, Inc. SAFe® is a registered trademark of Scaled Agile, Inc.',
-  'footer.link': 'scaledagileframework.com',
+  'footer.link': 'framework.scaledagile.com',
   'ui.skip': 'Skip to content',
   'ui.search': 'Search',
   'ui.search.placeholder': 'Search the handbook',
@@ -12,6 +12,7 @@ export default {
   'ui.search.count.other': '{n} results found',
   'ui.theme': 'Dark theme',
   'ui.language': 'Language',
+  'ui.newTab': 'opens in a new tab',
   // Language names stay in their own language in every dictionary.
   'lang.en': 'English',
   'lang.hr': 'Hrvatski',
@@ -644,31 +645,40 @@ export default {
     'This site is an unofficial, independent guide to SAFe 6.0. It is not affiliated with, sponsored by or endorsed by Scaled Agile, Inc. SAFe® and Scaled Agile Framework® are registered trademarks of Scaled Agile, Inc.\n\nThe text here is written in our own words to help newcomers get oriented. It may be incomplete or out of date, and details can differ between releases of the framework. For authoritative definitions, current guidance and training, consult the official SAFe website.',
   'topic.sources.item.src-safe-framework.title': 'SAFe Framework (official site)',
   'topic.sources.item.src-safe-framework.body':
-    'The main home of the SAFe framework, with the Big Picture and links to each topic.\n\nhttps://framework.scaledagile.com/',
+    'The main home of the SAFe framework, with the Big Picture and links to each topic.',
+  'topic.sources.item.src-safe-framework.url': 'https://framework.scaledagile.com/',
   'topic.sources.item.src-pi-planning.title': 'PI Planning',
   'topic.sources.item.src-pi-planning.body':
-    'Official overview of the PI Planning event and its outputs.\n\nhttps://framework.scaledagile.com/pi-planning/',
+    'Official overview of the PI Planning event and its outputs.',
+  'topic.sources.item.src-pi-planning.url': 'https://framework.scaledagile.com/pi-planning/',
   'topic.sources.item.src-inspect-adapt.title': 'Inspect and Adapt',
   'topic.sources.item.src-inspect-adapt.body':
-    'Official page describing the three parts of the Inspect and Adapt event.\n\nhttps://framework.scaledagile.com/inspect-and-adapt/',
+    'Official page describing the three parts of the Inspect and Adapt event.',
+  'topic.sources.item.src-inspect-adapt.url': 'https://framework.scaledagile.com/inspect-and-adapt/',
   'topic.sources.item.src-enablers.title': 'Enablers',
   'topic.sources.item.src-enablers.body':
-    'Official description of the enabler types: exploration, architecture, infrastructure and compliance.\n\nhttps://framework.scaledagile.com/enablers/',
+    'Official description of the enabler types: exploration, architecture, infrastructure and compliance.',
+  'topic.sources.item.src-enablers.url': 'https://framework.scaledagile.com/enablers/',
   'topic.sources.item.src-epic.title': 'Epic',
   'topic.sources.item.src-epic.body':
-    'Official page covering business and enabler epics and portfolio approval.\n\nhttps://framework.scaledagile.com/epic/',
+    'Official page covering business and enabler epics and portfolio approval.',
+  'topic.sources.item.src-epic.url': 'https://framework.scaledagile.com/epic/',
   'topic.sources.item.src-art-sync.title': 'ART Sync',
   'topic.sources.item.src-art-sync.body':
-    'Official page about the ART sync, which combines the PO sync and coach sync.\n\nhttps://framework.scaledagile.com/art-sync/',
+    'Official page about the ART Sync and the two conversations it combines, the PO Sync and the Coach Sync.',
+  'topic.sources.item.src-art-sync.url': 'https://framework.scaledagile.com/art-sync/',
   'topic.sources.item.src-measure-grow.title': 'Measure and Grow',
   'topic.sources.item.src-measure-grow.body':
-    'Official page on the outcomes, flow and competency measurement domains.\n\nhttps://framework.scaledagile.com/measure-and-grow/',
+    'Official page on the outcomes, flow and competency measurement domains.',
+  'topic.sources.item.src-measure-grow.url': 'https://framework.scaledagile.com/measure-and-grow/',
   'topic.sources.item.src-glossary.title': 'SAFe Glossary',
   'topic.sources.item.src-glossary.body':
-    'The official glossary of SAFe terms, useful for checking authoritative definitions.\n\nhttps://framework.scaledagile.com/glossary/',
+    'The official glossary of SAFe terms, useful for checking authoritative definitions.',
+  'topic.sources.item.src-glossary.url': 'https://framework.scaledagile.com/glossary/',
   'topic.sources.item.src-roadmap.title': 'SAFe Implementation Roadmap',
   'topic.sources.item.src-roadmap.body':
-    'Official series of articles on adopting SAFe step by step.\n\nhttps://framework.scaledagile.com/implementation-roadmap/',
+    'Official series of articles on adopting SAFe step by step.',
+  'topic.sources.item.src-roadmap.url': 'https://framework.scaledagile.com/implementation-roadmap/',
 
   // ---- PI Planning visual ----
   'pi.visual.title': 'PI Planning at a glance',

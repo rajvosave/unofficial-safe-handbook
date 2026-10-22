@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { buildNavModel, visibleSections, topicTitle, relatedLinks, SECTION_ORDER, visibleItems, splitParagraphs, itemAnchor } from '../js/render.js';
+import { buildNavModel, visibleSections, topicTitle, relatedLinks, SECTION_ORDER, visibleItems, splitParagraphs, itemAnchor, externalLink, itemLink } from '../js/render.js';
+import en from '../content/en.js';
 import { TOPICS, findTopic } from '../js/topics.js';
 
 const dict = {
@@ -65,4 +66,37 @@ test('splitParagraphs splits on blank lines and drops empties', () => {
 test('item anchors are prefixed so they cannot collide with page ids', () => {
   assert.equal(itemAnchor('full'), 'item-full');
   assert.equal(itemAnchor('portfolio'), 'item-portfolio');
+});
+
+test('externalLink builds an https link model with host/path text and a new-tab note', () => {
+  const tt = (k) => (k === 'ui.newTab' ? 'opens in a new tab' : k);
+  assert.deepEqual(externalLink('https://framework.scaledagile.com/pi-planning/', tt), {
+    href: 'https://framework.scaledagile.com/pi-planning/',
+    text: 'framework.scaledagile.com/pi-planning',
+    note: 'opens in a new tab',
+  });
+  assert.equal(externalLink('https://framework.scaledagile.com/', tt).text, 'framework.scaledagile.com');
+  for (const bad of ['', 'not a url', 'javascript:alert(1)', 'http://example.com/', undefined]) {
+    assert.equal(externalLink(bad, tt), null, String(bad));
+  }
+});
+
+test('itemLink reads the optional .url key of an item', () => {
+  const d = { 'topic.x.item.a.url': 'https://example.org/a' };
+  const tt = (k) => (Object.hasOwn(d, k) ? d[k] : k);
+  assert.equal(itemLink({ id: 'x' }, 'a', tt).href, 'https://example.org/a');
+  assert.equal(itemLink({ id: 'x' }, 'b', tt), null);
+});
+
+test('every source item has a verified-domain https URL and no URL left in its body', () => {
+  const tt = (k) => (Object.hasOwn(en, k) ? en[k] : k);
+  const src = TOPICS.find((x) => x.id === 'sources');
+  assert.ok(src.items.length >= 6 && src.items.length <= 10);
+  for (const slug of src.items) {
+    const link = itemLink(src, slug, tt);
+    assert.ok(link, `${slug} has no url`);
+    assert.match(link.href, /^https:\/\/framework\.scaledagile\.com\//, slug);
+    assert.doesNotMatch(en[`topic.sources.item.${slug}.body`], /https?:\/\//, `${slug} body still contains a URL`);
+  }
+  assert.ok(en['ui.newTab']);
 });

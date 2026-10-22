@@ -92,4 +92,4 @@ with, endorsed by or sponsored by Scaled Agile, Inc. SAFe® and Scaled Agile
 Framework® are registered trademarks of Scaled Agile, Inc. All descriptions
 are written in original wording; the drawings are original and do not
 reproduce the official SAFe Big Picture. For the authoritative framework, see
-<https://scaledagileframework.com>.
+<https://framework.scaledagile.com/>.

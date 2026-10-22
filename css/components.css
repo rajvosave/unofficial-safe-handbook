@@ -497,3 +497,6 @@ main.wide .topic > :not(.topic-visual) { max-width: var(--measure); }
   #search-results [role="option"] { transition: none; }
   .ia-visual *, .av-visual *, .rv-visual *, .pi-visual * { transition: none !important; }
 }
+
+/* External links (sources page): a small arrow marks links that leave the site. */
+a.external::after { content: "\2197"; content: "\2197" / ""; display: inline-block; margin-left: 0.2em; text-decoration: none; }

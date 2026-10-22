@@ -1,17 +1,42 @@
-const def = (section, id, related = []) => ({
+const def = (section, id, related = [], items) => ({
   id,
   section,
   route: `/${section}/${id}`,
   titleKey: `topic.${id}.title`,
   summaryKey: `topic.${id}.summary`,
   related,
+  ...(items ? { items } : {}),
 });
 
 export const TOPICS = [
   def('foundations', 'overview', ['core-competencies', 'configurations', 'principles']),
-  def('foundations', 'core-competencies', ['overview', 'principles', 'metrics']),
-  def('foundations', 'configurations', ['overview', 'art', 'solution-train']),
-  def('foundations', 'principles', ['overview', 'core-competencies']),
+  def('foundations', 'core-competencies', ['overview', 'principles', 'metrics'], [
+    'lean-agile-leadership',
+    'team-technical-agility',
+    'agile-product-delivery',
+    'enterprise-solution-delivery',
+    'lean-portfolio-management',
+    'organizational-agility',
+    'continuous-learning-culture',
+  ]),
+  def('foundations', 'configurations', ['overview', 'art', 'solution-train'], [
+    'essential',
+    'large-solution',
+    'portfolio',
+    'full',
+  ]),
+  def('foundations', 'principles', ['overview', 'core-competencies'], [
+    'economic-view',
+    'systems-thinking',
+    'variability-options',
+    'incremental-learning',
+    'objective-milestones',
+    'flow-wip',
+    'cadence-sync',
+    'intrinsic-motivation',
+    'decentralize',
+    'organize-value',
+  ]),
   def('foundations', 'art', ['pi-planning', 'rte', 'system-demo', 'art-sync', 'solution-train']),
   def('foundations', 'solution-train', ['art', 'configurations', 'system-architect']),
 

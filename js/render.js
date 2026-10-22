@@ -35,6 +35,19 @@ export function visibleSections(topic, t) {
   })).filter((s) => has(t, s.contentKey));
 }
 
+export function splitParagraphs(text) {
+  return String(text).split(/\n\s*\n/).map((x) => x.trim()).filter(Boolean);
+}
+
+export function visibleItems(topic, t) {
+  return (topic.items ?? [])
+    .filter((id) => has(t, `topic.${topic.id}.item.${id}.title`))
+    .map((id) => {
+      const bodyKey = `topic.${topic.id}.item.${id}.body`;
+      return { id, title: t(`topic.${topic.id}.item.${id}.title`), body: has(t, bodyKey) ? t(bodyKey) : '' };
+    });
+}
+
 export function relatedLinks(topic, t) {
   return (topic.related ?? [])
     .map((id) => TOPICS.find((x) => x.id === id))
@@ -56,9 +69,15 @@ export function renderTopic(topic, t) {
   article.append(el('h1', {}, topicTitle(topic, t)));
   if (has(t, topic.summaryKey)) article.append(el('p', { class: 'summary' }, t(topic.summaryKey)));
   for (const s of visibleSections(topic, t)) {
-    article.append(
-      el('section', { class: 'topic-section' }, el('h2', {}, t(s.headingKey)), el('p', {}, t(s.contentKey))),
-    );
+    const section = el('section', { class: 'topic-section' }, el('h2', {}, t(s.headingKey)));
+    for (const para of splitParagraphs(t(s.contentKey))) section.append(el('p', {}, para));
+    if (s.key === 'what') {
+      for (const item of visibleItems(topic, t)) {
+        section.append(el('h3', { id: item.id }, item.title));
+        for (const para of splitParagraphs(item.body)) section.append(el('p', {}, para));
+      }
+    }
+    article.append(section);
   }
   const links = relatedLinks(topic, t);
   if (links.length) {

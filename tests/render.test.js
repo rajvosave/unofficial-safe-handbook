@@ -44,3 +44,21 @@ test('relatedLinks builds hash links with title fallback', () => {
 test('relatedLinks skips unknown related ids', () => {
   assert.deepEqual(relatedLinks({ related: ['nope'] }, t), []);
 });
+
+import { visibleItems, splitParagraphs } from '../js/render.js';
+
+test('visibleItems returns only items whose title key exists, in order', () => {
+  const topic = { id: 'x', items: ['a', 'b', 'c'] };
+  const d = { 'topic.x.item.a.title': 'A', 'topic.x.item.c.title': 'C', 'topic.x.item.c.body': 'Body C' };
+  const tt = (k) => (Object.hasOwn(d, k) ? d[k] : k);
+  assert.deepEqual(visibleItems(topic, tt), [
+    { id: 'a', title: 'A', body: '' },
+    { id: 'c', title: 'C', body: 'Body C' },
+  ]);
+  assert.deepEqual(visibleItems({ id: 'x' }, tt), []);
+});
+
+test('splitParagraphs splits on blank lines and drops empties', () => {
+  assert.deepEqual(splitParagraphs('One\n\nTwo\n\n\nThree'), ['One', 'Two', 'Three']);
+  assert.deepEqual(splitParagraphs(''), []);
+});

@@ -15,7 +15,7 @@ const t = (key) => en[key] ?? key;
 
 rmSync(out, { recursive: true, force: true });
 mkdirSync(out, { recursive: true });
-for (const p of ['favicon.svg', 'css', 'js', 'content']) cpSync(join(root, p), join(out, p), { recursive: true });
+for (const p of ['favicon.svg', 'google3ae3894762f28485.html', 'css', 'js', 'content']) cpSync(join(root, p), join(out, p), { recursive: true });
 
 const shell = readFileSync(join(root, 'index.html'), 'utf8');
 writeFileSync(join(out, 'index.html'), buildPage(shell, { topic: null, t, siteUrl }));

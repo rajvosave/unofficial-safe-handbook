@@ -3,6 +3,7 @@ export default {
   'footer.disclaimer':
     'Unofficial guide. Not affiliated with or endorsed by Scaled Agile, Inc. SAFe® is a registered trademark of Scaled Agile, Inc.',
   'footer.link': 'framework.scaledagile.com',
+  'footer.contribute': 'Found a mistake or want to help? Contribute on GitHub.',
   'ui.skip': 'Skip to content',
   'ui.search': 'Search',
   'ui.search.placeholder': 'Search the handbook',

@@ -85,6 +85,11 @@ The site is static, so the repository root can be published as-is:
 Routing uses the URL hash (`#/events/pi-planning`), so no server rewrites are
 needed.
 
+## Contributing
+
+Corrections, new topics and translations are welcome. Open an issue or a pull
+request at <https://github.com/rajvosave/unofficial-safe-handbook>.
+
 ## Trademark and disclaimer
 
 This is an independent, unofficial learning resource. It is not affiliated

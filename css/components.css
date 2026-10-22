@@ -1,4 +1,5 @@
 .site-header {
+  position: relative; z-index: 5;
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
   gap: var(--space-3); padding: var(--space-3) var(--gutter);
   background: var(--surface); border-bottom: 1px solid var(--border);
@@ -435,6 +436,33 @@ main.wide .topic > :not(.topic-visual) { max-width: var(--measure); }
 .rv-card.is-related .rv-meta { color: var(--rv-hl-muted); }
 .rv-card.is-related .rv-link { border-top-color: var(--rv-hl-line); }
 
+/* ---- Search ---- */
+.search-panel {
+  position: absolute; top: 100%; right: var(--gutter); width: min(32rem, calc(100% - 2 * var(--gutter)));
+  max-height: min(70vh, 28rem); overflow-y: auto;
+  background: var(--sr-fill); color: var(--sr-text);
+  border: 1px solid var(--sr-line); border-radius: var(--radius);
+}
+.search-panel[hidden], .search-panel [hidden] { display: none; }
+#search-results { list-style: none; margin: 0; padding: var(--space-1) 0; }
+#search-results [role="option"] {
+  display: flex; flex-direction: column; justify-content: center; gap: 2px; min-height: 44px;
+  padding: var(--space-2) var(--space-3); cursor: pointer; color: var(--sr-text); background: var(--sr-fill);
+  transition: background-color 0.12s;
+}
+#search-results [role="option"]:hover { background: var(--sr-hover); }
+#search-results [role="option"][aria-selected="true"] { background: var(--sr-active-fill); color: var(--sr-active-text); }
+.search-title { font-weight: 700; }
+.search-snippet { font-size: 0.9rem; line-height: 1.4; color: var(--sr-muted); }
+#search-results [role="option"][aria-selected="true"] .search-snippet { color: var(--sr-active-muted); }
+.search-empty { margin: 0; padding: var(--space-3); color: var(--sr-muted); }
+#search:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+@media (max-width: 720px) {
+  .search-panel { left: var(--gutter); right: var(--gutter); width: auto; }
+  #search { width: 100%; }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  #search-results [role="option"] { transition: none; }
   .ia-visual *, .av-visual *, .rv-visual *, .pi-visual * { transition: none !important; }
 }

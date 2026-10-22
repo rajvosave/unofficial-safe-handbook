@@ -15,7 +15,12 @@
   <a class="brand" href="#/" data-i18n="app.title"></a>
   <div class="header-tools">
     <label class="visually-hidden" for="search" data-i18n="ui.search"></label>
-    <input id="search" type="search" data-i18n-placeholder="ui.search.placeholder">
+    <input id="search" type="search" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="search-results" autocomplete="off" data-i18n-placeholder="ui.search.placeholder">
+    <div id="search-panel" class="search-panel" hidden>
+      <ul id="search-results" role="listbox" data-i18n-aria-label="ui.search.results"></ul>
+      <p id="search-empty" class="search-empty" hidden></p>
+    </div>
+    <div id="search-status" class="visually-hidden" role="status" aria-live="polite"></div>
     <label class="visually-hidden" for="lang" data-i18n="ui.language"></label>
     <select id="lang"></select>
     <button id="theme" type="button" data-i18n="ui.theme" data-i18n-aria="ui.theme"></button>

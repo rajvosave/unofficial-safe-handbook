@@ -1,11 +1,12 @@
 import { createI18n } from './i18n.js';
 import { startRouter } from './router.js';
-import { findTopic } from './topics.js';
+import { findTopic, TOPICS } from './topics.js';
 import en from '../content/en.js';
 import hr from '../content/hr.js';
 import { buildNavModel, topicTitle, renderTopic, renderNotFound, renderHome } from './render.js';
 import { mountInfographic } from './infographic.js';
 import { hasVisual } from './visuals/index.js';
+import { mountSearch } from './search-ui.js';
 
 const i18n = createI18n({ dicts: { en, hr }, defaultLang: 'en' });
 const { t } = i18n;
@@ -100,8 +101,14 @@ $('theme').addEventListener('click', () => setTheme(currentTheme() === 'dark' ? 
 $('lang').addEventListener('change', (e) => {
   i18n.setLang(e.target.value);
   applyStatic();
+  search.rebuild();
   renderPage(false);
 });
+
+const search = mountSearch(
+  { input: $('search'), panel: $('search-panel'), list: $('search-results'), empty: $('search-empty'), status: $('search-status') },
+  { topics: TOPICS, t, navigate: navigateTo },
+);
 
 renderLangOptions();
 applyStatic();

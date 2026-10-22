@@ -37,3 +37,11 @@ test('glossary item titles are in alphabetical order', () => {
   const sorted = [...titles].sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' }));
   assert.deepEqual(titles, sorted);
 });
+
+test('language names come from lang.* keys in their native form', () => {
+  assert.equal(en['lang.en'], 'English');
+  assert.equal(en['lang.hr'], 'Hrvatski');
+  const main = readFileSync(new URL('../js/main.js', import.meta.url), 'utf8');
+  assert.match(main, /t\(`lang\.\$\{code\}`\)/);
+  assert.doesNotMatch(main, /code\.toUpperCase\(\)/);
+});

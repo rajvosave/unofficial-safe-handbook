@@ -10,8 +10,11 @@ export default {
   'ui.search.empty': 'No topics match your search. Try a shorter or different word.',
   'ui.search.count.one': '1 result found',
   'ui.search.count.other': '{n} results found',
-  'ui.theme': 'Toggle theme',
+  'ui.theme': 'Dark theme',
   'ui.language': 'Language',
+  // Language names stay in their own language in every dictionary.
+  'lang.en': 'English',
+  'lang.hr': 'Hrvatski',
   'ui.nav': 'Handbook sections',
   'ui.menu': 'Menu',
   'ui.notFound.title': 'Page not found',

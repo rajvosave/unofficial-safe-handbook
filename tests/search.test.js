@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { TOPICS } from '../js/topics.js';
 import en from '../content/en.js';
 import hr from '../content/hr.js';
-import { buildIndex, search, nextActiveIndex } from '../js/search.js';
+import { buildIndex, search, nextActiveIndex, escapeAction } from '../js/search.js';
 
 const tEn = (k) => (Object.hasOwn(en, k) ? en[k] : k);
 const tHr = (k) => (Object.hasOwn(hr, k) ? hr[k] : tEn(k));
@@ -86,12 +86,14 @@ test('whitespace, empty and non-string queries return []', () => {
   for (const q of ['', '   ', '\t\n', null, undefined, 42, {}, []]) assert.deepEqual(search(index, q), []);
 });
 
-test('respects limit (default 8, minimum 1)', () => {
+test('respects limit (default 8; zero or negative gives no results)', () => {
   assert.ok(search(index, 'a', 3).length <= 3);
   assert.equal(search(index, 'a', 3).length, 3);
   assert.equal(search(index, 'a').length, 8);
-  assert.equal(search(index, 'a', 0).length, 1);
-  assert.equal(search(index, 'a', -5).length, 1);
+  assert.equal(search(index, 'a', 2.7).length, 2);
+  assert.deepEqual(search(index, 'a', 0), []);
+  assert.deepEqual(search(index, 'a', -5), []);
+  assert.equal(search(index, 'a', NaN).length, 8);
 });
 
 test('snippet has match context and is ellipsized when cut', () => {
@@ -161,4 +163,11 @@ test('nextActiveIndex moves with arrows, wraps, and handles empty', () => {
   assert.equal(nextActiveIndex(0, 'End', 3), 2);
   assert.equal(nextActiveIndex(1, 'ArrowDown', 0), -1);
   assert.equal(nextActiveIndex(1, 'x', 3), 1);
+});
+
+test('escapeAction: first Escape closes an open panel, the next clears the query', () => {
+  assert.equal(escapeAction(true, 'pi'), 'close');
+  assert.equal(escapeAction(true, ''), 'close');
+  assert.equal(escapeAction(false, 'pi'), 'clear');
+  assert.equal(escapeAction(false, ''), 'none');
 });

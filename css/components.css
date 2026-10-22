@@ -295,6 +295,8 @@ main.wide .topic > :not(.topic-visual) { max-width: var(--measure); }
   background: var(--ia-step-fill); color: var(--ia-step-text);
 }
 .ia-step:has(.ia-toggle:focus-visible) { outline: 3px solid var(--focus); outline-offset: 2px; }
+/* Fallback for browsers without :has(): ring the button itself. */
+.ia-toggle:focus-visible { outline: 3px solid var(--focus); outline-offset: -3px; }
 .ia-step-h { margin: 0; font-size: inherit; }
 .ia-toggle {
   display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: var(--space-3);
@@ -302,7 +304,7 @@ main.wide .topic > :not(.topic-visual) { max-width: var(--measure); }
   border: none; border-radius: calc(var(--radius) - 2px); background: transparent; color: var(--ia-step-text);
   transition: background-color 0.15s ease;
 }
-.ia-toggle:focus-visible { outline: none; }
+@supports selector(:has(*)) { .ia-toggle:focus-visible { outline: none; } }
 .ia-toggle:hover { background: var(--ia-step-hover); }
 .ia-step.is-open .ia-toggle { background: var(--ia-step-open); border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
 .ia-num {
@@ -392,6 +394,7 @@ main.wide .topic > :not(.topic-visual) { max-width: var(--measure); }
 .av-enabler .av-desc { color: var(--av-en-muted); }
 .av-node:hover .av-title { text-decoration-thickness: 2px; }
 /* Parallel link from each business item to its enabler counterpart. */
+.av-node::before, .av-node::after { pointer-events: none; }
 .av-enabler::before {
   content: ""; position: absolute; right: calc(100% + 2px); top: 50%; width: calc(var(--hier-gap) - 4px); border-top: 2px dashed var(--av-en-line);
 }
@@ -418,6 +421,9 @@ main.wide .topic > :not(.topic-visual) { max-width: var(--measure); }
   background: var(--rv-card-fill); color: var(--rv-card-text);
 }
 @container (max-width: 40rem) { .rv-bar { position: static; } }
+/* Keep keyboard-focused cards clear of the sticky selection bar. */
+.rv-toggle, .rv-link { scroll-margin-top: 7rem; }
+@container (max-width: 40rem) { .rv-toggle, .rv-link { scroll-margin-top: var(--space-3); } }
 .rv-status { flex: 1 1 16rem; margin: 0; font-weight: 600; }
 .rv-clear { min-height: 44px; }
 .rv-clear[hidden] { display: none; }

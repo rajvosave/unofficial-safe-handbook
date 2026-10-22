@@ -48,7 +48,7 @@ function renderLangOptions() {
   for (const code of ['en', 'hr']) {
     const o = document.createElement('option');
     o.value = code;
-    o.textContent = code.toUpperCase();
+    o.textContent = t(`lang.${code}`);
     o.selected = code === i18n.getLang();
     sel.append(o);
   }
@@ -87,6 +87,12 @@ function navigateTo(route) {
 function setTheme(theme) {
   document.documentElement.dataset.theme = theme;
   try { localStorage.setItem('safe.theme', theme); } catch { /* ignore */ }
+  syncThemeButton();
+}
+
+// The button reads "Dark theme" and is pressed while the dark theme is active.
+function syncThemeButton() {
+  $('theme').setAttribute('aria-pressed', String(currentTheme() === 'dark'));
 }
 
 function currentTheme() {
@@ -101,6 +107,8 @@ document.querySelector('.skip-link').addEventListener('click', (e) => {
 });
 
 $('theme').addEventListener('click', () => setTheme(currentTheme() === 'dark' ? 'light' : 'dark'));
+matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change', syncThemeButton);
+syncThemeButton();
 $('lang').addEventListener('change', (e) => {
   i18n.setLang(e.target.value);
   applyStatic();

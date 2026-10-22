@@ -40,6 +40,10 @@ export function splitParagraphs(text) {
   return String(text).split(/\n\s*\n/).map((x) => x.trim()).filter(Boolean);
 }
 
+// Item headings get an id prefixed so slugs like 'full' or 'portfolio' never
+// clash with other ids on the page.
+export const itemAnchor = (id) => `item-${id}`;
+
 export function visibleItems(topic, t) {
   return (topic.items ?? [])
     .filter((id) => has(t, `topic.${topic.id}.item.${id}.title`))
@@ -86,7 +90,7 @@ export function renderTopic(topic, t, navigate = () => {}) {
     for (const para of splitParagraphs(t(s.contentKey))) section.append(el('p', {}, para));
     if (s.key === 'what') {
       for (const item of visibleItems(topic, t)) {
-        section.append(el('h3', { id: item.id }, item.title));
+        section.append(el('h3', { id: itemAnchor(item.id) }, item.title));
         for (const para of splitParagraphs(item.body)) section.append(el('p', {}, para));
       }
     }

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { buildNavModel, visibleSections, topicTitle, relatedLinks, SECTION_ORDER } from '../js/render.js';
+import { buildNavModel, visibleSections, topicTitle, relatedLinks, SECTION_ORDER, visibleItems, splitParagraphs, itemAnchor } from '../js/render.js';
 import { TOPICS, findTopic } from '../js/topics.js';
 
 const dict = {
@@ -45,7 +45,6 @@ test('relatedLinks skips unknown related ids', () => {
   assert.deepEqual(relatedLinks({ related: ['nope'] }, t), []);
 });
 
-import { visibleItems, splitParagraphs } from '../js/render.js';
 
 test('visibleItems returns only items whose title key exists, in order', () => {
   const topic = { id: 'x', items: ['a', 'b', 'c'] };
@@ -61,4 +60,9 @@ test('visibleItems returns only items whose title key exists, in order', () => {
 test('splitParagraphs splits on blank lines and drops empties', () => {
   assert.deepEqual(splitParagraphs('One\n\nTwo\n\n\nThree'), ['One', 'Two', 'Three']);
   assert.deepEqual(splitParagraphs(''), []);
+});
+
+test('item anchors are prefixed so they cannot collide with page ids', () => {
+  assert.equal(itemAnchor('full'), 'item-full');
+  assert.equal(itemAnchor('portfolio'), 'item-portfolio');
 });

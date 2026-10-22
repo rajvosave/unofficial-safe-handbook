@@ -244,3 +244,15 @@ test('mountInspectAdapt renders three disclosure buttons controlling existing pa
     assert.equal(box.all(hasClass('ia-ws-step')).length, 6);
   });
 });
+
+test('hard-coded routeLink routes in visual sources resolve via findTopic', () => {
+  let count = 0;
+  for (const f of ['inspect-adapt', 'artifacts', 'roles', 'pi-planning']) {
+    const src = readFileSync(new URL(`../js/visuals/${f}.js`, import.meta.url), 'utf8');
+    for (const m of src.matchAll(/routeLink\(\s*'([^']+)'/g)) {
+      count += 1;
+      assert.ok(findTopic(m[1]), `${f}: ${m[1]} does not resolve`);
+    }
+  }
+  assert.ok(count >= 2, 'expected the inspect-adapt outcome links');
+});

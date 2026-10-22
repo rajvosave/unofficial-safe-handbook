@@ -1,6 +1,6 @@
 // DOM wiring for the header search combobox. Mounted once; on a language
 // change main.js calls rebuild(), which only refreshes the index and results.
-import { buildIndex, search, nextActiveIndex } from './search.js';
+import { buildIndex, search, nextActiveIndex, escapeAction } from './search.js';
 
 export function mountSearch({ input, panel, list, empty, status }, { topics, t, navigate }) {
   let index = buildIndex(topics, t);
@@ -58,7 +58,8 @@ export function mountSearch({ input, panel, list, empty, status }, { topics, t, 
     empty.hidden = results.length !== 0;
     empty.textContent = t('ui.search.empty');
     panel.hidden = false;
-    input.setAttribute('aria-expanded', 'true');
+    // The listbox is only "expanded" when it has options to show.
+    input.setAttribute('aria-expanded', String(results.length > 0));
     setActive(-1);
     status.textContent = results.length === 0
       ? t('ui.search.empty')
@@ -77,19 +78,17 @@ export function mountSearch({ input, panel, list, empty, status }, { topics, t, 
   input.addEventListener('focus', () => { if (input.value.trim() && !isOpen()) render(); });
   input.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      if (isOpen() || input.value) {
-        e.preventDefault();
-        input.value = '';
-        close();
-        input.focus();
-      }
+      const action = escapeAction(isOpen(), input.value);
+      if (action !== 'none') e.preventDefault();
+      if (action === 'close') close();
+      else if (action === 'clear') input.value = '';
     } else if (e.key === 'Enter') {
       if (isOpen() && results.length) {
         e.preventDefault();
         go(results[active >= 0 ? active : 0].route);
       }
-    } else if (['ArrowDown', 'ArrowUp', 'Home', 'End'].includes(e.key)) {
-      if (e.key === 'Home' || e.key === 'End') return; // keep caret movement in the text field
+    } else if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      // Home/End are left to the text field for caret movement.
       if (!isOpen() && input.value.trim()) render();
       if (results.length) {
         e.preventDefault();

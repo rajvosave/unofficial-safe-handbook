@@ -62,7 +62,7 @@ test('lane and output links resolve to existing topics', () => {
   assert.ok(OUTPUTS.some((o) => o.route === '/artifacts/pi-objectives'));
 });
 
-test('visual registry maps pi-planning only', () => {
+test('visual registry maps pi-planning to its mount and rejects non-visual or inherited ids', () => {
   assert.equal(VISUALS['pi-planning'], mountPiPlanning);
   assert.equal(hasVisual('pi-planning'), true);
   assert.equal(hasVisual('art-sync'), false);

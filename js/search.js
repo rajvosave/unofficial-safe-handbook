@@ -71,7 +71,8 @@ export function search(index, query, limit = 8) {
   const q = squash(query).toLowerCase();
   if (!q || !Array.isArray(index)) return [];
   const words = q.split(' ');
-  const max = Number.isFinite(limit) ? Math.max(1, Math.floor(limit)) : 8;
+  const max = Number.isFinite(limit) ? Math.floor(limit) : 8;
+  if (max <= 0) return [];
   const hits = [];
   index.forEach((entry, pos) => {
     const hay = `${entry.titleLower} ${entry.text}`;
@@ -102,4 +103,11 @@ export function nextActiveIndex(current, key, length) {
     case 'End': return length - 1;
     default: return current;
   }
+}
+
+// Escape in the search field: an open panel closes first (the query stays so
+// the user can reopen it); a second press clears the query.
+export function escapeAction(open, value) {
+  if (open) return 'close';
+  return value ? 'clear' : 'none';
 }

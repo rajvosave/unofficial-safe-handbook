@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { TOPICS, findTopic, topicsBySection } from '../js/topics.js';
+import { TOPICS, findTopic, topicsBySection, roleEvents } from '../js/topics.js';
 
 const SECTIONS = ['foundations', 'roles', 'events', 'artifacts', 'measure', 'start', 'reference'];
 
@@ -48,5 +48,24 @@ test('every titleKey/summaryKey exists in content/en.js', { skip: process.env.CH
     for (const k of [t.titleKey, t.summaryKey]) {
       assert.ok(k in en, `topic ${t.id} is missing content key ${k}`);
     }
+  }
+});
+
+const ROLE_IDS = ['team', 'rte', 'product-owner', 'product-management', 'system-architect', 'scrum-master', 'business-owners', 'epic-owners', 'lpm'];
+const EVENT_IDS = ['pi-planning', 'iteration-planning', 'daily-standup', 'iteration-review-retro', 'system-demo', 'inspect-adapt', 'art-sync', 'po-sync'];
+
+test('roleEvents references existing role and event topic ids', () => {
+  for (const [role, events] of Object.entries(roleEvents)) {
+    assert.equal(findTopic(`/roles/${role}`)?.id, role, `unknown role ${role}`);
+    for (const e of events) {
+      assert.ok(EVENT_IDS.includes(e), `${role} lists unknown event ${e}`);
+      assert.equal(findTopic(`/events/${e}`)?.id, e);
+    }
+  }
+});
+
+test('each of the 9 role ids lists at least one event', () => {
+  for (const r of ROLE_IDS) {
+    assert.ok(Array.isArray(roleEvents[r]) && roleEvents[r].length > 0, `${r} has no events`);
   }
 });

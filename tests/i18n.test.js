@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { createI18n } from '../js/i18n.js';
+import { createI18n, availableLangs } from '../js/i18n.js';
 
 const dicts = { en: { a: 'Hello', b: 'Only EN' }, hr: { a: 'Bok' } };
 const memStore = () => {
@@ -51,4 +51,19 @@ test('survives missing or throwing storage and ignores unknown saved lang', () =
   assert.equal(createI18n({ dicts, defaultLang: 'en', storage: bad }).getLang(), 'en');
   const stale = { getItem: () => 'zz', setItem: () => {} };
   assert.equal(createI18n({ dicts, defaultLang: 'en', storage: stale }).getLang(), 'en');
+});
+
+test('availableLangs keeps only languages whose dictionary has entries, in order', () => {
+  assert.deepEqual(availableLangs({ en: { a: 'A' }, hr: {} }), { en: { a: 'A' } });
+  assert.deepEqual(Object.keys(availableLangs({ en: { a: 'A' }, hr: { a: 'B' } })), ['en', 'hr']);
+  assert.deepEqual(availableLangs({ en: { a: 'A' }, hr: null, de: undefined }), { en: { a: 'A' } });
+  assert.deepEqual(availableLangs(undefined), {});
+});
+
+test('a stored preference for an unavailable language falls back to en', () => {
+  const store = memStore();
+  store.setItem('safe.lang', 'hr');
+  const i = createI18n({ dicts: availableLangs({ en: { a: 'Hello' }, hr: {} }), defaultLang: 'en', storage: store });
+  assert.equal(i.getLang(), 'en');
+  assert.equal(i.t('a'), 'Hello');
 });

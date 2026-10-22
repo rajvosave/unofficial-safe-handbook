@@ -45,3 +45,12 @@ export function createI18n({ dicts = {}, defaultLang = FALLBACK_LANG, storage } 
     },
   };
 }
+
+// Only offer languages that actually supply text: an empty dictionary (a
+// translation not started yet) is left out, so the UI never claims a language
+// it cannot show. Adding keys to a dictionary makes it available automatically.
+export function availableLangs(dicts = {}) {
+  return Object.fromEntries(
+    Object.entries(dicts ?? {}).filter(([, d]) => d && typeof d === 'object' && Object.keys(d).length > 0),
+  );
+}

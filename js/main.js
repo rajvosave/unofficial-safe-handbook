@@ -1,4 +1,4 @@
-import { createI18n } from './i18n.js';
+import { createI18n, availableLangs } from './i18n.js';
 import { startRouter } from './router.js';
 import { findTopic, TOPICS } from './topics.js';
 import en from '../content/en.js';
@@ -10,7 +10,8 @@ import { mountSearch } from './search-ui.js';
 import { mountNavToggle } from './nav-toggle.js';
 import { revealNewView } from './focus-view.js';
 
-const i18n = createI18n({ dicts: { en, hr }, defaultLang: 'en' });
+const dicts = availableLangs({ en, hr });
+const i18n = createI18n({ dicts, defaultLang: 'en' });
 const { t } = i18n;
 const $ = (id) => document.getElementById(id);
 let currentRoute = { route: '/' };
@@ -46,7 +47,11 @@ function renderNav() {
 function renderLangOptions() {
   const sel = $('lang');
   sel.replaceChildren();
-  for (const code of ['en', 'hr']) {
+  const codes = Object.keys(dicts);
+  // With a single language there is nothing to choose: hide the control.
+  sel.hidden = codes.length < 2;
+  document.querySelector('label[for="lang"]').hidden = codes.length < 2;
+  for (const code of codes) {
     const o = document.createElement('option');
     o.value = code;
     o.textContent = t(`lang.${code}`);

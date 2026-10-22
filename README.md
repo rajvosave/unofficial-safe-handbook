@@ -50,7 +50,7 @@ js/search-ui.js     Search combobox wiring
 js/pi-calendar.js   Planning Interval calendar model
 js/visuals/         PI Planning, Inspect and Adapt, artifact and role visuals
 content/en.js       All English text, keyed by id
-content/hr.js       Croatian text (empty for now; falls back to English)
+content/hr.js       Croatian text (empty for now, so not offered yet)
 tests/              node:test suites
 ```
 
@@ -64,10 +64,14 @@ All text lives in flat dictionaries in `content/`. To translate into Croatian:
    to English automatically, so you can translate step by step.
 3. Paragraphs inside a value are separated by a blank line (`\n\n`).
 
+A language is only offered once its dictionary has at least one key: while
+`hr.js` is empty the site is English-only and the language menu is hidden. As
+soon as you add keys to `hr.js`, "Hrvatski" appears in the menu automatically.
+
 To add another language, create `content/<code>.js` with the same shape,
-import it in `js/main.js`, add it to the `dicts` passed to `createI18n` and to
-the language list in `renderLangOptions`, and add a `lang.<code>` key with the
-language's own name (for example `'lang.de': 'Deutsch'`) to `content/en.js`.
+import it in `js/main.js`, add it to the object passed to `availableLangs`, and
+add a `lang.<code>` key with the language's own name (for example
+`'lang.de': 'Deutsch'`) to `content/en.js`.
 
 ## Publish
 

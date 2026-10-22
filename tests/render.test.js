@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { buildNavModel, visibleSections, topicTitle, relatedLinks, SECTION_ORDER, visibleItems, splitParagraphs, itemAnchor, externalLink, itemLink } from '../js/render.js';
+import { buildNavModel, visibleSections, topicTitle, relatedLinks, SECTION_ORDER, visibleItems, splitParagraphs, itemAnchor, externalLink, itemLink, parseBlocks, splitLead, roleEventLinks } from '../js/render.js';
 import en from '../content/en.js';
 import { TOPICS, findTopic } from '../js/topics.js';
 
@@ -99,4 +99,28 @@ test('every source item has a verified-domain https URL and no URL left in its b
     assert.doesNotMatch(en[`topic.sources.item.${slug}.body`], /https?:\/\//, `${slug} body still contains a URL`);
   }
   assert.ok(en['ui.newTab']);
+});
+
+test('parseBlocks turns labelled bullet runs into toned lists', () => {
+  const blocks = parseBlocks('Intro\n\nResponsibilities:\n\n- A\n\n- B\n\nCommon anti-patterns:\n\n- X\n\nThere are three parts:\n\n- Y');
+  assert.deepEqual(blocks.map((b) => b.type === 'p' ? 'p' : `${b.tone}:${b.label}:${b.items.length}`), [
+    'p', 'do:Responsibilities:2', 'avoid:Common anti-patterns:1', 'plain:There are three parts:1',
+  ]);
+});
+
+test('splitLead bolds only short terms before a colon', () => {
+  assert.deepEqual(splitLead('Strategy and funding: decide where to invest'), { lead: 'Strategy and funding', rest: 'decide where to invest' });
+  assert.equal(splitLead('Prepare for and run PI Planning, including the vote').lead, '');
+  assert.equal(splitLead('Run the thing, then check it twice more: it works for a very long clause indeed').lead, '');
+});
+
+test('role pages use role headings and list the events they take part in', () => {
+  const tt = (k) => (Object.hasOwn(en, k) ? en[k] : k);
+  const rte = findTopic('/roles/rte');
+  const secs = visibleSections(rte, tt);
+  assert.deepEqual(secs.map((s) => s.headingKey), ['ui.section.what', 'ui.section.who.role', 'ui.section.cadence.role']);
+  assert.equal(visibleSections(findTopic('/foundations/overview'), tt).find((s) => s.key === 'who').headingKey, 'ui.section.who');
+  const links = roleEventLinks(rte, tt);
+  assert.equal(links.length, 5);
+  assert.ok(links.every((l) => l.href.startsWith('#/events/')));
 });

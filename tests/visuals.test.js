@@ -6,6 +6,8 @@ import { VISUALS, hasVisual } from '../js/visuals/index.js';
 import { buildInspectAdaptModel, mountInspectAdapt } from '../js/visuals/inspect-adapt.js';
 import { buildArtifactsModel, mountArtifacts } from '../js/visuals/artifacts.js';
 import { buildRolesModel, relatedTo, mountRoles } from '../js/visuals/roles.js';
+import { buildPiObjectivesModel } from '../js/visuals/pi-objectives.js';
+import { buildMetricsModel } from '../js/visuals/metrics.js';
 import { findTopic, roleEvents } from '../js/topics.js';
 
 const EVENT_IDS = ['pi-planning', 'iteration-planning', 'daily-standup', 'iteration-review-retro', 'system-demo', 'inspect-adapt', 'art-sync', 'po-sync'];
@@ -173,7 +175,7 @@ test('relatedTo highlights events of a role and roles of an event', () => {
 // ---- Content hygiene ----
 
 test('all literal inspect/artifactsviz/rolesviz keys used in sources exist', () => {
-  for (const [file, prefix] of [['inspect-adapt', 'inspect'], ['artifacts', 'artifactsviz'], ['roles', 'rolesviz']]) {
+  for (const [file, prefix] of [['inspect-adapt', 'inspect'], ['artifacts', 'artifactsviz'], ['roles', 'rolesviz'], ['pi-objectives', 'poviz'], ['metrics', 'mviz']]) {
     const src = readFileSync(new URL(`../js/visuals/${file}.js`, import.meta.url), 'utf8');
     const re = new RegExp(`['"\`](${prefix}\\.[a-z0-9.-]+[a-z0-9])['"\`]`, 'g');
     const literals = [...src.matchAll(re)].map((m) => m[1]);
@@ -183,7 +185,7 @@ test('all literal inspect/artifactsviz/rolesviz keys used in sources exist', () 
 });
 
 test('new strings are plain text and avoid retired terms', () => {
-  const entries = Object.entries(en).filter(([k]) => /^(inspect|artifactsviz|rolesviz)\./.test(k));
+  const entries = Object.entries(en).filter(([k]) => /^(inspect|artifactsviz|rolesviz|poviz|mviz)\./.test(k));
   assert.ok(entries.length > 30);
   for (const [k, v] of entries) {
     assert.equal(typeof v, 'string');
@@ -193,7 +195,7 @@ test('new strings are plain text and avoid retired terms', () => {
 });
 
 test('visual sources do not use innerHTML', () => {
-  for (const f of ['inspect-adapt', 'artifacts', 'roles']) {
+  for (const f of ['inspect-adapt', 'artifacts', 'roles', 'pi-objectives', 'metrics']) {
     const src = readFileSync(new URL(`../js/visuals/${f}.js`, import.meta.url), 'utf8');
     assert.doesNotMatch(src, /innerHTML|insertAdjacentHTML/, f);
   }
@@ -247,7 +249,7 @@ test('mountInspectAdapt renders three disclosure buttons controlling existing pa
 
 test('hard-coded routeLink routes in visual sources resolve via findTopic', () => {
   let count = 0;
-  for (const f of ['inspect-adapt', 'artifacts', 'roles', 'pi-planning']) {
+  for (const f of ['inspect-adapt', 'artifacts', 'roles', 'pi-planning', 'pi-objectives']) {
     const src = readFileSync(new URL(`../js/visuals/${f}.js`, import.meta.url), 'utf8');
     for (const m of src.matchAll(/routeLink\(\s*'([^']+)'/g)) {
       count += 1;
@@ -255,4 +257,34 @@ test('hard-coded routeLink routes in visual sources resolve via findTopic', () =
     }
   }
   assert.ok(count >= 2, 'expected the inspect-adapt outcome links');
+});
+
+test('pi-objectives model: four steps in order, example keys exist, values on a 1 to 10 scale', () => {
+  const m = buildPiObjectivesModel();
+  assert.deepEqual(m.steps.map((x) => x.id), ['draft', 'plan', 'deliver', 'score']);
+  for (const x of m.steps) for (const k of [x.titleKey, x.whoKey, x.descKey]) assert.ok(Object.hasOwn(en, k), k);
+  assert.ok(m.example.some((x) => !x.committed));
+  for (const x of m.example) {
+    assert.ok(Object.hasOwn(en, x.nameKey), x.nameKey);
+    for (const v of [x.planned, x.actual]) assert.ok(v >= 1 && v <= 10);
+  }
+  assert.equal(hasVisual('pi-objectives'), true);
+});
+
+test('ROAM block has all four groups with title, description and example', () => {
+  for (const id of ['resolved', 'owned', 'accepted', 'mitigated']) {
+    for (const part of ['title', 'desc', 'example']) assert.ok(Object.hasOwn(en, `pi.roam.${id}.${part}`), `${id}.${part}`);
+  }
+  for (const k of ['pi.roam.title', 'pi.roam.intro', 'pi.roam.uncommitted', 'pi.roam.link', 'poviz.kind.uncommitted.risk', 'poviz.kind.link']) assert.ok(Object.hasOwn(en, k), k);
+});
+
+test('metrics model: three dimensions with the six flow measures and existing keys', () => {
+  const m = buildMetricsModel();
+  assert.deepEqual(m.dimensions.map((d) => d.id), ['outcomes', 'flow', 'competency']);
+  assert.equal(m.dimensions[1].measures.length, 6);
+  for (const d of m.dimensions) {
+    for (const k of [d.titleKey, d.questionKey, d.howKey, d.usedByKey, ...d.measures.flatMap((x) => [x.termKey, x.descKey])]) assert.ok(Object.hasOwn(en, k), k);
+  }
+  for (const k of [...m.do.map((x) => `mviz.do.${x}`), ...m.avoid.map((x) => `mviz.avoid.${x}`)]) assert.ok(Object.hasOwn(en, k), k);
+  assert.equal(hasVisual('metrics'), true);
 });

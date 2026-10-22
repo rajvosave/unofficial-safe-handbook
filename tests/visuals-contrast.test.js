@@ -75,12 +75,19 @@ const PAIRS = [
   ['--rv-hl-line', '--bg', 3],
   ['--rv-badge-text', '--rv-badge-fill', 4.5],
   ['--rv-sel-fill', '--bg', 3],
+  // Role pages: responsibility / anti-pattern cards
+  ['--text', '--cl-do-fill', 4.5],
+  ['--text', '--cl-avoid-fill', 4.5],
+  ['--cl-do-icon-text', '--cl-do-line', 4.5],
+  ['--cl-avoid-icon-text', '--cl-avoid-line', 4.5],
+  ['--cl-do-line', '--cl-do-fill', 3],
+  ['--cl-avoid-line', '--cl-avoid-fill', 3],
   // Focus ring (drawn outside the element, on the page or box background)
   ['--focus', '--bg', 3],
   ['--focus', '--surface', 3],
 ];
 
-const PREFIXES = ['--ia-', '--av-', '--rv-'];
+const PREFIXES = ['--ia-', '--av-', '--rv-', '--cl-'];
 const ours = (k) => PREFIXES.some((p) => k.startsWith(p));
 
 test('ia/av/rv tokens exist in light, media-dark and explicit-dark blocks identically', () => {

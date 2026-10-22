@@ -6,12 +6,16 @@ import { mountPiPlanning } from './pi-planning.js';
 import { mountInspectAdapt } from './inspect-adapt.js';
 import { mountArtifacts } from './artifacts.js';
 import { mountRoles } from './roles.js';
+import { mountPiObjectives } from './pi-objectives.js';
+import { mountMetrics } from './metrics.js';
 
 export const VISUALS = Object.freeze({
   'pi-planning': mountPiPlanning,
   'inspect-adapt': mountInspectAdapt,
   backlogs: mountArtifacts,
   'roles-overview': mountRoles,
+  'pi-objectives': mountPiObjectives,
+  metrics: mountMetrics,
 });
 
 export const hasVisual = (id) => Object.hasOwn(VISUALS, id);

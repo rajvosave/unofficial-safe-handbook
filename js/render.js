@@ -1,4 +1,4 @@
-import { TOPICS, topicsBySection, findTopic } from './topics.js';
+import { TOPICS, topicsBySection, findTopic, roleEvents } from './topics.js';
 import { VISUALS, hasVisual } from './visuals/index.js';
 
 export const SECTION_ORDER = [...new Set(TOPICS.map((x) => x.section))];
@@ -28,16 +28,56 @@ export function buildNavModel(t) {
   }));
 }
 
+// Role pages (and the roles overview) word the "who" and "cadence" headings
+// for roles; other topics keep the generic ones.
+export const isRoleTopic = (topic) => topic.section === 'roles';
+
 export function visibleSections(topic, t) {
   return SECTION_KEYS.map(([key, headingKey]) => ({
     key,
-    headingKey,
+    headingKey: isRoleTopic(topic) && has(t, `${headingKey}.role`) ? `${headingKey}.role` : headingKey,
     contentKey: `topic.${topic.id}.${key}`,
   })).filter((s) => has(t, s.contentKey));
 }
 
+// Events a role takes part in, as link models, in the order of the events section.
+export function roleEventLinks(topic, t) {
+  const ids = roleEvents[topic.id] ?? [];
+  return topicsBySection('events')
+    .filter((x) => ids.includes(x.id))
+    .map((x) => ({ href: `#${x.route}`, label: topicTitle(x, t) }));
+}
+
 export function splitParagraphs(text) {
   return String(text).split(/\n\s*\n/).map((x) => x.trim()).filter(Boolean);
+}
+
+// Splits a text into paragraphs and bullet lists. A list is a run of
+// paragraphs starting with "- "; a preceding paragraph ending in ":" becomes
+// its label. Lists labelled Responsibilities / anti-patterns get a tone so
+// they can be drawn as cards.
+export function parseBlocks(text) {
+  const blocks = [];
+  for (const para of splitParagraphs(text)) {
+    if (para.startsWith('- ')) {
+      const item = para.replace(/^-\s+/, '');
+      const last = blocks[blocks.length - 1];
+      if (last?.type === 'list') { last.items.push(item); continue; }
+      const prev = last?.type === 'p' && last.text.endsWith(':') ? blocks.pop() : null;
+      const label = prev ? prev.text.replace(/:$/, '') : '';
+      const tone = /anti-?pattern/i.test(label) ? 'avoid' : /^responsibilit/i.test(label) ? 'do' : 'plain';
+      blocks.push({ type: 'list', label, tone, items: [item] });
+    } else {
+      blocks.push({ type: 'p', text: para });
+    }
+  }
+  return blocks;
+}
+
+// "Term: explanation" bullets get a bold term when the term is short.
+export function splitLead(item) {
+  const m = /^([^:.]{2,40}):\s+(.+)$/s.exec(item);
+  return m && m[1].split(/\s+/).length <= 5 ? { lead: m[1], rest: m[2] } : { lead: '', rest: item };
 }
 
 // Item headings get an id prefixed so slugs like 'full' or 'portfolio' never
@@ -94,6 +134,18 @@ function renderVisual(topic, t, navigate) {
   return box;
 }
 
+function renderBlock(block) {
+  if (block.type === 'p') return el('p', {}, block.text);
+  const ul = el('ul', { class: 'point-list' });
+  for (const item of block.items) {
+    const { lead, rest } = splitLead(item);
+    ul.append(el('li', {}, ...(lead ? [el('strong', {}, `${lead}: `), rest] : [rest])));
+  }
+  if (block.tone === 'plain') return block.label ? el('div', {}, el('p', {}, `${block.label}:`), ul) : ul;
+  const icon = el('span', { class: 'callout-icon', 'aria-hidden': 'true' }, block.tone === 'do' ? '✓' : '!');
+  return el('div', { class: `callout callout-${block.tone}` }, el('h3', {}, icon, block.label), ul);
+}
+
 export function renderTopic(topic, t, navigate = () => {}) {
   const article = el('article', { class: 'topic' });
   article.append(el('h1', {}, topicTitle(topic, t)));
@@ -103,7 +155,15 @@ export function renderTopic(topic, t, navigate = () => {}) {
   if (visual && !sections.some((s) => s.key === 'what')) article.append(visual);
   for (const s of sections) {
     const section = el('section', { class: 'topic-section' }, el('h2', {}, t(s.headingKey)));
-    for (const para of splitParagraphs(t(s.contentKey))) section.append(el('p', {}, para));
+    for (const block of parseBlocks(t(s.contentKey))) section.append(renderBlock(block));
+    if (s.key === 'cadence' && isRoleTopic(topic)) {
+      const events = roleEventLinks(topic, t);
+      if (events.length) {
+        const ul = el('ul', { class: 'event-chips' });
+        for (const l of events) ul.append(el('li', {}, el('a', { href: l.href }, l.label)));
+        section.append(el('p', { class: 'chips-label' }, t('ui.role.events')), ul);
+      }
+    }
     if (s.key === 'what') {
       for (const item of visibleItems(topic, t)) {
         section.append(el('h3', { id: itemAnchor(item.id) }, item.title));

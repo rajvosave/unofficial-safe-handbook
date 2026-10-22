@@ -1,5 +1,5 @@
 export default {
-  'app.title': 'SAFe 6.0 Handbook',
+  'app.title': 'Unofficial SAFe Handbook',
   'footer.disclaimer':
     'Unofficial guide. Not affiliated with or endorsed by Scaled Agile, Inc. SAFe® is a registered trademark of Scaled Agile, Inc.',
   'footer.link': 'framework.scaledagile.com',
@@ -21,7 +21,7 @@ export default {
   'ui.notFound.title': 'Page not found',
   'ui.notFound.body': 'This page does not exist. Pick a topic from the navigation or return to the home page.',
   'ui.home.link': 'Back to home',
-  'ui.home.title': 'SAFe 6.0 Handbook',
+  'ui.home.title': 'Unofficial SAFe Handbook',
   'ui.home.intro':
     'A plain-language guide to the Scaled Agile Framework: how the pieces fit, who does what, and how to get started.',
   'ui.home.card.foundations': 'Core ideas, configurations and the Agile Release Train.',
@@ -35,6 +35,9 @@ export default {
   'ui.section.who': 'Who takes part',
   'ui.section.io': 'Inputs and outputs',
   'ui.section.cadence': 'Cadence and duration',
+  'ui.section.who.role': 'Works with',
+  'ui.section.cadence.role': 'Where it takes part',
+  'ui.role.events': 'Events it takes part in',
   'ui.section.related': 'Related topics',
   'nav.foundations': 'Foundations',
   'nav.roles': 'Roles',
@@ -359,7 +362,7 @@ export default {
   'topic.pi-planning.summary':
     'The two-day, face-to-face (or fully virtual) planning event where every team on a train plans the next Planning Interval together.',
   'topic.pi-planning.what':
-    'PI Planning is the event the rest of a train\'s rhythm is built around. Once per Planning Interval, everyone on the train gathers to agree what will be built next and to expose the dependencies and risks that would otherwise surface late. The point is shared understanding and commitment, not producing a document.\n\nThe flow, in prose. Day one opens with the business context, where a senior leader explains where the organization stands and what matters most. Product Management then presents the product or solution vision and the top features, and the System Architect shares the architecture vision and the development practices the train will rely on. After a short planning-context briefing from the RTE, teams split into breakouts. Each team estimates its capacity, pulls in features, drafts stories and iteration-level plans, notes dependencies and writes draft PI Objectives. The day ends with a review of the draft plans, followed by a management review where leaders adjust scope, resolve problems and decide what to change overnight.\n\nDay two starts with any changes in direction. Teams hold a second round of breakouts to refine their plans, with business value assigned to their objectives by Business Owners. A final plan review follows, then the train works through its risks and sorts each one as resolved, owned, accepted or mitigated (ROAM). The train votes on its confidence in the plan, and if confidence is low, teams rework until it is acceptable. A short retrospective closes the event.\n\nCommon anti-patterns: skipping the preparation, treating the objectives as a contract, letting leaders dictate team plans, or holding the event without the people who can make decisions.',
+    'PI Planning is the event the rest of a train\'s rhythm is built around. Once per Planning Interval, everyone on the train gathers to agree what will be built next and to expose the dependencies and risks that would otherwise surface late. The point is shared understanding and commitment, not producing a document.\n\nThe flow, in prose. Day one opens with the business context, where a senior leader explains where the organization stands and what matters most. Product Management then presents the product or solution vision and the top features, and the System Architect shares the architecture vision and the development practices the train will rely on. After a short planning-context briefing from the RTE, teams split into breakouts. Each team estimates its capacity, pulls in features, drafts stories and iteration-level plans, notes dependencies and risks, and writes draft PI Objectives. The day ends with a review of the draft plans, followed by a management review where leaders adjust scope, resolve problems and decide what to change overnight.\n\nDay two starts with any changes in direction. Teams hold a second round of breakouts to refine their plans, with business value assigned to their objectives by Business Owners. A final plan review follows, then the train works through its risks and sorts each one as resolved, owned, accepted or mitigated (ROAM). The train votes on its confidence in the plan, and if confidence is low, teams rework until it is acceptable. A short retrospective closes the event.\n\nCommon anti-patterns: skipping the preparation, treating the objectives as a contract, letting leaders dictate team plans, or holding the event without the people who can make decisions.',
   'topic.pi-planning.who':
     'Every team on the train, including the Product Owner and Scrum Master, plus the RTE who facilitates, Product Management, the System Architect and Business Owners. Epic Owners and Lean Portfolio Management representatives often join for context.',
   'topic.pi-planning.io':
@@ -515,7 +518,7 @@ export default {
   'topic.pi-objectives.summary':
     'Short, business-readable statements of what each team intends to achieve in a Planning Interval.',
   'topic.pi-objectives.what':
-    'PI Objectives summarize, in plain language, what each team plans to accomplish during a Planning Interval. They translate the team\'s stories and features into outcomes that a business person can understand and assess.\n\nEach team drafts its objectives during PI Planning and presents them to everyone. Business Owners then rate each one on a scale of business value, which signals the planned importance. Teams also estimate their confidence, and the train combines them with the ART planning board and risk list into a shared view.\n\nSome objectives are marked as uncommitted. They are planned into the team\'s capacity like the rest, but the team does not commit to them because they carry real uncertainty. Business Owners still assign them business value, and they give the plan room to absorb surprises without breaking commitments.\n\nDuring the PI the objectives are the yardstick for progress. At the end, teams and Business Owners compare planned value against actual value, and the results are reviewed at Inspect and Adapt.\n\nObjectives are a forecast, not a contract. If new information appears, adjust them openly.',
+    'PI Objectives summarize, in plain language, what each team plans to accomplish during a Planning Interval. They translate the team\'s stories and features into outcomes that a business person can understand and assess.\n\nEach team drafts its objectives during PI Planning and presents them to everyone. Teams also state their confidence, and the train combines the objectives with the ART planning board and risk list into a shared view.\n\nEvery objective is rated twice, before the PI and after it, as the diagram below shows. Objectives are a forecast, not a contract. If new information appears, adjust them openly.',
   'topic.pi-objectives.who':
     'Each Agile Team writes its own; Business Owners rate their value; the RTE and Product Management consolidate and track them.',
   'topic.pi-objectives.io':
@@ -525,7 +528,7 @@ export default {
   'topic.metrics.summary':
     'How to tell whether SAFe is paying off: outcomes, flow and competency, and why results beat activity.',
   'topic.metrics.what':
-    'Measurement in SAFe is meant to guide improvement, not to rank teams. The Measure and Grow approach looks at three questions: are the solutions meeting customer and business needs (outcomes), how efficiently does value move through the system (flow), and how skilled is the organization in the practices that make it agile (competency).\n\nOutcome metrics look at results: customer satisfaction, revenue or cost effects, adoption of delivered features, and progress toward goals. Objectives and key results, or OKRs, are a popular way to set such goals. An objective states a direction; key results are the measurable signs that you got there.\n\nFlow metrics look at the delivery system itself. Common examples are how long work takes from start to finish (flow time), how much work is in progress (flow load), how much is completed (flow velocity), how much waiting is built in (flow efficiency), how work is split between features, defects, enablers and debt (flow distribution), and how reliably the train meets its plans (flow predictability).\n\nCompetency assessments are self-evaluations that show where teams and leaders have room to grow.\n\nPrefer outcome measures to output measures. Counting stories or story points tells you how busy people are; it does not tell you whether customers gained anything. Use several measures together, watch trends instead of single numbers, and be careful that a metric used for reward will be gamed. Exact definitions and formulas vary by source, so check the official material before standardizing.',
+    'Measurement in SAFe is meant to guide improvement, not to rank teams. The Measure and Grow approach looks at three questions: are the solutions meeting customer and business needs (outcomes), how efficiently does value move through the system (flow), and how skilled is the organization in the practices that make it agile (competency).\n\nExact definitions and formulas vary by source, so check the official material before standardizing.',
   'topic.metrics.who':
     'Leaders, Lean Portfolio Management and Business Owners use outcome data to steer investment. Teams and the RTE use flow data to improve delivery.',
   'topic.metrics.cadence':
@@ -616,7 +619,7 @@ export default {
     'The coach and facilitator of an Agile Release Train, who hosts its events, brings risks and impediments into the open and helps the teams deliver as one.',
   'topic.glossary.item.roam.title': 'ROAM',
   'topic.glossary.item.roam.body':
-    'A way of sorting risks as resolved, owned, accepted or mitigated.',
+    'A way of sorting the risks raised at PI Planning. Resolved: no longer a problem. Owned: a named person works on it. Accepted: nothing more can be done, so the train lives with it. Mitigated: the plan changes to reduce its impact or chance. Risks behind uncommitted PI Objectives are sorted the same way.',
   'topic.glossary.item.scrum-master.title': 'Scrum Master / Team Coach',
   'topic.glossary.item.scrum-master.body':
     'The servant leader who helps one team follow its working agreements and keep improving.',
@@ -791,6 +794,24 @@ export default {
   'pi.flow.confidence-vote.title': 'Confidence vote',
   'pi.flow.confidence-vote.desc': 'The train commits to the plan, or reworks it first.',
 
+  'pi.roam.title': 'Managing risks with ROAM',
+  'pi.roam.intro':
+    'Risks are collected while teams plan: each team notes what could stop it, such as an unclear requirement, an unproven technology or a dependency on another team. On day two the train reviews them together and sorts each one into one of four groups, called ROAM.',
+  'pi.roam.resolved.title': 'Resolved',
+  'pi.roam.resolved.desc': 'Everyone in the room agrees the risk is no longer a problem.',
+  'pi.roam.resolved.example': 'Example: the other team confirms it will deliver the interface in iteration 2.',
+  'pi.roam.owned.title': 'Owned',
+  'pi.roam.owned.desc': 'The risk cannot be settled now, so one named person takes responsibility for working on it.',
+  'pi.roam.owned.example': 'Example: the System Architect will check by next week whether the vendor service meets the load.',
+  'pi.roam.accepted.title': 'Accepted',
+  'pi.roam.accepted.desc': 'Nothing more can reasonably be done. The train agrees to live with it and see what happens.',
+  'pi.roam.accepted.example': 'Example: a regulator may change a rule during the PI, and the plan stays as it is.',
+  'pi.roam.mitigated.title': 'Mitigated',
+  'pi.roam.mitigated.desc': 'The plan is changed to lower the impact or the chance of the risk.',
+  'pi.roam.mitigated.example': 'Example: a spike in iteration 1 tests the unknown technology before features rely on it.',
+  'pi.roam.uncommitted':
+    'Risks often explain why an objective is uncommitted. When a team cannot promise an objective because of real uncertainty, it marks the objective as uncommitted and raises the risk behind it here.',
+  'pi.roam.link': 'See committed and uncommitted PI Objectives',
   'pi.out.title': 'What PI Planning produces',
   'pi.out.objectives.title': 'PI Objectives',
   'pi.out.objectives.desc':
@@ -863,6 +884,94 @@ export default {
   'inspect.ws.backlog.title': 'Create improvement backlog items',
   'inspect.ws.backlog.desc':
     'Turn the most promising solutions into improvement items with an owner, ready for PI Planning.',
+
+  'mviz.title': 'Three things to measure, and how',
+  'mviz.intro': 'Each dimension answers a different question and uses different measures. Look at all three together rather than relying on one.',
+  'mviz.dim.outcomes.title': 'Outcomes',
+  'mviz.dim.outcomes.question': 'Are our solutions meeting customer and business needs?',
+  'mviz.dim.outcomes.how': 'How to measure',
+  'mviz.dim.outcomes.m.satisfaction.term': 'Customer satisfaction',
+  'mviz.dim.outcomes.m.satisfaction.desc': 'Ask customers and users, and watch their feedback over time.',
+  'mviz.dim.outcomes.m.business.term': 'Revenue and cost effects',
+  'mviz.dim.outcomes.m.business.desc': 'Check whether delivered work moved money in or out as expected.',
+  'mviz.dim.outcomes.m.adoption.term': 'Feature adoption',
+  'mviz.dim.outcomes.m.adoption.desc': 'See whether people actually use what was delivered.',
+  'mviz.dim.outcomes.m.okr.term': 'Objectives and key results (OKRs)',
+  'mviz.dim.outcomes.m.okr.desc': 'An objective states a direction; key results are the measurable signs you got there.',
+  'mviz.dim.outcomes.usedBy': 'Used by: leaders, Lean Portfolio Management and Business Owners, to steer investment. Reviewed on the portfolio review rhythm.',
+  'mviz.dim.flow.title': 'Flow',
+  'mviz.dim.flow.question': 'How efficiently does value move through the delivery system?',
+  'mviz.dim.flow.how': 'How to measure',
+  'mviz.dim.flow.m.time.term': 'Flow time',
+  'mviz.dim.flow.m.time.desc': 'How long work takes from start to finish.',
+  'mviz.dim.flow.m.load.term': 'Flow load',
+  'mviz.dim.flow.m.load.desc': 'How much work is in progress.',
+  'mviz.dim.flow.m.velocity.term': 'Flow velocity',
+  'mviz.dim.flow.m.velocity.desc': 'How much work is completed.',
+  'mviz.dim.flow.m.efficiency.term': 'Flow efficiency',
+  'mviz.dim.flow.m.efficiency.desc': 'How much of the elapsed time is active work rather than waiting.',
+  'mviz.dim.flow.m.distribution.term': 'Flow distribution',
+  'mviz.dim.flow.m.distribution.desc': 'How work is split between features, defects, enablers and debt.',
+  'mviz.dim.flow.m.predictability.term': 'Flow predictability',
+  'mviz.dim.flow.m.predictability.desc': 'How reliably the train meets its plans.',
+  'mviz.dim.flow.usedBy': 'Used by: teams and the RTE, to improve delivery. Reviewed every iteration for teams and at least at each Inspect and Adapt for the train.',
+  'mviz.dim.competency.title': 'Competency',
+  'mviz.dim.competency.question': 'How skilled are we in the practices that make us agile?',
+  'mviz.dim.competency.how': 'How to measure',
+  'mviz.dim.competency.m.teams.term': 'Team self-assessment',
+  'mviz.dim.competency.m.teams.desc': 'Teams evaluate their own practices and pick where to grow.',
+  'mviz.dim.competency.m.leaders.term': 'Leader self-assessment',
+  'mviz.dim.competency.m.leaders.desc': 'Leaders do the same for the Lean-Agile habits and the system around the teams.',
+  'mviz.dim.competency.usedBy': 'Used by: teams and leaders, to see where they have room to grow. It is a self-evaluation, not a score to compare teams.',
+  'mviz.do.title': 'Measure well',
+  'mviz.do.outcomes': 'Prefer outcome measures to output measures.',
+  'mviz.do.several': 'Use several measures together.',
+  'mviz.do.trends': 'Watch trends instead of single numbers.',
+  'mviz.avoid.title': 'Avoid',
+  'mviz.avoid.points': 'Counting stories or story points: it shows how busy people are, not whether customers gained anything.',
+  'mviz.avoid.reward': 'Tying a metric to rewards: it will be gamed.',
+
+  'poviz.title': 'From plan to feedback: how an objective is rated',
+  'poviz.intro':
+    'Each objective gets a business value twice. The first rating, before the PI, says how much it matters. The second, after the PI, records the value that was really delivered. The gap between the two is the feedback.',
+  'poviz.step.draft.title': 'Draft',
+  'poviz.step.draft.who': 'Each team',
+  'poviz.step.draft.desc': 'Writes objectives in business language at PI Planning and presents them to everyone.',
+  'poviz.step.plan.title': 'Plan the value',
+  'poviz.step.plan.who': 'Business Owners',
+  'poviz.step.plan.desc': 'Give each objective a planned business value from 1 to 10. It signals how important it is.',
+  'poviz.step.deliver.title': 'Deliver',
+  'poviz.step.deliver.who': 'Teams and the train',
+  'poviz.step.deliver.desc': 'The objectives are the yardstick for progress during the PI, and are adjusted openly if new information appears.',
+  'poviz.step.score.title': 'Score the actual value',
+  'poviz.step.score.who': 'Business Owners and teams',
+  'poviz.step.score.desc': 'At the end of the PI, give each objective an actual business value on the same 1 to 10 scale, based on what was delivered.',
+  'poviz.loop.title': 'The feedback loop',
+  'poviz.loop.desc':
+    'Comparing planned and actual value shows the business how well its priorities held up against real outcomes. The results are reviewed at Inspect and Adapt and inform the next PI Planning.',
+  'poviz.example.title': 'A worked example',
+  'poviz.example.intro': 'Three objectives of one team, planned at the start of the PI and scored at the end.',
+  'poviz.example.caption': 'Planned and actual business value of three example objectives',
+  'poviz.example.col.objective': 'Objective',
+  'poviz.example.col.planned': 'Planned value',
+  'poviz.example.col.actual': 'Actual value',
+  'poviz.example.planned': 'Planned {n} of 10',
+  'poviz.example.actual': 'Actual {n} of 10',
+  'poviz.example.pay': 'Customers can pay with a saved card',
+  'poviz.example.search': 'Faster search results',
+  'poviz.example.reset': 'Self-service password reset',
+  'poviz.example.note':
+    'The numbers are made up for illustration. The first objective delivered what was expected. The second delivered less than planned, which tells the business that its priority was worth less than it seemed. The third was uncommitted because it depended on an external service that was not yet confirmed; once the service was ready, it turned out more valuable than planned.',
+  'poviz.kind.title': 'Committed and uncommitted objectives',
+  'poviz.kind.committed.title': 'Committed',
+  'poviz.kind.committed.desc': 'The team promises to deliver it within the PI. It counts toward the plan the train stands behind.',
+  'poviz.kind.uncommitted.title': 'Uncommitted',
+  'poviz.kind.uncommitted.tag': 'Uncommitted',
+  'poviz.kind.uncommitted.desc':
+    'Planned into the team\'s capacity but not promised, because it is usually tied to a risk: an unknown dependency, an unproven technology or an unclear requirement. It still gets a business value, and gives the plan room to absorb surprises without breaking commitments.',
+  'poviz.kind.uncommitted.risk':
+    'The risk behind it is raised at PI Planning and sorted as resolved, owned, accepted or mitigated (ROAM).',
+  'poviz.kind.link': 'How risks are managed at PI Planning',
 
   'artifactsviz.title': 'How the backlog items fit together',
   'artifactsviz.intro':

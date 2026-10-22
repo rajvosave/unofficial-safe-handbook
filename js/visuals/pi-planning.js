@@ -356,6 +356,31 @@ function renderFlow(t) {
   return h('div', { class: 'pi-block' }, h('h3', {}, t('pi.flow.title')), h('p', {}, t('pi.flow.intro')), list);
 }
 
+const ROAM = ['resolved', 'owned', 'accepted', 'mitigated'];
+
+function renderRoam(t) {
+  const list = h('ul', { class: 'pi-roam' });
+  for (const id of ROAM) {
+    list.append(h(
+      'li',
+      { class: `pi-roam-card pi-roam-${id}` },
+      h('span', { class: 'pi-roam-letter', 'aria-hidden': 'true' }, t(`pi.roam.${id}.title`)[0]),
+      h('strong', {}, t(`pi.roam.${id}.title`)),
+      h('span', { class: 'pi-roam-desc' }, t(`pi.roam.${id}.desc`)),
+      h('span', { class: 'pi-roam-eg' }, t(`pi.roam.${id}.example`)),
+    ));
+  }
+  return h(
+    'div',
+    { class: 'pi-block' },
+    h('h3', {}, t('pi.roam.title')),
+    h('p', {}, t('pi.roam.intro')),
+    list,
+    h('p', { class: 'pi-note' }, t('pi.roam.uncommitted')),
+    routeLink('/artifacts/pi-objectives', { class: 'pi-out-link' }, t('pi.roam.link')),
+  );
+}
+
 function renderOutputs(t) {
   const list = h('ul', { class: 'pi-outputs' });
   for (const o of OUTPUTS) {
@@ -383,6 +408,7 @@ export function mountPiPlanning(container, t, navigate) {
     renderAgenda(t),
     renderCalendar(t),
     renderFlow(t),
+    renderRoam(t),
     renderOutputs(t),
   );
   // Internal links go through navigate(); modified clicks keep browser behavior.

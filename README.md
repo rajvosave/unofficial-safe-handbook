@@ -85,6 +85,16 @@ The site is static, so the repository root can be published as-is:
 Routing uses the URL hash (`#/events/pi-planning`), so no server rewrites are
 needed.
 
+## Search engine visibility
+
+`npm run build` (also run by the Pages workflow) writes `_site/` with a static
+HTML page per topic, for example `_site/events/pi-planning/index.html`, each
+with its own title, description, canonical address and structured data, plus
+`sitemap.xml` and `robots.txt`. The app still takes over in the browser. The
+public address comes from `SITE_URL` (default: the GitHub Pages address); set it
+when the site moves to a custom domain. Adding a topic to `js/topics.js` adds
+its page and sitemap entry automatically.
+
 ## Contributing
 
 Corrections, new topics and translations are welcome. Open an issue or a pull

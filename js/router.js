@@ -8,7 +8,13 @@ export function parseHash(hash) {
 }
 
 export function startRouter(onRoute, win = window) {
-  const fire = () => onRoute(parseHash(win.location.hash));
+  // A prerendered page (/events/pi-planning/) names its topic on <body>; it
+  // applies while the hash is empty, so the app shows what the URL says.
+  const fire = () => {
+    const hash = win.location.hash;
+    const base = win.document?.body?.dataset?.route;
+    onRoute(parseHash(base && (!hash || hash === '#') ? `#${base}` : hash));
+  };
   win.addEventListener('hashchange', fire);
   fire();
 }

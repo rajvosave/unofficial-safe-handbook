@@ -32,10 +32,11 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - name: Collect the site files
-        run: |
-          mkdir _site
-          cp -r index.html favicon.svg css js content _site/
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Build the site (static page per topic, sitemap, robots)
+        run: node scripts/build.js _site
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SAFe 6.0 Handbook</title>
+<script>try{var th=localStorage.getItem('safe.theme');if(th==='light'||th==='dark')document.documentElement.dataset.theme=th;}catch(e){}</script>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+<a class="skip-link" href="#app" data-i18n="ui.skip"></a>
+<header class="site-header">
+  <a class="brand" href="#/" data-i18n="app.title"></a>
+  <div class="header-tools">
+    <label class="visually-hidden" for="search" data-i18n="ui.search"></label>
+    <input id="search" type="search" data-i18n-placeholder="ui.search.placeholder">
+    <label class="visually-hidden" for="lang" data-i18n="ui.language"></label>
+    <select id="lang"></select>
+    <button id="theme" type="button" data-i18n="ui.theme" data-i18n-aria="ui.theme"></button>
+  </div>
+</header>
+<div class="layout">
+  <nav id="nav" data-i18n-aria-label="ui.nav"></nav>
+  <main id="app" tabindex="-1"></main>
+</div>
+<footer class="site-footer">
+  <p><span data-i18n="footer.disclaimer"></span> <a href="https://scaledagileframework.com" rel="noopener" data-i18n="footer.link"></a></p>
+</footer>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

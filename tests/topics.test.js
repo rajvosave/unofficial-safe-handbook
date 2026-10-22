@@ -69,3 +69,28 @@ test('each of the 9 role ids lists at least one event', () => {
     assert.ok(Array.isArray(roleEvents[r]) && roleEvents[r].length > 0, `${r} has no events`);
   }
 });
+
+test('every topic has .what content in content/en.js', { skip: process.env.CHECK_CONTENT !== '1' && 'set CHECK_CONTENT=1 to enable' }, async () => {
+  const mod = await import('../content/en.js');
+  const en = mod.default ?? mod.en ?? mod;
+  for (const t of TOPICS) {
+    assert.ok(`topic.${t.id}.what` in en, `topic ${t.id} is missing topic.${t.id}.what`);
+  }
+});
+
+test('every item slug has title and body keys', { skip: process.env.CHECK_CONTENT !== '1' && 'set CHECK_CONTENT=1 to enable' }, async () => {
+  const mod = await import('../content/en.js');
+  const en = mod.default ?? mod.en ?? mod;
+  for (const t of TOPICS.filter((x) => x.items)) {
+    for (const slug of t.items) {
+      for (const part of ['title', 'body']) {
+        assert.ok(`topic.${t.id}.item.${slug}.${part}` in en, `topic ${t.id} item ${slug} missing ${part}`);
+      }
+    }
+  }
+});
+
+test('glossary and sources declare items', () => {
+  assert.ok(findTopic('/reference/glossary').items.length >= 25);
+  assert.ok(findTopic('/reference/sources').items.length >= 6);
+});

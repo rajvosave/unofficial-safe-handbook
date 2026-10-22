@@ -345,4 +345,319 @@ export default {
     "The STE, Solution Management and Solution Architect work with each train's RTE, Product Management and System Architect, and with suppliers.",
   "topic.solution-train.cadence":
     "Trains plan on a shared cadence, and Solution Train events line up with the trains' PI events, for example a combined planning event and a solution demo. Details depend on your setup.",
+  'topic.pi-planning.title': 'PI Planning',
+  'topic.pi-planning.summary':
+    'The two-day, face-to-face (or fully virtual) planning event where every team on a train plans the next Planning Interval together.',
+  'topic.pi-planning.what':
+    'PI Planning is the heartbeat of an Agile Release Train. Once per Planning Interval, everyone on the train gathers to agree what will be built next and to expose the dependencies and risks that would otherwise surface late. The point is shared understanding and commitment, not producing a document.\n\nThe flow, in prose. Day one opens with the business context, where a senior leader explains where the organization stands and what matters most. Product Management then presents the product or solution vision and the top features, and the System Architect shares the architecture vision and the development practices the train will rely on. After a short planning-context briefing from the RTE, teams split into breakouts. Each team estimates its capacity, pulls in features, drafts stories and iteration-level plans, notes dependencies and writes draft PI Objectives. The day ends with a review of the draft plans, followed by a management review where leaders adjust scope, resolve problems and decide what to change overnight.\n\nDay two starts with any changes in direction. Teams hold a second round of breakouts to refine their plans, with business value assigned to their objectives by Business Owners. A final plan review follows, then the train works through its risks and sorts each one as resolved, owned, accepted or mitigated (ROAM). The train votes on its confidence in the plan, and if confidence is low, teams rework until it is acceptable. A short retrospective closes the event.\n\nCommon anti-patterns: skipping the preparation, treating the objectives as a contract, letting leaders dictate team plans, or holding the event without the people who can make decisions.',
+  'topic.pi-planning.who':
+    'Every team on the train, including the Product Owner and Scrum Master, plus the RTE who facilitates, Product Management, the System Architect and Business Owners. Epic Owners and Lean Portfolio Management representatives often join for context.',
+  'topic.pi-planning.io':
+    'In: the product or solution vision, a prioritized ART Backlog of features, the architecture vision and each team\'s capacity. Out: PI Objectives for each team, a program board showing features, milestones and dependencies, a list of risks with their ROAM status, and a recorded confidence vote.',
+  'topic.pi-planning.cadence':
+    'Two days, at the start of every Planning Interval. Planning Intervals usually run eight to twelve weeks, so most trains hold PI Planning four to six times a year.',
+
+  'topic.iteration-planning.title': 'Iteration Planning',
+  'topic.iteration-planning.summary':
+    'The team event at the start of each iteration where the team decides what it can finish in the next one to two weeks.',
+  'topic.iteration-planning.what':
+    'In iteration planning, a team looks at the stories at the top of its backlog and agrees on a realistic body of work for the iteration. The team reads each story, clarifies the acceptance criteria with the Product Owner, discusses how to build and test it, and compares the total against what it can handle given holidays, absences and past results.\n\nThe outcome is a shared iteration goal and a set of stories the team believes it can complete. Because stories are traced back to the features and objectives from PI Planning, the event is also where the team checks that its day-to-day work still supports the larger plan.\n\nGood practice is to refine stories before the meeting so planning is a short conversation, not a long clarification session. If the team finds it cannot fit everything, it negotiates scope with the Product Owner rather than working extra hours.',
+  'topic.iteration-planning.who':
+    'The whole Agile Team, with the Product Owner explaining priorities and the Scrum Master facilitating.',
+  'topic.iteration-planning.io':
+    'In: a refined team backlog, the team\'s PI Objectives and its recent velocity or throughput. Out: an iteration goal and a committed set of stories the team expects to complete.',
+  'topic.iteration-planning.cadence':
+    'At the start of every iteration. Teams often take one to two hours for each week of iteration length, though the exact time varies.',
+
+  'topic.daily-standup.title': 'Daily Stand-up',
+  'topic.daily-standup.summary':
+    'A short daily meeting for the team to coordinate, spot problems early and replan the day.',
+  'topic.daily-standup.what':
+    'The daily stand-up is a brief team meeting held at the same time and place each day. Its purpose is coordination, not status reporting to a manager. Members share what progress they have made toward the iteration goal, what they plan to tackle next, and anything that is blocking them.\n\nMany teams walk the board from right to left, starting with the items closest to done, to focus on finishing work rather than starting more. Longer discussions are taken offline straight after, with only the people who need to be there.\n\nIt works best when it stays short, usually fifteen minutes or less, and when team members talk to each other rather than to the Scrum Master. Impediments raised here are tracked by the Scrum Master and escalated to the ART sync when the team cannot clear them.',
+  'topic.daily-standup.who':
+    'The Agile Team members and the Scrum Master. Others may listen but should not interrupt.',
+  'topic.daily-standup.io':
+    'In: the team board and the iteration goal. Out: an updated shared picture of progress, a list of impediments and any follow-up conversations to hold.',
+  'topic.daily-standup.cadence':
+    'Every working day, for about fifteen minutes.',
+
+  'topic.iteration-review-retro.title': 'Iteration Review and Retrospective',
+  'topic.iteration-review-retro.summary':
+    'Two team events at the end of each iteration: show what was built, then improve how the team works.',
+  'topic.iteration-review-retro.what':
+    'At the end of every iteration, the team holds two linked events. The iteration review is a demonstration of the working results to the Product Owner and any interested stakeholders. The team shows finished stories, gathers reactions and updates the backlog based on what it hears. Only completed work counts, so unfinished stories are not demonstrated as done.\n\nThe iteration retrospective follows and focuses on the team itself. Members look at what went well, what did not, and pick a small number of improvements to try in the next iteration. Useful retrospectives produce concrete actions with owners, and the next retrospective starts by checking whether they were done.\n\nTogether the two events close a feedback loop: one on the product, the other on the process.',
+  'topic.iteration-review-retro.who':
+    'The Agile Team, Product Owner and Scrum Master. Stakeholders are invited to the review; the retrospective is normally limited to the team.',
+  'topic.iteration-review-retro.io':
+    'In: the completed stories and the iteration goal. Out: stakeholder feedback, backlog adjustments, and a short list of improvement actions for the team.',
+  'topic.iteration-review-retro.cadence':
+    'At the end of each iteration, typically one to two hours for the review and about the same for the retrospective.',
+
+  'topic.system-demo.title': 'System Demo',
+  'topic.system-demo.summary':
+    'A regular demonstration of the combined, integrated work of all teams on the train.',
+  'topic.system-demo.what':
+    'Individual team demos only show a slice. The system demo shows what all the teams have produced together as one integrated whole, ideally running in a production-like environment. It gives stakeholders objective evidence of progress and lets the train learn whether the integrated solution actually works.\n\nThe demo is usually run by the Product Owners and Product Management with help from the System Architect, with the RTE coordinating logistics. Presenters show new features in a realistic flow rather than slides, and stakeholders respond with feedback that feeds the ART Backlog.\n\nThe last system demo in a Planning Interval is covered in the Inspect and Adapt event as its first part, often with a broader audience.',
+  'topic.system-demo.who':
+    'Product Owners, Product Management, the System Architect and the RTE take the lead. Teams, Business Owners, customers and other stakeholders attend to watch and comment.',
+  'topic.system-demo.io':
+    'In: integrated, working features from all teams. Out: stakeholder feedback and a clearer view of what is truly done, used to adjust the ART Backlog.',
+  'topic.system-demo.cadence':
+    'At the end of every iteration, often scheduled soon after the iteration reviews. The final one of a Planning Interval is shown again at Inspect and Adapt.',
+
+  'topic.inspect-adapt.title': 'Inspect and Adapt',
+  'topic.inspect-adapt.summary':
+    'The event at the end of each Planning Interval where the train reviews its results and improves.',
+  'topic.inspect-adapt.what':
+    'Inspect and Adapt, often shortened to I&A, is the structured reflection that closes a Planning Interval. Its purpose is to look honestly at how the train did and to turn the findings into improvements that go into the next PI.\n\nThere are three parts:\n\n- The PI system demo: the train shows the integrated solution built during the interval to Business Owners and other stakeholders, who give feedback.\n\n- Quantitative and qualitative measurement: the train reviews data such as the PI objectives outcome, flow metrics and quality indicators, alongside qualitative impressions from the people involved.\n\n- A retrospective and problem-solving workshop: the group reflects on what worked and what did not, picks the most important systemic problem, analyzes root causes and agrees on improvement items.\n\nThe resulting improvement items are added to the ART Backlog and planned into the next PI Planning, so the cycle of learning continues.',
+  'topic.inspect-adapt.who':
+    'The whole train: teams, Scrum Masters, the RTE, Product Management, the System Architect and Business Owners. Epic Owners and Lean Portfolio Management representatives often take part as well.',
+  'topic.inspect-adapt.io':
+    'In: the PI system demo, the PI objectives results and measurement data. Out: a prioritized list of improvement items, owned and ready to enter the ART Backlog.',
+  'topic.inspect-adapt.cadence':
+    'Once at the end of every Planning Interval, typically a half day for a train, though length depends on size and complexity.',
+
+  'topic.art-sync.title': 'ART Sync',
+  'topic.art-sync.summary':
+    'A regular alignment meeting where the train checks progress, dependencies and impediments between planning events.',
+  'topic.art-sync.what':
+    'The ART sync keeps the train aligned between PI Planning sessions. It is made up of two conversations that often run back to back: the PO sync, which concentrates on progress against objectives and scope, and a coach sync, where Scrum Masters and the RTE discuss delivery, dependencies and impediments.\n\nThe RTE facilitates. Teams report briefly on progress against their PI Objectives, raise cross-team dependencies and identify obstacles they cannot clear alone, which the RTE then follows up. The sync is also a good place to spot risks that have changed and to plan for the next system demo.\n\nKeep it short and focused on problems, not individual status reports.',
+  'topic.art-sync.who':
+    'The RTE, Scrum Masters, Product Owners and the System Architect. Other specialists join when a topic calls for them.',
+  'topic.art-sync.io':
+    'In: team progress, the program board and the list of open risks and impediments. Out: refreshed dependencies, an escalation list and agreed follow-ups.',
+  'topic.art-sync.cadence':
+    'Usually weekly or once per iteration, depending on what the train agrees. Typically up to an hour.',
+
+  'topic.po-sync.title': 'PO Sync',
+  'topic.po-sync.summary':
+    'A focused meeting for Product Owners and Product Management to align on scope and content.',
+  'topic.po-sync.what':
+    'The PO sync is where the people who own content, Product Owners and Product Management, compare notes on how the train is progressing toward its objectives. They review feature progress, discuss scope changes, prepare for upcoming events such as PI Planning, and prioritize the ART Backlog in light of new learning.\n\nThe RTE or Product Management usually facilitates. It can be a stand-alone meeting or one half of the ART sync, depending on how your train is organized.\n\nUse it to catch mismatches early, for example two teams reading the same feature differently, instead of discovering them at the system demo.',
+  'topic.po-sync.who':
+    'Product Owners and Product Management, with the RTE. The System Architect or others join as needed.',
+  'topic.po-sync.io':
+    'In: feature progress, new customer feedback and the state of the ART Backlog. Out: adjusted scope and priorities, and clearer feature descriptions.',
+  'topic.po-sync.cadence':
+    'Held regularly, often weekly or at least once every iteration, as the train agrees.',
+
+  'topic.backlogs.title': 'Backlogs',
+  'topic.backlogs.summary':
+    'The ordered lists of work at each level, from portfolio down to the single team.',
+  'topic.backlogs.what':
+    'A backlog is a prioritized list of work waiting to be done. SAFe uses several, each at a different altitude, and each holds a different size of item. Keeping them separate lets every level plan at the granularity that suits it.\n\nPortfolio backlog. Holds epics that have been proposed or approved and are waiting to be analyzed or implemented. It is managed through the portfolio Kanban and owned by Lean Portfolio Management with Epic Owners.\n\nSolution backlog. Used in Large Solution SAFe. Holds capabilities and enabler work that span several trains in one Solution Train, and is owned by Solution Management.\n\nART Backlog. Holds the features that one Agile Release Train will build, along with enablers. Product Management owns and orders it. This is the backlog that PI Planning draws on. In older SAFe material it was called the program backlog.\n\nTeam backlog. Holds the stories and team-level enablers a single team will build. The Product Owner owns it, and the team pulls work from the top each iteration.\n\nWork flows downward: epics are split into capabilities or features, and features into stories. Each backlog should be visible, ordered by economic value (many use WSJF) and refined often enough that the next piece of work is ready.',
+  'topic.backlogs.who':
+    'Lean Portfolio Management and Epic Owners for the portfolio, Solution Management for the solution, Product Management for the ART, and Product Owners with their teams for the team backlog.',
+  'topic.backlogs.io':
+    'In: ideas, customer feedback, strategic themes and enabler needs. Out: ordered, refined items ready for the next level of planning.',
+
+  'topic.epic.title': 'Epic',
+  'topic.epic.summary':
+    'A large initiative that needs a business case and portfolio-level approval before work starts.',
+  'topic.epic.what':
+    'An epic is a big piece of work, usually spanning several Planning Intervals and often more than one train. Because it costs a lot and carries real risk, an epic is not simply dropped into a backlog. It is written up as a hypothesis, checked with a lean business case, and approved by portfolio leaders first.\n\nThere are two kinds. A business epic delivers value that customers or users can see. An enabler epic builds technical or architectural groundwork that future business work depends on.\n\nA typical epic is proposed by an Epic Owner, moves through the portfolio Kanban from idea to analysis to approval, and may begin with a minimum viable product (MVP) to test the hypothesis cheaply before further investment. Once approved, it is broken into features (or capabilities in a Solution Train) that go onto the right backlogs.\n\nThe epic should be reviewed regularly. If evidence shows the hypothesis is wrong, stopping early is a good result.',
+  'topic.epic.who':
+    'Epic Owners write and shepherd it, Lean Portfolio Management approves it, and Product Management and architects help split it into features.',
+  'topic.epic.io':
+    'In: a strategic idea or opportunity. Out: an approved scope with an MVP definition, a business case and the features that implement it.',
+
+  'topic.capability.title': 'Capability',
+  'topic.capability.summary':
+    'A solution-level piece of functionality large enough to need several trains.',
+  'topic.capability.what':
+    'A capability is to a Solution Train what a feature is to a single train. It describes a behavior of the overall solution that no single ART can build alone, so it is split into features that each train delivers.\n\nCapabilities only appear in Large Solution and Full SAFe configurations. Solution Management owns them and keeps them on the solution backlog, with input from architects and the trains concerned. If your product fits within one ART, you do not need capabilities at all; use features directly.\n\nA capability is sized to fit within one Planning Interval, so it can be planned alongside everything else. Like a feature, it carries a benefit hypothesis and acceptance criteria that make it testable.',
+  'topic.capability.who':
+    'Solution Management owns it, with the Solution Architect and the Product Management and System Architect of each affected train.',
+  'topic.capability.io':
+    'In: an approved epic or a solution-level need. Out: features distributed to the affected trains\' ART Backlogs.',
+
+  'topic.feature.title': 'Feature',
+  'topic.feature.summary':
+    'A service or behavior that meets a stakeholder need and fits inside one Planning Interval.',
+  'topic.feature.what':
+    'A feature is the unit of work a train plans in PI Planning. It describes something a user or the business will notice, written at a level of detail that lets teams estimate and split it, but small enough that one train can finish it within a Planning Interval.\n\nA useful feature description contains a short statement of what it does, a benefit hypothesis explaining why it should matter, and acceptance criteria stating how you will recognize success. Product Management writes and orders features on the ART Backlog, and teams break each into stories.\n\nFeatures that are too big should be split along user flows or business rules instead of by technical layer. Features that cannot be finished in a PI should not be accepted at planning.\n\nWhen a feature is delivered, check whether the benefit actually materialized. That evidence helps guide the next round of priorities.',
+  'topic.feature.who':
+    'Product Management owns features; Product Owners, teams and the System Architect refine and implement them.',
+  'topic.feature.io':
+    'In: an approved epic or capability, or a customer need. Out: a set of stories for the teams and a released, validated increment of value.',
+
+  'topic.story.title': 'Story',
+  'topic.story.summary':
+    'A small, team-sized slice of value written from the viewpoint of a user.',
+  'topic.story.what':
+    'A story is the smallest unit of planning that still delivers something meaningful. It is written from the perspective of the person who benefits, commonly in the form "as a ..., I want ..., so that ...", and comes with acceptance criteria that make it clear when it is done.\n\nStories are owned by the Product Owner and are created by splitting features, ideally by user-visible behavior. A well-formed story is small enough to finish within one iteration, independent enough to be reordered, and testable.\n\nStories come in two flavors. User stories deliver functionality directly. Enabler stories support work such as research, architecture, infrastructure or compliance.\n\nIn iteration planning the team picks the top stories, and the Product Owner accepts each one once it meets its criteria.',
+  'topic.story.who':
+    'The Product Owner and the team write and refine stories together; the Product Owner accepts them.',
+  'topic.story.io':
+    'In: a feature from the ART Backlog. Out: a working, tested piece of the solution accepted by the Product Owner.',
+
+  'topic.enabler.title': 'Enabler',
+  'topic.enabler.summary':
+    'Work that supports future delivery rather than adding user-visible functionality directly.',
+  'topic.enabler.what':
+    'An enabler is a piece of work that makes future business work faster, safer or possible. It does not deliver a customer-facing behavior itself, yet without it the user-facing items would slow down or stall. Enablers can appear at every level: as epics, capabilities, features or stories, and they are prioritized alongside business items.\n\nSAFe describes four types:\n\n- Exploration: research, prototypes and experiments that reduce uncertainty about customer needs or alternative solutions.\n\n- Architecture: work that builds the technical foundation, often called the architectural runway, for upcoming features.\n\n- Infrastructure: building, improving or automating the environments used to develop, test, deploy and run the solution.\n\n- Compliance: activities such as verification, validation, audits and policy automation needed to meet regulatory or internal rules.\n\nTechnical debt reduction is not a separate type; it is normally carried out as architecture or infrastructure enabler work. A common guideline is to reserve a steady share of capacity for enablers so that technical health does not erode.',
+  'topic.enabler.who':
+    'The System Architect and Product Management identify and prioritize enablers; teams build them like any other backlog item.',
+  'topic.enabler.io':
+    'In: technical needs, risks, debt or compliance obligations. Out: improved runway, environments, evidence or knowledge that unblocks later features.',
+
+  'topic.pi-objectives.title': 'PI Objectives',
+  'topic.pi-objectives.summary':
+    'Short, business-readable statements of what each team intends to achieve in a Planning Interval.',
+  'topic.pi-objectives.what':
+    'PI Objectives summarize, in plain language, what each team plans to accomplish during a Planning Interval. They translate the team\'s stories and features into outcomes that a business person can understand and assess.\n\nEach team drafts its objectives during PI Planning and presents them to everyone. Business Owners then rate each one on a scale of business value, which signals the planned importance. Teams also estimate their confidence, and the train combines them with the program board and risk list into a shared view.\n\nSome objectives are marked as stretch objectives. They are extra work beyond the capacity the team commits to, and give flexibility without putting the main plan at risk.\n\nDuring the PI the objectives are the yardstick for progress. At the end, teams and Business Owners compare planned value against actual value, and the results are reviewed at Inspect and Adapt.\n\nObjectives are a forecast, not a contract. If new information appears, adjust them openly.',
+  'topic.pi-objectives.who':
+    'Each Agile Team writes its own; Business Owners rate their value; the RTE and Product Management consolidate and track them.',
+  'topic.pi-objectives.io':
+    'In: a team\'s selected features and stories. Out: a set of rated objectives, a scoring of actual versus planned value, and input for Inspect and Adapt.',
+
+  'topic.metrics.title': 'Measure and Grow',
+  'topic.metrics.summary':
+    'How to tell whether SAFe is paying off: outcomes, flow and competency, and why results beat activity.',
+  'topic.metrics.what':
+    'Measurement in SAFe is meant to guide improvement, not to rank teams. The Measure and Grow approach looks at three questions: are the solutions meeting customer and business needs (outcomes), how efficiently does value move through the system (flow), and how skilled is the organization in the practices that make it agile (competency).\n\nOutcome metrics look at results: customer satisfaction, revenue or cost effects, adoption of delivered features, and progress toward goals. Objectives and key results, or OKRs, are a popular way to set such goals. An objective states a direction; key results are the measurable signs that you got there.\n\nFlow metrics look at the delivery system itself. Common examples are how long work takes from start to finish (flow time), how much work is in progress (flow load), how much is completed (flow velocity), how much waiting is built in (flow efficiency), how work is split between features, defects, enablers and debt (flow distribution), and how reliably the train meets its plans (flow predictability).\n\nCompetency assessments are self-evaluations that show where teams and leaders have room to grow.\n\nPrefer outcome measures to output measures. Counting stories or story points tells you how busy people are; it does not tell you whether customers gained anything. Use several measures together, watch trends instead of single numbers, and be careful that a metric used for reward will be gamed. Exact definitions and formulas vary by source, so check the official material before standardizing.',
+  'topic.metrics.who':
+    'Leaders, Lean Portfolio Management and Business Owners use outcome data to steer investment. Teams and the RTE use flow data to improve delivery.',
+  'topic.metrics.cadence':
+    'Review team data every iteration, train data at least at each Inspect and Adapt, and portfolio outcomes on the regular portfolio review rhythm.',
+
+  'topic.getting-started.title': 'Getting Started with SAFe',
+  'topic.getting-started.summary':
+    'A practical path for an organization adopting SAFe, from the first value stream to the first improvement cycle.',
+  'topic.getting-started.what':
+    'There is no single correct route, but most successful adoptions share a similar shape. The following is a practical sequence, described in general terms rather than as an official procedure.\n\n1. Build the case and find sponsors. Agree on why you want to change, such as faster delivery or better alignment, and secure a leader who will back it visibly.\n\n2. Identify value streams. Map how value reaches customers, and find where work is delayed or handed off. This tells you where to form trains.\n\n3. Choose a starting configuration. Most organizations begin with Essential SAFe, one or two trains, and add more levels only if needed.\n\n4. Train leaders and key people first. Leaders, Product Management, Product Owners, Scrum Masters and the RTE need a shared vocabulary and a clear idea of how their behavior will change.\n\n5. Launch the first Agile Release Train. Pick a value stream with real business importance, name the leadership group, form teams and prepare the backlog.\n\n6. Run the first PI Planning. Prepare carefully, invite the right decision makers and treat the first event as a learning experience, not a test.\n\n7. Execute the iterations. Hold the regular team and train events, demonstrate working results, and make impediments visible.\n\n8. Inspect and adapt. At the end of the first Planning Interval, use real data to improve, then add trains and extend to portfolio topics as capability grows.\n\nCommon pitfalls: starting with tools instead of mindset, skipping leader training, launching too many trains at once, and treating the framework as a checklist.',
+  'topic.getting-started.who':
+    'Executive sponsors, a small guiding group, future RTEs and Product Management, and coaches with prior SAFe experience.',
+  'topic.getting-started.cadence':
+    'Preparation and training often take weeks to a few months; after that, work proceeds in Planning Intervals, each followed by an improvement cycle.',
+
+  'topic.glossary.title': 'Glossary',
+  'topic.glossary.summary': 'Short plain-language definitions of the SAFe terms used in this handbook.',
+  'topic.glossary.what':
+    'Terms are listed alphabetically. The definitions here are brief and written in our own words, so for the authoritative wording consult the official SAFe glossary.',
+  'topic.glossary.item.agile-release-train.title': 'Agile Release Train (ART)',
+  'topic.glossary.item.agile-release-train.body':
+    'A standing group of Agile Teams, usually 50 to 125 people, that plans and delivers for one value stream on a shared rhythm.',
+  'topic.glossary.item.agile-team.title': 'Agile Team',
+  'topic.glossary.item.agile-team.body':
+    'A small cross-functional group that can define, build, test and deliver working increments by itself.',
+  'topic.glossary.item.architectural-runway.title': 'Architectural Runway',
+  'topic.glossary.item.architectural-runway.body':
+    'Existing technical groundwork, such as shared components and platforms, that lets new features be built without major rework.',
+  'topic.glossary.item.art-backlog.title': 'ART Backlog',
+  'topic.glossary.item.art-backlog.body':
+    'The prioritized list of features and enablers that one Agile Release Train intends to build, owned by Product Management.',
+  'topic.glossary.item.art-sync.title': 'ART Sync',
+  'topic.glossary.item.art-sync.body':
+    'A recurring meeting combining the PO sync and a coach sync, in which the train reviews progress, dependencies and impediments.',
+  'topic.glossary.item.business-owners.title': 'Business Owners',
+  'topic.glossary.item.business-owners.body':
+    'Senior stakeholders accountable for the business results and fit of what an ART delivers.',
+  'topic.glossary.item.capability.title': 'Capability',
+  'topic.glossary.item.capability.body':
+    'A solution-level behavior too big for one train, split into features that several trains deliver.',
+  'topic.glossary.item.confidence-vote.title': 'Confidence Vote',
+  'topic.glossary.item.confidence-vote.body':
+    'A show of hands at the end of PI Planning where everyone rates how likely they think the plan is to succeed.',
+  'topic.glossary.item.enabler.title': 'Enabler',
+  'topic.glossary.item.enabler.body':
+    'Work that builds knowledge, architecture, infrastructure or compliance evidence needed to support future delivery.',
+  'topic.glossary.item.epic.title': 'Epic',
+  'topic.glossary.item.epic.body':
+    'A large initiative that needs a lean business case and portfolio approval before it is split into features.',
+  'topic.glossary.item.feature.title': 'Feature',
+  'topic.glossary.item.feature.body':
+    'A deliverable benefit sized to fit within one Planning Interval, broken into stories by the teams.',
+  'topic.glossary.item.flow-metrics.title': 'Flow Metrics',
+  'topic.glossary.item.flow-metrics.body':
+    'Measures such as flow time, load, velocity, efficiency, distribution and predictability that show how work moves through the system.',
+  'topic.glossary.item.inspect-and-adapt.title': 'Inspect and Adapt',
+  'topic.glossary.item.inspect-and-adapt.body':
+    'The event ending each Planning Interval, combining a system demo, measurement review and an improvement workshop.',
+  'topic.glossary.item.iteration.title': 'Iteration',
+  'topic.glossary.item.iteration.body':
+    'A short fixed timebox, commonly one to two weeks, in which a team plans, builds and reviews work.',
+  'topic.glossary.item.lean-portfolio-management.title': 'Lean Portfolio Management (LPM)',
+  'topic.glossary.item.lean-portfolio-management.body':
+    'The function that connects strategy, funding and governance across the value streams of a portfolio.',
+  'topic.glossary.item.mvp.title': 'Minimum Viable Product (MVP)',
+  'topic.glossary.item.mvp.body':
+    'The smallest version of a solution that can test a hypothesis and produce real learning.',
+  'topic.glossary.item.okrs.title': 'OKRs',
+  'topic.glossary.item.okrs.body':
+    'Objectives and key results: an ambitious direction paired with measurable results that show progress toward it.',
+  'topic.glossary.item.pi-objectives.title': 'PI Objectives',
+  'topic.glossary.item.pi-objectives.body':
+    'Business-readable summaries of what each team aims to accomplish in a Planning Interval.',
+  'topic.glossary.item.pi-planning.title': 'PI Planning',
+  'topic.glossary.item.pi-planning.body':
+    'The two-day event at the start of each Planning Interval in which all teams on a train plan together.',
+  'topic.glossary.item.planning-interval.title': 'Planning Interval (PI)',
+  'topic.glossary.item.planning-interval.body':
+    'A fixed timebox, commonly eight to twelve weeks, made up of several iterations and ending with Inspect and Adapt.',
+  'topic.glossary.item.product-owner.title': 'Product Owner',
+  'topic.glossary.item.product-owner.body':
+    'The team member who owns the team backlog and decides on priorities and acceptance.',
+  'topic.glossary.item.program-board.title': 'Program Board',
+  'topic.glossary.item.program-board.body':
+    'A visual plan showing features, milestones and dependencies across teams for the Planning Interval.',
+  'topic.glossary.item.rte.title': 'Release Train Engineer (RTE)',
+  'topic.glossary.item.rte.body':
+    'The servant leader who facilitates the train\'s events and helps it deliver reliably.',
+  'topic.glossary.item.roam.title': 'ROAM',
+  'topic.glossary.item.roam.body':
+    'A way of sorting risks as resolved, owned, accepted or mitigated.',
+  'topic.glossary.item.scrum-master.title': 'Scrum Master / Team Coach',
+  'topic.glossary.item.scrum-master.body':
+    'The servant leader who helps one team follow its working agreements and keep improving.',
+  'topic.glossary.item.solution-train.title': 'Solution Train',
+  'topic.glossary.item.solution-train.body':
+    'A group of Agile Release Trains and suppliers that work together on one large solution.',
+  'topic.glossary.item.story.title': 'Story',
+  'topic.glossary.item.story.body':
+    'A small slice of value, written from a user\'s perspective, that a team can finish within an iteration.',
+  'topic.glossary.item.system-architect.title': 'System Architect',
+  'topic.glossary.item.system-architect.body':
+    'The person or group who guides technical design and quality across a train.',
+  'topic.glossary.item.system-demo.title': 'System Demo',
+  'topic.glossary.item.system-demo.body':
+    'A demonstration of the integrated work of all teams on a train, shown to stakeholders.',
+  'topic.glossary.item.value-stream.title': 'Value Stream',
+  'topic.glossary.item.value-stream.body':
+    'The sequence of steps and people that turns an idea or request into value for a customer.',
+  'topic.glossary.item.wsjf.title': 'WSJF',
+  'topic.glossary.item.wsjf.body':
+    'Weighted Shortest Job First, a method for ordering work by dividing its relative cost of delay by its relative size.',
+
+  'topic.sources.title': 'Sources and trademark note',
+  'topic.sources.summary': 'Official pages used as references, and a note on the status of this site.',
+  'topic.sources.what':
+    'This site is an unofficial, independent guide to SAFe 6.0. It is not affiliated with, sponsored by or endorsed by Scaled Agile, Inc. SAFe® and Scaled Agile Framework® are registered trademarks of Scaled Agile, Inc.\n\nThe text here is written in our own words to help newcomers get oriented. It may be incomplete or out of date, and details can differ between releases of the framework. For authoritative definitions, current guidance and training, consult the official SAFe website.',
+  'topic.sources.item.safe-framework.title': 'SAFe Framework (official site)',
+  'topic.sources.item.safe-framework.body':
+    'The main home of the SAFe framework, with the Big Picture and links to each topic.\n\nhttps://framework.scaledagile.com/',
+  'topic.sources.item.src-pi-planning.title': 'PI Planning',
+  'topic.sources.item.src-pi-planning.body':
+    'Official overview of the PI Planning event and its outputs.\n\nhttps://framework.scaledagile.com/pi-planning/',
+  'topic.sources.item.src-inspect-adapt.title': 'Inspect and Adapt',
+  'topic.sources.item.src-inspect-adapt.body':
+    'Official page describing the three parts of the Inspect and Adapt event.\n\nhttps://framework.scaledagile.com/inspect-and-adapt/',
+  'topic.sources.item.src-enablers.title': 'Enablers',
+  'topic.sources.item.src-enablers.body':
+    'Official description of the enabler types: exploration, architecture, infrastructure and compliance.\n\nhttps://framework.scaledagile.com/enablers/',
+  'topic.sources.item.src-epic.title': 'Epic',
+  'topic.sources.item.src-epic.body':
+    'Official page covering business and enabler epics and portfolio approval.\n\nhttps://framework.scaledagile.com/epic/',
+  'topic.sources.item.src-art-sync.title': 'ART Sync',
+  'topic.sources.item.src-art-sync.body':
+    'Official page about the ART sync, which combines the PO sync and coach sync.\n\nhttps://framework.scaledagile.com/art-sync/',
+  'topic.sources.item.src-measure-grow.title': 'Measure and Grow',
+  'topic.sources.item.src-measure-grow.body':
+    'Official page on the outcomes, flow and competency measurement domains.\n\nhttps://framework.scaledagile.com/measure-and-grow/',
+  'topic.sources.item.src-glossary.title': 'SAFe Glossary',
+  'topic.sources.item.src-glossary.body':
+    'The official glossary of SAFe terms, useful for checking authoritative definitions.\n\nhttps://framework.scaledagile.com/glossary/',
+  'topic.sources.item.src-roadmap.title': 'SAFe Implementation Roadmap',
+  'topic.sources.item.src-roadmap.body':
+    'Official series of articles on adopting SAFe step by step.\n\nhttps://framework.scaledagile.com/implementation-roadmap/',
 };

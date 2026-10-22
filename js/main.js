@@ -7,6 +7,7 @@ import { buildNavModel, topicTitle, renderTopic, renderNotFound, renderHome } fr
 import { mountInfographic } from './infographic.js';
 import { hasVisual } from './visuals/index.js';
 import { mountSearch } from './search-ui.js';
+import { mountNavToggle } from './nav-toggle.js';
 
 const i18n = createI18n({ dicts: { en, hr }, defaultLang: 'en' });
 const { t } = i18n;
@@ -77,6 +78,8 @@ function renderPage(focus) {
   if (focus) app.focus();
 }
 
+const navToggle = mountNavToggle($('nav-toggle'), $('nav'));
+
 function navigateTo(route) {
   location.hash = `#${route}`;
 }
@@ -112,7 +115,12 @@ const search = mountSearch(
 
 renderLangOptions();
 applyStatic();
+// The first render keeps focus where the browser put it (top of the page);
+// later route changes move focus to the new content for keyboard and AT users.
+let firstRender = true;
 startRouter((r) => {
   currentRoute = r;
-  renderPage(true);
+  renderPage(!firstRender);
+  if (!firstRender) navToggle.navigated();
+  firstRender = false;
 });

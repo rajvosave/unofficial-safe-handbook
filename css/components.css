@@ -34,8 +34,22 @@ main { flex: 1 1 20rem; min-width: 0; padding: var(--space-3) var(--gutter) var(
   padding: var(--space-3) var(--gutter); border-top: 1px solid var(--border);
   background: var(--surface); color: var(--text-muted); font-size: 0.9rem;
 }
+.nav-toggle { display: none; align-items: center; gap: var(--space-2); font-weight: 600; min-height: 44px; }
+.nav-toggle-icon, .nav-toggle-icon::before, .nav-toggle-icon::after {
+  display: block; width: 1.1rem; height: 2px; background: currentColor; border-radius: 1px;
+}
+.nav-toggle-icon { position: relative; }
+.nav-toggle-icon::before, .nav-toggle-icon::after { content: ""; position: absolute; left: 0; }
+.nav-toggle-icon::before { top: -6px; }
+.nav-toggle-icon::after { top: 6px; }
+.nav-toggle[aria-expanded="true"] { border-color: var(--accent); }
 @media (max-width: 720px) {
   #nav { flex-basis: 100%; }
+  /* Scripted narrow layout: the menu button discloses the nav. Without JS
+     (html.no-js) the button stays hidden and the nav stays visible. */
+  .js .nav-toggle { display: inline-flex; }
+  .js #nav:not(.is-open) { display: none; }
+  .js #nav.is-open { border-bottom: 1px solid var(--border); }
 }
 
 /* ---- Home infographic ---- */
@@ -46,6 +60,17 @@ main.wide .home > :not(#infographic) { max-width: var(--measure); }
 .ig-scroll svg { display: block; width: 100%; height: auto; min-width: 720px; font-family: var(--font); }
 .ig-hint { display: none; margin: 0 0 var(--space-2); color: var(--text-muted); font-size: 0.9rem; }
 @container (max-width: 719px) { .ig-hint { display: block; } }
+/* Fallback links for the drawing: only where the SVG has to scroll sideways
+   (R7). On wide screens the hotspots themselves are the links, so the list is
+   removed entirely and adds no extra tab stops. */
+.ig-list { display: none; }
+@container (max-width: 719px) {
+  .ig-list {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 12rem), 1fr));
+    gap: 0 var(--space-3); list-style: none; margin: var(--space-3) 0 0; padding: 0;
+  }
+  .ig-list a { display: flex; align-items: center; min-height: 44px; }
+}
 
 .ig-band { stroke-width: 2; }
 .ig-band-full { fill: var(--ig-band-full); stroke: var(--ig-line-full); }

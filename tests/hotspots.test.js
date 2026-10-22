@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { HOTSPOTS, VIEWBOX, MIN_HIT } from '../js/hotspots.js';
+import { HOTSPOTS, VIEWBOX, MIN_HIT, hotspotLinks } from '../js/hotspots.js';
 import { findTopic } from '../js/topics.js';
 import { wrapLabel } from '../js/infographic.js';
 import en from '../content/en.js';
@@ -80,4 +80,16 @@ test('wrapLabel splits on words within the limit and never drops text', () => {
   assert.deepEqual(wrapLabel('ART', 15), ['ART']);
   assert.deepEqual(wrapLabel('Supercalifragilistic word', 10), ['Supercalifragilistic', 'word']);
   assert.equal(wrapLabel('a b c d e f', 3).join(' '), 'a b c d e f');
+});
+
+test('hotspotLinks lists every hotspot in order as a hash link with its label', () => {
+  const tt = (k) => (Object.hasOwn(en, k) ? en[k] : k);
+  const links = hotspotLinks(tt);
+  assert.equal(links.length, HOTSPOTS.length);
+  links.forEach((l, i) => {
+    const h = HOTSPOTS[i];
+    assert.deepEqual(l, { id: h.id, href: `#${h.route}`, label: en[h.labelKey] });
+    assert.ok(findTopic(l.href.slice(1)), l.href);
+  });
+  assert.ok(Object.hasOwn(en, 'infographic.list'), 'infographic.list label key');
 });

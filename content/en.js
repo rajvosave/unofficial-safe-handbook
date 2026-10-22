@@ -13,6 +13,7 @@ export default {
   'ui.theme': 'Toggle theme',
   'ui.language': 'Language',
   'ui.nav': 'Handbook sections',
+  'ui.menu': 'Menu',
   'ui.notFound.title': 'Page not found',
   'ui.notFound.body': 'This page does not exist. Pick a topic from the navigation or return to the home page.',
   'ui.home.link': 'Back to home',
@@ -42,8 +43,9 @@ export default {
   'infographic.title': 'SAFe 6.0 at a glance',
   'infographic.desc':
     'An original overview drawing. Seven core competencies frame three nested levels: Portfolio at the top, Large Solution in the middle, and Essential at the bottom, which holds the Agile Release Train, its roles and events, and the team level. Every labelled box opens the matching handbook page.',
-  'infographic.hint': 'Scroll sideways to see the whole picture. Tap a box to open its page.',
+  'infographic.hint': 'Scroll sideways to see the whole picture and tap a box to open its page, or use the list of links below the drawing.',
   'infographic.teamLevel': 'Team level',
+  'infographic.list': 'Pages in the overview drawing',
   'infographic.competency-lean-agile-leadership.label': 'Lean-Agile Leadership',
   'infographic.competency-lean-agile-leadership.desc':
     'Leaders model the mindset, set direction and remove obstacles so teams can deliver.',

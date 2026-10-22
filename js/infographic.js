@@ -1,4 +1,4 @@
-import { HOTSPOTS, VIEWBOX } from './hotspots.js';
+import { HOTSPOTS, VIEWBOX, hotspotLinks } from './hotspots.js';
 
 const NS = 'http://www.w3.org/2000/svg';
 const CHAR_EM = 0.56; // rough average glyph width in em for the UI font
@@ -155,7 +155,13 @@ export function mountInfographic(container, t, navigate) {
   const tip = htmlEl('div', { class: 'ig-tooltip', role: 'tooltip', id: 'ig-tooltip', hidden: '' });
   const descs = htmlEl('div', { class: 'visually-hidden' });
   for (const h of HOTSPOTS) descs.append(htmlEl('span', { id: `ig-desc-${h.id}` }, t(h.descKey)));
-  container.append(hint, scroll, tip, descs);
+  const list = htmlEl('ul', { class: 'ig-list', 'aria-label': t('infographic.list') });
+  for (const l of hotspotLinks(t)) {
+    const li = htmlEl('li');
+    li.append(htmlEl('a', { href: l.href }, l.label));
+    list.append(li);
+  }
+  container.append(hint, scroll, tip, descs, list);
 
   const byId = new Map(HOTSPOTS.map((h) => [h.id, h]));
   let hideTimer = null;

@@ -65,3 +65,9 @@ export const HOTSPOTS = [
   hs('competency-organizational-agility', COMP, 'competency', 407, 718, 386, 76),
   hs('competency-continuous-learning-culture', COMP, 'competency', 804, 718, 386, 76),
 ];
+
+// Plain link list of the same hotspots, shown under the drawing on narrow
+// screens where the SVG scrolls sideways (see css: .ig-list).
+export function hotspotLinks(t) {
+  return HOTSPOTS.map((h) => ({ id: h.id, href: `#${h.route}`, label: t(h.labelKey) }));
+}

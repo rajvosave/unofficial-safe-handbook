@@ -784,4 +784,119 @@ export default {
   'pi.out.risks.desc':
     'The list of train-level risks, each sorted as resolved, owned, accepted or mitigated, with an owner where follow-up is needed.',
   'pi.out.glossary': 'See the glossary',
+
+  'inspect.visual.title': 'The three parts of Inspect and Adapt',
+  'inspect.visual.intro':
+    'Inspect and Adapt runs as three parts, one after the other. Open a part to see what happens in it.',
+  'inspect.flow.label': 'Inspect and Adapt sequence',
+  'inspect.part.label': 'Part {n}',
+  'inspect.part.demo.title': 'PI System Demo',
+  'inspect.part.demo.desc':
+    'The train shows the integrated result of the whole Planning Interval to Business Owners and other stakeholders.',
+  'inspect.part.demo.d1':
+    'It covers everything the train achieved during the PI, working together as one system rather than team by team.',
+  'inspect.part.demo.d2':
+    'Business Owners, customers and other stakeholders react to what they see and give direct feedback.',
+  'inspect.part.demo.d3':
+    'What the demo shows helps Business Owners rate the actual business value delivered against each PI Objective.',
+  'inspect.part.measure.title': 'Quantitative and qualitative measurement',
+  'inspect.part.measure.desc':
+    'The train looks at both the numbers and the experience of the people involved to judge how the PI really went.',
+  'inspect.part.measure.d1':
+    'Quantitative: how much of the planned business value was achieved, flow metrics such as flow time and flow predictability, and any quality indicators the train agreed to track.',
+  'inspect.part.measure.d2':
+    'Qualitative: observations and stories from teams and stakeholders that explain what the numbers alone cannot.',
+  'inspect.part.measure.d3':
+    'The data is usually prepared ahead of time, often by the RTE, so the session is spent understanding it instead of collecting it.',
+  'inspect.part.workshop.title': 'Retrospective and problem-solving workshop',
+  'inspect.part.workshop.desc':
+    'The group reflects on the PI, chooses the systemic problems that matter most and works out how to fix them.',
+  'inspect.part.workshop.d1':
+    'A short retrospective surfaces what went well and what did not, and the group selects the problems worth solving.',
+  'inspect.part.workshop.d2':
+    'Small groups, each focused on one problem, then follow a structured problem-solving approach, outlined below.',
+  'inspect.part.workshop.d3':
+    'The outcome is a set of improvement items that go to the ART Backlog and are planned at the next PI Planning.',
+  'inspect.outcome.title': 'What comes out',
+  'inspect.outcome.text':
+    'Prioritized improvement items with owners. They enter the ART Backlog and compete for capacity at the next PI Planning, so learning feeds straight into the next interval.',
+  'inspect.outcome.backlogs': 'How backlogs work',
+  'inspect.outcome.pi': 'Go to PI Planning',
+  'inspect.ws.title': 'The problem-solving workshop, step by step',
+  'inspect.ws.intro':
+    'A structured path from a visible symptom to concrete improvements. The sketches are simplified illustrations, not templates.',
+  'inspect.ws.agree.title': 'Agree on the problem',
+  'inspect.ws.agree.desc':
+    'Describe the problem clearly: what happens, where and when, and what it costs the train.',
+  'inspect.ws.root-cause.title': 'Analyze root causes',
+  'inspect.ws.root-cause.desc':
+    'Sort possible causes on a fishbone diagram and keep asking "why?" (the five whys) to get below the symptoms.',
+  'inspect.ws.biggest.title': 'Find the biggest root cause',
+  'inspect.ws.biggest.desc':
+    'Vote on the causes and use a Pareto view to spot the few that drive most of the problem.',
+  'inspect.ws.restate.title': 'Restate the problem',
+  'inspect.ws.restate.desc':
+    'Rewrite the problem around the chosen root cause so that the solutions target the real issue.',
+  'inspect.ws.brainstorm.title': 'Brainstorm solutions',
+  'inspect.ws.brainstorm.desc':
+    'Collect many possible fixes in a short, time-boxed session before narrowing them down.',
+  'inspect.ws.backlog.title': 'Create improvement backlog items',
+  'inspect.ws.backlog.desc':
+    'Turn the most promising solutions into improvement items with an owner, ready for PI Planning.',
+
+  'artifactsviz.title': 'How the backlog items fit together',
+  'artifactsviz.intro':
+    'Large items are split into smaller ones as they move from the portfolio down to the teams. Enablers follow the same path as a parallel branch. Select any item to open its page.',
+  'artifactsviz.label': 'Backlog item hierarchy',
+  'artifactsviz.col.level': 'Where it lives',
+  'artifactsviz.col.business': 'Business items',
+  'artifactsviz.col.enabler': 'Enablers, in parallel',
+  'artifactsviz.level.portfolio': 'Portfolio backlog',
+  'artifactsviz.level.solution': 'Solution backlog',
+  'artifactsviz.level.art': 'ART Backlog',
+  'artifactsviz.level.team': 'Team backlog',
+  'artifactsviz.splits': 'Splits into the level below',
+  'artifactsviz.node.epic.desc':
+    'A large initiative that needs a lean business case and portfolio approval before work starts.',
+  'artifactsviz.node.capability.desc':
+    'Solution behavior too large for one train, split into features for several ARTs.',
+  'artifactsviz.node.feature.desc':
+    'A service or behavior one ART can deliver within a Planning Interval.',
+  'artifactsviz.node.story.desc':
+    'A small slice of value one team can finish within an iteration.',
+  'artifactsviz.capability.note':
+    'Used with a Solution Train. Without one, epics split straight into features.',
+  'artifactsviz.enabler.epic.title': 'Enabler epic',
+  'artifactsviz.enabler.epic.desc':
+    'Large technical or architectural groundwork, approved like any other epic.',
+  'artifactsviz.enabler.capability.title': 'Enabler capability',
+  'artifactsviz.enabler.capability.desc':
+    'Groundwork that spans several trains, such as shared architecture.',
+  'artifactsviz.enabler.feature.title': 'Enabler feature',
+  'artifactsviz.enabler.feature.desc':
+    'Runway, infrastructure, exploration or compliance work for one ART.',
+  'artifactsviz.enabler.story.title': 'Enabler story',
+  'artifactsviz.enabler.story.desc':
+    'A team-sized spike, setup task or piece of technical groundwork.',
+
+  'rolesviz.title': 'Who takes part in which event',
+  'rolesviz.intro':
+    'Select a role to see the events it takes part in, or select an event to see who attends. Every card also links to its own page.',
+  'rolesviz.roles.title': 'Roles',
+  'rolesviz.events.title': 'Events',
+  'rolesviz.group.team': 'Team level',
+  'rolesviz.group.art': 'Train level',
+  'rolesviz.group.solution-portfolio': 'Solution and portfolio level',
+  'rolesviz.count.events': '{n} events',
+  'rolesviz.count.events.one': '1 event',
+  'rolesviz.count.roles': '{n} roles',
+  'rolesviz.count.roles.one': '1 role',
+  'rolesviz.badge.selected': 'Selected',
+  'rolesviz.badge.event': 'Takes part',
+  'rolesviz.badge.role': 'Attends',
+  'rolesviz.status.none': 'Nothing selected yet. Choose a role or an event.',
+  'rolesviz.status.role': '{name} takes part in: {list}.',
+  'rolesviz.status.event': '{name} is attended by: {list}.',
+  'rolesviz.clear': 'Clear selection',
+  'rolesviz.open': 'Open page',
 };

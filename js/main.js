@@ -8,6 +8,7 @@ import { mountInfographic } from './infographic.js';
 import { hasVisual } from './visuals/index.js';
 import { mountSearch } from './search-ui.js';
 import { mountNavToggle } from './nav-toggle.js';
+import { revealNewView } from './focus-view.js';
 
 const i18n = createI18n({ dicts: { en, hr }, defaultLang: 'en' });
 const { t } = i18n;
@@ -75,7 +76,7 @@ function renderPage(focus) {
   if (isHome) mountInfographic($('infographic'), t, navigateTo);
   document.title = title;
   renderNav();
-  if (focus) app.focus();
+  if (focus) revealNewView(app);
 }
 
 const navToggle = mountNavToggle($('nav-toggle'), $('nav'));

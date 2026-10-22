@@ -5,6 +5,7 @@ import en from '../content/en.js';
 import hr from '../content/hr.js';
 import { buildNavModel, topicTitle, renderTopic, renderNotFound, renderHome } from './render.js';
 import { mountInfographic } from './infographic.js';
+import { hasVisual } from './visuals/index.js';
 
 const i18n = createI18n({ dicts: { en, hr }, defaultLang: 'en' });
 const { t } = i18n;
@@ -60,7 +61,7 @@ function renderPage(focus) {
     view = renderHome(t);
     title = t('app.title');
   } else if (topic) {
-    view = renderTopic(topic, t);
+    view = renderTopic(topic, t, navigateTo);
     title = `${topicTitle(topic, t)} | ${t('app.title')}`;
   } else {
     view = renderNotFound(t);
@@ -68,7 +69,7 @@ function renderPage(focus) {
   }
   app.replaceChildren(view);
   const isHome = currentRoute.route === '/';
-  app.classList.toggle('wide', isHome);
+  app.classList.toggle('wide', isHome || Boolean(topic && hasVisual(topic.id)));
   if (isHome) mountInfographic($('infographic'), t, navigateTo);
   document.title = title;
   renderNav();

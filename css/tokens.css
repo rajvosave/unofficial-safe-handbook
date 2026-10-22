@@ -37,6 +37,21 @@
   --ig-pill: #0b5cad;
   --ig-pill-hover: #084a8c;
   --ig-pill-text: #ffffff;
+  --pi-dev-fill: #e3edfb;
+  --pi-dev-line: #2f5fa6;
+  --pi-dev-text: #13305e;
+  --pi-ip-fill: #fbe3c6;
+  --pi-ip-line: #8a4504;
+  --pi-ip-text: #4f2702;
+  --pi-ip-tint: #fdf3e6;
+  --pi-row-alt: #f6f8fb;
+  --pi-marker: #0b5cad;
+  --pi-marker-key: #9b1c4b;
+  --pi-lane-art: #136556;
+  --pi-lane-po: #54389a;
+  --pi-arrow: #4a5568;
+  --pi-step-fill: #f4f6fa;
+  --pi-step-text: #1a2233;
   --font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 @media (prefers-color-scheme: dark) {
@@ -74,6 +89,21 @@
     --ig-pill: #7ab8ff;
     --ig-pill-hover: #a8d0ff;
     --ig-pill-text: #0b1220;
+    --pi-dev-fill: #1a2a45;
+    --pi-dev-line: #7fa8ea;
+    --pi-dev-text: #d6e4fb;
+    --pi-ip-fill: #3a2610;
+    --pi-ip-line: #f2b56b;
+    --pi-ip-text: #fde3c2;
+    --pi-ip-tint: #231a0e;
+    --pi-row-alt: #161b24;
+    --pi-marker: #7ab8ff;
+    --pi-marker-key: #ff9cc0;
+    --pi-lane-art: #6fd6c0;
+    --pi-lane-po: #c3b0f5;
+    --pi-arrow: #b0b9c9;
+    --pi-step-fill: #1b212c;
+    --pi-step-text: #e8ecf3;
   }
 }
 :root[data-theme="dark"] {
@@ -106,4 +136,19 @@
   --ig-pill: #7ab8ff;
   --ig-pill-hover: #a8d0ff;
   --ig-pill-text: #0b1220;
+  --pi-dev-fill: #1a2a45;
+  --pi-dev-line: #7fa8ea;
+  --pi-dev-text: #d6e4fb;
+  --pi-ip-fill: #3a2610;
+  --pi-ip-line: #f2b56b;
+  --pi-ip-text: #fde3c2;
+  --pi-ip-tint: #231a0e;
+  --pi-row-alt: #161b24;
+  --pi-marker: #7ab8ff;
+  --pi-marker-key: #ff9cc0;
+  --pi-lane-art: #6fd6c0;
+  --pi-lane-po: #c3b0f5;
+  --pi-arrow: #b0b9c9;
+  --pi-step-fill: #1b212c;
+  --pi-step-text: #e8ecf3;
 }

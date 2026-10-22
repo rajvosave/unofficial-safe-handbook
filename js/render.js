@@ -1,4 +1,5 @@
 import { TOPICS, topicsBySection, findTopic } from './topics.js';
+import { VISUALS, hasVisual } from './visuals/index.js';
 
 export const SECTION_ORDER = [...new Set(TOPICS.map((x) => x.section))];
 
@@ -64,11 +65,23 @@ function el(tag, attrs = {}, ...children) {
   return node;
 }
 
-export function renderTopic(topic, t) {
+// Topics registered in js/visuals/index.js get their visual right after the
+// "What it is" section (or after the summary when that section is absent).
+function renderVisual(topic, t, navigate) {
+  if (!hasVisual(topic.id)) return null;
+  const box = el('section', { class: 'topic-section topic-visual', 'data-visual': topic.id });
+  VISUALS[topic.id](box, t, navigate);
+  return box;
+}
+
+export function renderTopic(topic, t, navigate = () => {}) {
   const article = el('article', { class: 'topic' });
   article.append(el('h1', {}, topicTitle(topic, t)));
   if (has(t, topic.summaryKey)) article.append(el('p', { class: 'summary' }, t(topic.summaryKey)));
-  for (const s of visibleSections(topic, t)) {
+  const sections = visibleSections(topic, t);
+  const visual = renderVisual(topic, t, navigate);
+  if (visual && !sections.some((s) => s.key === 'what')) article.append(visual);
+  for (const s of sections) {
     const section = el('section', { class: 'topic-section' }, el('h2', {}, t(s.headingKey)));
     for (const para of splitParagraphs(t(s.contentKey))) section.append(el('p', {}, para));
     if (s.key === 'what') {
@@ -78,6 +91,7 @@ export function renderTopic(topic, t) {
       }
     }
     article.append(section);
+    if (s.key === 'what' && visual) article.append(visual);
   }
   const links = relatedLinks(topic, t);
   if (links.length) {

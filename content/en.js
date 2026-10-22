@@ -660,4 +660,128 @@ export default {
   'topic.sources.item.src-roadmap.title': 'SAFe Implementation Roadmap',
   'topic.sources.item.src-roadmap.body':
     'Official series of articles on adopting SAFe step by step.\n\nhttps://framework.scaledagile.com/implementation-roadmap/',
+
+  // ---- PI Planning visual ----
+  'pi.visual.title': 'PI Planning at a glance',
+  'pi.visual.intro':
+    'Explore a typical two-day agenda, see where PI Planning sits in the Planning Interval, and follow the path from business context to a plan the whole train commits to.',
+
+  'pi.agenda.title': 'Two-day agenda',
+  'pi.agenda.note':
+    'Typical, illustrative times. Adapt the schedule to your train, time zones and context. Select an item to read a short explanation.',
+  'pi.agenda.tabs': 'PI Planning days',
+  'pi.agenda.day1': 'Day 1',
+  'pi.agenda.day2': 'Day 2',
+  'pi.agenda.business-context.title': 'Business context',
+  'pi.agenda.business-context.desc':
+    'A senior business leader describes the current state of the business, how existing solutions are doing and what matters most in the coming interval.',
+  'pi.agenda.vision.title': 'Product and solution vision',
+  'pi.agenda.vision.desc':
+    'Product Management presents the vision and the highest-priority features from the ART Backlog, along with any changes since the last event.',
+  'pi.agenda.architecture.title': 'Architecture vision and development practices',
+  'pi.agenda.architecture.desc':
+    'The System Architect shares the architecture vision, key enablers and changes to development practices, such as new tooling or test automation.',
+  'pi.agenda.planning-context.title': 'Planning context and lunch',
+  'pi.agenda.planning-context.desc':
+    'The RTE explains how planning will run: the timebox, the expected outputs, where teams sit and how to raise dependencies and questions.',
+  'pi.agenda.breakout-1.title': 'Team breakout 1',
+  'pi.agenda.breakout-1.desc':
+    'Teams estimate their capacity for each iteration, pull in features, sketch stories, identify risks and dependencies, and write draft PI Objectives.',
+  'pi.agenda.draft-review.title': 'Draft plan review',
+  'pi.agenda.draft-review.desc':
+    'Each team briefly presents its capacity and load, draft objectives, risks and dependencies, so the whole train can see the emerging picture.',
+  'pi.agenda.management-review.title': 'Management review and problem solving',
+  'pi.agenda.management-review.desc':
+    'Leaders and Business Owners look at the draft plans together, resolve scope and resource problems, and agree on adjustments to share the next morning.',
+  'pi.agenda.adjustments.title': 'Planning adjustments',
+  'pi.agenda.adjustments.desc':
+    'Management shares the decisions from the evening before, such as changes to scope, priorities or people, so teams can adapt their plans.',
+  'pi.agenda.breakout-2.title': 'Team breakout 2',
+  'pi.agenda.breakout-2.desc':
+    'Teams refine their plans, settle dependencies with other teams and finalize their PI Objectives. Business Owners visit teams and assign business value to each objective.',
+  'pi.agenda.final-review.title': 'Final plan review and lunch',
+  'pi.agenda.final-review.desc':
+    'Teams present their final plans, objectives with business value, and remaining risks. Business Owners ask questions and accept each plan or ask for changes.',
+  'pi.agenda.risks.title': 'Risk review (ROAM)',
+  'pi.agenda.risks.desc':
+    'Risks that could affect the whole train are discussed in front of everyone and each is sorted as resolved, owned, accepted or mitigated.',
+  'pi.agenda.confidence-vote.title': 'Confidence vote',
+  'pi.agenda.confidence-vote.desc':
+    'Everyone votes on how confident they are in the plan, often by holding up one to five fingers. Low votes are discussed openly rather than overruled.',
+  'pi.agenda.rework.title': 'Plan rework if needed',
+  'pi.agenda.rework.desc':
+    'If confidence is too low, teams adjust their plans until the train can commit. This slot is often unused, but it is kept free on purpose.',
+  'pi.agenda.retro.title': 'Planning retrospective and next steps',
+  'pi.agenda.retro.desc':
+    'The RTE leads a short retrospective on the event itself and confirms what happens next, such as updating tools and scheduling the first syncs.',
+
+  'pi.cal.title': 'Planning Interval calendar',
+  'pi.cal.intro':
+    'A Planning Interval is a fixed timebox of several development iterations followed by one Innovation and Planning (IP) iteration. Change the settings to see how the calendar shifts.',
+  'pi.cal.devIterations': 'Development iterations',
+  'pi.cal.iterationLength': 'Iteration length',
+  'pi.cal.len.1': '1 week',
+  'pi.cal.len.2': '2 weeks',
+  'pi.cal.len.3': '3 weeks',
+  'pi.cal.summary':
+    'This PI lasts {weeks} weeks: {dev} development iterations plus one IP iteration, each {len} long.',
+  'pi.cal.hint': 'Scroll sideways inside the calendar to see all weeks.',
+  'pi.cal.caption': 'PI calendar showing iterations, events and weekly syncs by week',
+  'pi.cal.week': 'Week',
+  'pi.cal.iterations': 'Iterations',
+  'pi.cal.iteration': 'Iteration {n}',
+  'pi.cal.ip': 'IP iteration',
+  'pi.cal.weeks': 'Weeks {from}–{to}',
+  'pi.cal.weekOne': 'Week {n}',
+  'pi.cal.weekly': 'weekly',
+  'pi.cal.at.start': 'start of {iteration}',
+  'pi.cal.at.end': 'end of {iteration}',
+  'pi.cal.lane.iteration-planning': 'Iteration Planning',
+  'pi.cal.lane.system-demo': 'System Demo',
+  'pi.cal.lane.iteration-review-retro': 'Iteration Review and Retro',
+  'pi.cal.lane.inspect-adapt': 'Inspect and Adapt',
+  'pi.cal.lane.pi-planning': 'PI Planning (next PI)',
+  'pi.cal.lane.art-sync': 'ART Sync',
+  'pi.cal.lane.po-sync': 'PO Sync',
+  'pi.cal.legend.dev': 'Development iteration',
+  'pi.cal.legend.ip': 'Innovation and Planning (IP) iteration',
+  'pi.cal.legend.marker': 'Team or train event; select it to open its page',
+  'pi.cal.legend.key': 'Event that closes the PI and plans the next one',
+  'pi.cal.legend.lane':
+    'Recurring sync, drawn weekly. Some trains hold it once per iteration instead.',
+  'pi.cal.ipNote':
+    'The IP iteration leaves room for innovation, learning, infrastructure work and Inspect and Adapt, and it hosts PI Planning for the next interval. It also acts as a buffer if the plan runs late.',
+  'pi.cal.typical':
+    'Planning Intervals commonly run eight to twelve weeks, most often with two-week iterations. The other settings are here so you can compare.',
+
+  'pi.flow.title': 'From context to commitment',
+  'pi.flow.intro':
+    'The two days follow a clear path: understand the context, plan in teams, review and adjust, then commit together.',
+  'pi.flow.business-context.title': 'Business context',
+  'pi.flow.business-context.desc': 'Why this interval matters to the business.',
+  'pi.flow.vision.title': 'Vision',
+  'pi.flow.vision.desc': 'Product, solution and architecture direction, with the top features.',
+  'pi.flow.breakouts.title': 'Team breakouts',
+  'pi.flow.breakouts.desc': 'Teams plan iterations, find dependencies and draft objectives.',
+  'pi.flow.draft-review.title': 'Draft plan review',
+  'pi.flow.draft-review.desc': 'The train sees every team\'s draft plan side by side.',
+  'pi.flow.management-review.title': 'Management review',
+  'pi.flow.management-review.desc': 'Leaders resolve problems and adjust scope overnight.',
+  'pi.flow.final-plan.title': 'Final plan',
+  'pi.flow.final-plan.desc': 'Refined plans and objectives with business value, accepted by Business Owners.',
+  'pi.flow.confidence-vote.title': 'Confidence vote',
+  'pi.flow.confidence-vote.desc': 'The train commits to the plan, or reworks it first.',
+
+  'pi.out.title': 'What PI Planning produces',
+  'pi.out.objectives.title': 'PI Objectives',
+  'pi.out.objectives.desc':
+    'Each team\'s summary of what it aims to achieve in the interval, with business value assigned by Business Owners. Some objectives are marked uncommitted.',
+  'pi.out.objectives.link': 'Read about PI Objectives',
+  'pi.out.board.title': 'Program board',
+  'pi.out.board.desc':
+    'A shared view of when features are planned to land, the milestones they serve and the dependencies between teams.',
+  'pi.out.risks.title': 'Risks (ROAM)',
+  'pi.out.risks.desc':
+    'The list of train-level risks, each sorted as resolved, owned, accepted or mitigated, with an owner where follow-up is needed.',
+  'pi.out.glossary': 'See the glossary',
 };

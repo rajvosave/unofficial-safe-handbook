@@ -34,7 +34,7 @@ function htmlEl(tag, attrs = {}, text) {
   return n;
 }
 
-// Multi-line centred label at (cx, cy); rotate = -90 for vertical text.
+// Multi-line centered label at (cx, cy); rotate = -90 for vertical text.
 function label(text, cx, cy, width, { fs = LABEL_FS, cls = 'ig-label', rotate = 0 } = {}) {
   const maxChars = Math.max(4, Math.floor((width - 24) / (fs * CHAR_EM)));
   const lines = wrapLabel(text, maxChars);

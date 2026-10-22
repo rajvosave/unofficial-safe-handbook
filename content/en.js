@@ -42,7 +42,7 @@ export default {
 
   'infographic.title': 'SAFe 6.0 at a glance',
   'infographic.desc':
-    'An original overview drawing. Seven core competencies frame three nested levels: Portfolio at the top, Large Solution in the middle, and Essential at the bottom, which holds the Agile Release Train, its roles and events, and the team level. Every labelled box opens the matching handbook page.',
+    'An original overview drawing. Seven core competencies frame three nested levels: Portfolio at the top, Large Solution in the middle, and Essential at the bottom, which holds the Agile Release Train, its roles and events, and the team level. Every labeled box opens the matching handbook page.',
   'infographic.hint': 'Scroll sideways to see the whole picture and tap a box to open its page, or use the list of links below the drawing.',
   'infographic.teamLevel': 'Team level',
   'infographic.list': 'Pages in the overview drawing',
@@ -63,10 +63,10 @@ export default {
     'Aligns strategy with execution through lean funding, governance and portfolio flow.',
   'infographic.competency-organizational-agility.label': 'Organizational Agility',
   'infographic.competency-organizational-agility.desc':
-    'Lets the whole business, not only IT, respond quickly to change and organise around value.',
+    'Lets the whole business, not only IT, respond quickly to change and organize around value.',
   'infographic.competency-continuous-learning-culture.label': 'Continuous Learning Culture',
   'infographic.competency-continuous-learning-culture.desc':
-    'Encourages everyone to keep learning, innovating and improving how the organisation works.',
+    'Encourages everyone to keep learning, innovating and improving how the organization works.',
   'infographic.config-full.label': 'Full SAFe',
   'infographic.config-full.desc':
     'The most complete configuration: Portfolio, Large Solution and Essential working together.',
@@ -126,7 +126,7 @@ export default {
   'topic.overview.summary':
     'What the Scaled Agile Framework is, what changed in version 6.0, and how the rest of this handbook fits together.',
   'topic.overview.what':
-    'SAFe, the Scaled Agile Framework, is a body of guidance for organizations that need many Agile teams to work toward shared goals. It combines Lean thinking, Agile practices and product development flow into roles, events and artifacts that teams, programs and leadership can adopt step by step.\n\nVersion 6.0 puts business agility at the centre: the ability of a whole organization, not just its software teams, to sense change and respond quickly. The framework is organized around seven core competencies, each with its own practices and measures. Delivery happens through value streams, and version 6.0 adds the Business Agility Value Stream to show how business and technology work together to deliver value. A Measure and Grow approach helps organizations assess where they stand and decide what to improve next.\n\nSAFe is built on a Lean-Agile mindset and four core values: alignment, transparency, respect for people and relentless improvement. Together with the Lean-Agile principles they explain why the practices exist, which matters when you need to adapt them to your own context.\n\nYou do not adopt everything at once. Pick the configuration that matches your size and needs, and grow from there. Use the pages on competencies, configurations and principles to go deeper, then move on to roles, events and artifacts.',
+    'SAFe, the Scaled Agile Framework, is a body of guidance for organizations that need many Agile teams to work toward shared goals. It combines Lean thinking, Agile practices and product development flow into roles, events and artifacts that teams, trains and leadership can adopt step by step.\n\nVersion 6.0 puts business agility at the center: the ability of a whole organization, not just its software teams, to sense change and respond quickly. The framework is organized around seven core competencies, each with its own practices and measures. Delivery happens through value streams, and version 6.0 adds the Business Agility Value Stream to show how business and technology work together to deliver value. A Measure and Grow approach helps organizations assess where they stand and decide what to improve next.\n\nSAFe is built on a Lean-Agile mindset and four core values: alignment, transparency, respect for people and relentless improvement. Together with the Lean-Agile principles they explain why the practices exist, which matters when you need to adapt them to your own context.\n\nYou do not adopt everything at once. Pick the configuration that matches your size and needs, and grow from there. Use the pages on competencies, configurations and principles to go deeper, then move on to roles, events and artifacts.',
   'topic.overview.who':
     'Everyone involved in building and funding a product: Agile teams, their leaders, product and business stakeholders, architects, and the executives who sponsor the change.',
   'topic.core-competencies.title':
@@ -134,7 +134,7 @@ export default {
   'topic.core-competencies.summary':
     'The seven areas of expertise that SAFe 6.0 says an organization needs in order to be agile as a business.',
   'topic.core-competencies.what':
-    'SAFe 6.0 groups its guidance into seven core competencies. Each is a set of related capabilities that an organization develops over time. They reinforce one another, so progress in one area tends to expose the next area to improve.\n\nTreat them as a self-assessment lens rather than a checklist. A simple use is to rate your organization against each competency, pick the one that hurts most, and work on it for a few months before reassessing. Lean-Agile leadership is the foundation: without leaders who model and support the change, the other six rarely take hold.\n\nThe sections below describe each competency in practical terms.',
+    'SAFe 6.0 groups its guidance into seven core competencies. Each is a set of related capabilities that an organization develops over time. They reinforce one another, so progress in one area tends to expose the next area to improve.\n\nTreat them as a self-assessment lens rather than a checklist. A simple use is to rate your organization against each competency, pick the one that hurts most, and work on it for a few months before reassessing. Lean-Agile leadership is a critical enabler for the rest: change sticks far more easily when leaders model it and actively support it.\n\nThe sections below describe each competency in practical terms.',
   'topic.core-competencies.item.lean-agile-leadership.title':
     'Lean-Agile Leadership',
   'topic.core-competencies.item.lean-agile-leadership.body':
@@ -172,7 +172,7 @@ export default {
   'topic.configurations.item.essential.title':
     'Essential SAFe',
   'topic.configurations.item.essential.body':
-    'The minimum setup that still delivers the benefits of the framework. It centres on one or more Agile Release Trains, each a team of teams that plans and delivers together on a shared cadence, supported by the key roles and events.\n\nChoose it when you are starting out, when a single product or value stream involves roughly 50 to 125 people, or when you want to prove the approach before expanding.',
+    'The minimum setup that still delivers the benefits of the framework. It centers on one or more Agile Release Trains, each a team of teams that plans and delivers together on a shared cadence, supported by the key roles and events.\n\nChoose it when you are starting out, when a single product or value stream involves roughly 50 to 125 people, or when you want to prove the approach before expanding.',
   'topic.configurations.item.large-solution.title':
     'Large Solution SAFe',
   'topic.configurations.item.large-solution.body':
@@ -214,7 +214,7 @@ export default {
   'topic.principles.item.flow-wip.title':
     'Make value flow without interruptions',
   'topic.principles.item.flow-wip.body':
-    'Help work move smoothly from idea to customer. Limit work in progress, shrink batch sizes and keep queues short, since overloaded teams and large batches create waiting and delay. Older descriptions of this principle phrase it as visualizing and limiting WIP, reducing batch sizes and managing queue lengths.',
+    'Help work move smoothly from idea to customer. Limit work in progress, shrink batch sizes and keep queues short, since overloaded teams and large batches create waiting and delay.',
   'topic.principles.item.cadence-sync.title':
     'Apply cadence, synchronize with cross-domain planning',
   'topic.principles.item.cadence-sync.body':
@@ -226,131 +226,131 @@ export default {
   'topic.principles.item.decentralize.title':
     'Decentralize decision-making',
   'topic.principles.item.decentralize.body':
-    'Let decisions be made by those with the best information. Reserve centralized decisions for choices that are infrequent, long-lasting and have large economies of scale, and make everything else local and fast.',
+    'Push decisions to the people closest to the work, since they usually have the freshest information and can act on it fastest. Keep only a few decisions central: the strategic ones that are made rarely, are hard to undo, or are clearly better made once for everyone. Everything else should be decided locally and quickly.',
   'topic.principles.item.organize-value.title':
     'Organize around value',
   'topic.principles.item.organize-value.body':
     'Structure teams and teams of teams around the flow of value to customers instead of around functional silos. Fewer hand-offs mean faster delivery and clearer ownership.',
-  "topic.roles-overview.title":
-    "SAFe roles at a glance",
-  "topic.roles-overview.summary":
-    "How the SAFe roles divide up the work, grouped by team, train and solution or portfolio level.",
-  "topic.roles-overview.what":
-    "SAFe spreads accountability across a handful of roles so that no single person has to decide everything. Each role answers a different question: what is worth building, how will we build it, and how do we keep everyone moving together.\n\nTeam level. The Agile Team does the hands-on work of defining, building and testing. The Product Owner decides what the team works on next, and the Scrum Master (or Team Coach) helps the team work well together.\n\nTrain level. The Release Train Engineer keeps the whole Agile Release Train running smoothly. Product Management sets the direction for features, the System Architect guides technical design, and Business Owners hold overall responsibility for the business outcomes of the train.\n\nSolution and portfolio level. Epic Owners steer the biggest initiatives from idea to decision. Lean Portfolio Management handles strategy, funding and governance across value streams. Where several trains build one product, extra roles such as the Solution Train Engineer, Solution Management and the Solution Architect coordinate between them.\n\nA role is not a job title. One person may hold several roles on a small train, and several people may share one role on a large one. What matters is that every responsibility has a clear owner.",
-  "topic.roles-overview.who":
-    "Every role works with the others through shared events. Use the role pages for details, and the events pages to see who sits at which table.",
-  "topic.roles-overview.cadence":
-    "Team roles meet every iteration. Train roles meet at least every iteration and again at each Planning Interval. Portfolio roles mostly engage around planning and review points.",
-  "topic.team.title":
-    "Agile Team",
-  "topic.team.summary":
-    "The small, cross-functional group that actually builds, tests and delivers the work.",
-  "topic.team.what":
-    "The Agile Team is the basic unit of delivery in SAFe. It is a group of roughly five to eleven people who together hold every skill needed to take an idea to a working, tested increment. It is the team that defines, builds, tests and, where possible, releases.\n\nResponsibilities include: planning each iteration, committing to realistic scope, building and testing in small slices, keeping the backlog healthy together with the Product Owner, integrating frequently with other teams, and improving how the team works.\n\nTeams are self-organizing. They choose how to do the work, while the Product Owner decides priorities and the Scrum Master supports the process. Teams may follow Scrum, Kanban or a mix; SAFe cares that the work is visible, small and flowing.\n\nCommon anti-patterns:\n\n- A team of specialists who hand work from one to the next instead of working on the same item together.\n\n- Accepting more work than capacity, so commitments are routinely missed.\n\n- Treating the PI plan as a fixed contract and never adjusting as learning arrives.",
-  "topic.team.who":
-    "The team works daily with its Product Owner and Scrum Master, and depends on other teams on the train for integration and dependencies. The System Architect and Product Management guide direction but do not assign tasks.",
-  "topic.team.cadence":
-    "Every iteration: planning, daily stand-up, refinement, review and retrospective. Every Planning Interval: PI Planning, system demos and Inspect and Adapt with the whole train.",
-  "topic.rte.title":
-    "Release Train Engineer (RTE)",
-  "topic.rte.summary":
-    "The servant leader and coach who keeps the Agile Release Train planning and delivering together.",
-  "topic.rte.what":
-    "The Release Train Engineer, or RTE, is the chief facilitator of an Agile Release Train. Think of the role as a combination of coach, event host and obstacle remover. The RTE does not manage people or decide what gets built; the aim is to help the train deliver reliably and keep improving.\n\nResponsibilities:\n\n- Prepare for and run PI Planning, including the confidence vote.\n\n- Run the ART sync and keep an eye on risks, dependencies and progress toward PI objectives.\n\n- Help teams and the train limit work in progress and keep the flow of features visible.\n\n- Support the system demo and facilitate Inspect and Adapt, turning findings into improvement work.\n\n- Coach leaders, Scrum Masters and Product Owners on Lean-Agile habits.\n\nCommon anti-patterns:\n\n- Acting as a project manager who assigns tasks and chases status.\n\n- Solving problems that belong to teams, which weakens their ownership.\n\n- Treating the role as administrative scheduling rather than coaching and improving the system.",
-  "topic.rte.who":
-    "The RTE works most closely with Product Management, the System Architect and Business Owners, who together lead the train, and with Scrum Masters and Product Owners across the teams.",
-  "topic.rte.cadence":
-    "Prepares ahead of each Planning Interval, then facilitates PI Planning, regular ART syncs, the system demo and Inspect and Adapt. Many trains hold the ART sync weekly or every iteration; check what your train agreed.",
-  "topic.product-owner.title":
-    "Product Owner",
-  "topic.product-owner.summary":
-    "The team-level content owner who decides what the team builds next and accepts the result.",
-  "topic.product-owner.what":
-    "A Product Owner (PO) represents the needs of customers and the business at the level of a single Agile Team. The PO is the person who says what is most valuable for the team to do next, and whether finished work meets expectations.\n\nResponsibilities:\n\n- Own and order the team backlog, mostly made up of stories and enablers.\n\n- Refine upcoming work with the team and clarify acceptance criteria.\n\n- Accept stories as done and take part in the iteration review.\n\n- Connect the team to Product Management for features, and to customers for feedback.\n\n- Help the team draft its PI objectives and share them at PI Planning.\n\nCommon anti-patterns:\n\n- Behaving as a requirements writer who hands over detailed specs instead of working with the team.\n\n- Being unavailable, so the team waits for answers.\n\n- Letting the backlog fill with unrefined or stale items, or changing priorities mid-iteration without need.",
-  "topic.product-owner.who":
-    "The PO works every day with the team and the Scrum Master, and regularly with Product Management and other Product Owners on the train to keep work aligned.",
-  "topic.product-owner.cadence":
-    "Iteration planning, backlog refinement and iteration review every iteration; the PO sync on the train rhythm; PI Planning and the system demo each Planning Interval.",
-  "topic.product-management.title":
-    "Product Management",
-  "topic.product-management.summary":
-    "The train-level owners of what to build: vision, roadmap and the feature backlog.",
-  "topic.product-management.what":
-    "Product Management owns the content of an Agile Release Train. Its job is to find out what customers need, decide what is worth building, and describe it clearly enough for teams to act on. In practice this means working with customers, the business and the teams to shape the solution.\n\nResponsibilities:\n\n- Keep the product vision and roadmap clear and up to date.\n\n- Own and prioritize the ART Backlog of features, with benefit hypotheses and acceptance criteria.\n\n- Prepare the content presentation for PI Planning, and answer questions during it.\n\n- Work with Product Owners to turn features into stories and with the System Architect on enablers.\n\n- Validate that delivered features achieve the intended benefit.\n\nCommon anti-patterns:\n\n- Delivering a long, fixed list of features instead of a prioritized, evolving backlog.\n\n- Handing teams detailed requirements and leaving no space for their ideas.\n\n- Never checking whether released features were actually used or valued.",
-  "topic.product-management.who":
-    "Product Management partners with the RTE and System Architect in leading the train, with Business Owners on strategy, and with Product Owners for day-to-day detail. In a Large Solution it also coordinates with Solution Management.",
-  "topic.product-management.cadence":
-    "Prepares features before each Planning Interval, presents at PI Planning, meets Product Owners in the PO sync, and joins system demos and Inspect and Adapt.",
-  "topic.system-architect.title":
-    "System Architect",
-  "topic.system-architect.summary":
-    "The person or small group that guides technical direction across the whole train.",
-  "topic.system-architect.what":
-    "The System Architect looks after the technical health of the solution built by an Agile Release Train. Where teams optimise their own part, the architect keeps the whole system coherent: interfaces, shared components, qualities such as performance and security, and technology choices.\n\nResponsibilities:\n\n- Define and communicate the architectural vision and the nonfunctional requirements.\n\n- Identify enablers that build technical runway for future features.\n\n- Work with Product Management to size and sequence features, and with teams to resolve design questions.\n\n- Support the integration environment and take part in the system demo.\n\n- Encourage evolutionary design rather than big up-front design.\n\nCommon anti-patterns:\n\n- The ivory-tower architect who issues designs without joining teams in the code.\n\n- A central gatekeeper who must approve every decision, which slows the train.\n\n- Neglecting enablers until technical debt blocks delivery.",
-  "topic.system-architect.who":
-    "The architect works with teams, Product Management and the RTE. On trains that belong to a Solution Train, the System Architect coordinates with the Solution Architect.",
-  "topic.system-architect.cadence":
-    "Joins PI Planning to explain architectural context and help resolve risks, attends system demos and Inspect and Adapt, and drops in on the ART sync when technical dependencies arise.",
-  "topic.scrum-master.title":
-    "Scrum Master / Team Coach",
-  "topic.scrum-master.summary":
-    "The servant leader who helps a team follow its working agreements and improve how it works.",
-  "topic.scrum-master.what":
-    "The Scrum Master, called Team Coach in some SAFe material, is a servant leader and coach for one Agile Team. The role is about helping the team become effective, not about assigning work or reporting on it.\n\nResponsibilities:\n\n- Facilitate the team events: planning, daily stand-up, review and retrospective.\n\n- Help the team make work visible and respect limits on work in progress.\n\n- Remove or escalate impediments that the team cannot clear alone.\n\n- Coach the team in Agile practices, and its members in collaboration and conflict.\n\n- Represent the team at the ART sync and with other Scrum Masters.\n\nCommon anti-patterns:\n\n- Acting as the team secretary or project manager who tracks tasks and hours.\n\n- Solving every problem for the team rather than coaching it to find its own answers.\n\n- Running events as rituals with the same agenda and no improvements.",
-  "topic.scrum-master.who":
-    "The Scrum Master works with the team and Product Owner every day, and meets other Scrum Masters and the RTE to share dependencies and improvement ideas across the train.",
-  "topic.scrum-master.cadence":
-    "Every iteration: iteration planning, daily stand-up, review and retrospective. Each Planning Interval: PI Planning and Inspect and Adapt. Also takes part in the ART sync.",
-  "topic.business-owners.title":
-    "Business Owners",
-  "topic.business-owners.summary":
-    "The senior sponsors who fund a train, judge whether it delivers value and sign off on its direction.",
-  "topic.business-owners.what":
-    "Business Owners are the senior stakeholders behind an Agile Release Train. They typically sponsor and fund its work, and they are the ones who decide whether what the train produces is worth what it costs. Many come from business, operations or technology leadership; some are customers or key internal sponsors.\n\nIn short, they sign off on direction and outcomes, and they make sure the train stays within the rules the organization has to follow.\n\nResponsibilities:\n\n- Take part in PI Planning, give business context and review the draft plans.\n\n- Assign business value to the PI objectives so everyone sees what matters most.\n\n- Take part in the confidence vote and agree to the plan, or request changes.\n\n- Attend system demos and give feedback on whether the solution fits business needs.\n\n- Join Inspect and Adapt, and help remove organizational impediments.\n\nCommon anti-patterns:\n\n- Appearing only at the end of an increment, then changing priorities.\n\n- Treating PI objectives as a commitment to extract from teams rather than a shared forecast.\n\n- Delegating the role so far down that nobody present can make decisions.",
-  "topic.business-owners.who":
-    "Business Owners work most directly with Product Management, the RTE and the System Architect, and meet the teams chiefly through PI Planning and demos.",
-  "topic.business-owners.cadence":
-    "Each Planning Interval: PI Planning, system demos, and Inspect and Adapt.",
-  "topic.epic-owners.title":
-    "Epic Owners",
-  "topic.epic-owners.summary":
-    "The people who shepherd a large initiative from an idea through analysis, approval and implementation.",
-  "topic.epic-owners.what":
-    "An Epic Owner takes responsibility for a single epic, which is a large, cross-cutting initiative that may span several trains and take months to deliver. Epics are funded and approved through the portfolio, so the Epic Owner acts as the link between the portfolio level and the teams who do the work.\n\nResponsibilities:\n\n- Develop the epic hypothesis and a lean business case.\n\n- Take the epic through the portfolio Kanban for review and approval.\n\n- Work with Product Management and architects to break an approved epic into features and capabilities.\n\n- Follow progress during implementation and check whether benefits are realised.\n\n- Recommend stopping or pivoting if the evidence says the epic is not worth continuing.\n\nCommon anti-patterns:\n\n- Treating an epic as a detailed project plan with a fixed scope.\n\n- Handing off to teams after approval and disappearing.\n\n- Being unwilling to stop an epic that no longer makes sense.",
-  "topic.epic-owners.who":
-    "Epic Owners collaborate with Lean Portfolio Management, Product Management, architects and Business Owners.",
-  "topic.epic-owners.cadence":
-    "Active at portfolio review points, then at PI Planning and Inspect and Adapt while an epic is being implemented.",
-  "topic.lpm.title":
-    "Lean Portfolio Management (LPM)",
-  "topic.lpm.summary":
-    "The group that connects strategy, funding and governance across the portfolio.",
-  "topic.lpm.what":
-    "Lean Portfolio Management, or LPM, is a function rather than one person. It is usually a small group of executives, finance leaders and enterprise architects who decide where an organization invests and how that investment is governed.\n\nResponsibilities:\n\n- Strategy and investment funding: link portfolio strategy to value streams and fund long-lived teams instead of projects.\n\n- Agile portfolio operations: coordinate trains, support communities of practice and keep portfolio work visible.\n\n- Lean governance: set guardrails on spend, compliance and risk, with light checkpoints instead of heavy stage gates.\n\n- Review and decide on epics proposed by Epic Owners.\n\nCommon anti-patterns:\n\n- Funding individual projects with detailed budgets and treating the plan as the goal.\n\n- Demanding status reports and spreadsheets in place of observing real progress.\n\n- Keeping strategy private so teams cannot see how their work contributes.",
-  "topic.lpm.who":
-    "LPM works with Business Owners, Epic Owners and RTEs to see what the trains deliver, and with finance to keep funding flexible.",
-  "topic.lpm.cadence":
-    "Reviews the portfolio and adjusts investments on a regular rhythm, and joins events such as Inspect and Adapt where strategy and funding are discussed. The exact rhythm varies by organization.",
-  "topic.art.title":
-    "Agile Release Train (ART)",
-  "topic.art.summary":
-    "A standing group of Agile teams that delivers for one value stream on a shared cadence.",
-  "topic.art.what":
-    "An Agile Release Train is the main delivery vehicle in SAFe. It is a standing group of Agile teams, together with the people who support them, organised around a single value stream and working toward a shared mission. The train does not disband after a project; it keeps delivering.\n\nA typical train has about 50 to 125 people. Smaller groups often lack the range of skills, while larger ones become hard to coordinate and are usually split. The train contains everything needed to define, build, test and release: development and testing teams, system teams and, where relevant, shared services. Its leadership is formed by the RTE, Product Management, the System Architect and Business Owners.\n\nThe train works in Planning Intervals, commonly eight to twelve weeks, each made up of several iterations. Everyone plans together at PI Planning, syncs through the ART sync and PO sync, demonstrates integrated work at the system demo, and improves at Inspect and Adapt.\n\nCommon anti-patterns:\n\n- Forming a train around an org chart instead of a value stream.\n\n- Letting teams run on different cadences, which makes integration hard.\n\n- Running PI Planning without full participation, or without Business Owners.",
-  "topic.art.who":
-    "Everyone on the train takes part in some form: teams, Product Owners, Scrum Masters, and the leadership group. Business Owners and stakeholders join at key events.",
-  "topic.art.cadence":
-    "Planning Intervals of commonly eight to twelve weeks, broken into iterations. Events include PI Planning, ART sync, PO sync, system demo and Inspect and Adapt.",
-  "topic.solution-train.title":
-    "Solution Train",
-  "topic.solution-train.summary":
-    "How several Agile Release Trains and suppliers coordinate to build one large solution.",
-  "topic.solution-train.what":
-    "Some products are too large for a single Agile Release Train. Examples include systems combining hardware and software, or those built with many suppliers under strict regulation. In Large Solution SAFe, several ARTs are joined into a Solution Train that works toward one shared solution.\n\nThe Solution Train adds coordination without replacing the trains underneath. Each ART continues to plan and deliver in its own way, but the trains align on a common cadence and a shared solution vision.\n\nAdded roles:\n\n- Solution Train Engineer (STE): facilitates the Solution Train, like an RTE for the trains.\n\n- Solution Management: owns the solution vision, roadmap and capabilities, like Product Management for the whole solution.\n\n- Solution Architect and Engineering: guide the architecture across trains.\n\nUse a Solution Train only when the work truly spans trains and needs this coordination. Otherwise it adds overhead.\n\nCommon anti-patterns:\n\n- Creating a Solution Train for a product that one ART could build.\n\n- Letting the Solution Train become a layer of approval that slows the ARTs.\n\n- Aligning trains on cadence but not on a shared vision.",
-  "topic.solution-train.who":
-    "The STE, Solution Management and Solution Architect work with each train's RTE, Product Management and System Architect, and with suppliers.",
-  "topic.solution-train.cadence":
-    "Trains plan on a shared cadence, and Solution Train events line up with the trains' PI events, for example a combined planning event and a solution demo. Details depend on your setup.",
+  'topic.roles-overview.title':
+    'SAFe roles at a glance',
+  'topic.roles-overview.summary':
+    'How the SAFe roles divide up the work, grouped by team, train and solution or portfolio level.',
+  'topic.roles-overview.what':
+    'SAFe spreads accountability across a handful of roles so that no single person has to decide everything. Each role answers a different question: what is worth building, how will we build it, and how do we keep everyone moving together.\n\nTeam level. The Agile Team does the hands-on work of defining, building and testing. The Product Owner decides what the team works on next, and the Scrum Master (or Team Coach) helps the team work well together.\n\nTrain level. The Release Train Engineer keeps the whole Agile Release Train running smoothly. Product Management sets the direction for features, the System Architect guides technical design, and Business Owners hold overall responsibility for the business outcomes of the train.\n\nSolution and portfolio level. Epic Owners steer the biggest initiatives from idea to decision. Lean Portfolio Management handles strategy, funding and governance across value streams. Where several trains build one product, extra roles such as the Solution Train Engineer, Solution Management and the Solution Architect coordinate between them.\n\nA role is not a job title. One person may hold several roles on a small train, and several people may share one role on a large one. What matters is that every responsibility has a clear owner.',
+  'topic.roles-overview.who':
+    'Every role works with the others through shared events. Use the role pages for details, and the events pages to see who sits at which table.',
+  'topic.roles-overview.cadence':
+    'Team roles meet every iteration. Train roles meet at least every iteration and again at each Planning Interval. Portfolio roles mostly engage around planning and review points.',
+  'topic.team.title':
+    'Agile Team',
+  'topic.team.summary':
+    'The small, cross-functional group that actually builds, tests and delivers the work.',
+  'topic.team.what':
+    'The Agile Team is where delivery happens in SAFe. It is a small, cross-functional group, usually ten people or fewer, whose members between them have every skill needed to turn an idea into a working, tested increment. The team owns its work from start to finish: clarifying it, building it, testing it and, where the context allows, releasing it.\n\nResponsibilities include: planning each iteration, committing to realistic scope, building and testing in small slices, keeping the backlog healthy together with the Product Owner, integrating frequently with other teams, and improving how the team works.\n\nTeams are self-organizing. They choose how to do the work, while the Product Owner decides priorities and the Scrum Master supports the process. Teams may follow Scrum, Kanban or a mix; SAFe cares that the work is visible, small and flowing.\n\nCommon anti-patterns:\n\n- A team of specialists who hand work from one to the next instead of working on the same item together.\n\n- Accepting more work than capacity, so commitments are routinely missed.\n\n- Treating the PI plan as a fixed contract and never adjusting as learning arrives.',
+  'topic.team.who':
+    'The team works daily with its Product Owner and Scrum Master, and depends on other teams on the train for integration and dependencies. The System Architect and Product Management guide direction but do not assign tasks.',
+  'topic.team.cadence':
+    'Every iteration: planning, daily stand-up, refinement, review and retrospective. Every Planning Interval: PI Planning, system demos and Inspect and Adapt with the whole train.',
+  'topic.rte.title':
+    'Release Train Engineer (RTE)',
+  'topic.rte.summary':
+    'The servant leader and coach who keeps the Agile Release Train planning and delivering together.',
+  'topic.rte.what':
+    'The Release Train Engineer, or RTE, coaches and facilitates an Agile Release Train as a whole. The job mixes coaching, hosting the train\'s events and clearing obstacles out of the way. The RTE neither manages people nor decides what gets built; success means the train delivers reliably and keeps getting better at it.\n\nResponsibilities:\n\n- Prepare for and run PI Planning, including the confidence vote.\n\n- Run the ART sync and keep an eye on risks, dependencies and progress toward PI objectives.\n\n- Help teams and the train limit work in progress and keep the flow of features visible.\n\n- Support the system demo and facilitate Inspect and Adapt, turning findings into improvement work.\n\n- Coach leaders, Scrum Masters and Product Owners on Lean-Agile habits.\n\nCommon anti-patterns:\n\n- Acting as a project manager who assigns tasks and chases status.\n\n- Solving problems that belong to teams, which weakens their ownership.\n\n- Treating the role as administrative scheduling rather than coaching and improving the system.',
+  'topic.rte.who':
+    'The RTE works most closely with Product Management, the System Architect and Business Owners, who together lead the train, and with Scrum Masters and Product Owners across the teams.',
+  'topic.rte.cadence':
+    'Prepares ahead of each Planning Interval, then facilitates PI Planning, regular ART syncs, the system demo and Inspect and Adapt. Many trains hold the ART sync weekly or every iteration; check what your train agreed.',
+  'topic.product-owner.title':
+    'Product Owner',
+  'topic.product-owner.summary':
+    'The team-level content owner who decides what the team builds next and accepts the result.',
+  'topic.product-owner.what':
+    'A Product Owner (PO) represents the needs of customers and the business at the level of a single Agile Team. The PO is the person who says what is most valuable for the team to do next, and whether finished work meets expectations.\n\nResponsibilities:\n\n- Own and order the team backlog, mostly made up of stories and enablers.\n\n- Refine upcoming work with the team and clarify acceptance criteria.\n\n- Accept stories as done and take part in the iteration review.\n\n- Connect the team to Product Management for features, and to customers for feedback.\n\n- Help the team draft its PI objectives and share them at PI Planning.\n\nCommon anti-patterns:\n\n- Behaving as a requirements writer who hands over detailed specs instead of working with the team.\n\n- Being unavailable, so the team waits for answers.\n\n- Letting the backlog fill with unrefined or stale items, or changing priorities mid-iteration without need.',
+  'topic.product-owner.who':
+    'The PO works every day with the team and the Scrum Master, and regularly with Product Management and other Product Owners on the train to keep work aligned.',
+  'topic.product-owner.cadence':
+    'Iteration planning, backlog refinement and iteration review every iteration; the PO sync on the train rhythm; PI Planning and the system demo each Planning Interval.',
+  'topic.product-management.title':
+    'Product Management',
+  'topic.product-management.summary':
+    'The train-level owners of what to build: vision, roadmap and the feature backlog.',
+  'topic.product-management.what':
+    'Product Management owns the content of an Agile Release Train. Its job is to find out what customers need, decide what is worth building, and describe it clearly enough for teams to act on. In practice this means working with customers, the business and the teams to shape the solution.\n\nResponsibilities:\n\n- Keep the product vision and roadmap clear and up to date.\n\n- Own and prioritize the ART Backlog of features, with benefit hypotheses and acceptance criteria.\n\n- Prepare the content presentation for PI Planning, and answer questions during it.\n\n- Work with Product Owners to turn features into stories and with the System Architect on enablers.\n\n- Validate that delivered features achieve the intended benefit.\n\nCommon anti-patterns:\n\n- Delivering a long, fixed list of features instead of a prioritized, evolving backlog.\n\n- Handing teams detailed requirements and leaving no space for their ideas.\n\n- Never checking whether released features were actually used or valued.',
+  'topic.product-management.who':
+    'Product Management partners with the RTE and System Architect in leading the train, with Business Owners on strategy, and with Product Owners for day-to-day detail. In a Large Solution it also coordinates with Solution Management.',
+  'topic.product-management.cadence':
+    'Prepares features before each Planning Interval, presents at PI Planning, meets Product Owners in the PO sync, and joins system demos and Inspect and Adapt.',
+  'topic.system-architect.title':
+    'System Architect',
+  'topic.system-architect.summary':
+    'The person or small group that guides technical direction across the whole train.',
+  'topic.system-architect.what':
+    'The System Architect looks after the technical health of the solution built by an Agile Release Train. Where teams optimize their own part, the architect keeps the whole system coherent: interfaces, shared components, qualities such as performance and security, and technology choices.\n\nResponsibilities:\n\n- Define and communicate the architectural vision and the nonfunctional requirements.\n\n- Identify enablers that build technical runway for future features.\n\n- Work with Product Management to size and sequence features, and with teams to resolve design questions.\n\n- Support the integration environment and take part in the system demo.\n\n- Encourage evolutionary design rather than big up-front design.\n\nCommon anti-patterns:\n\n- The ivory-tower architect who issues designs without joining teams in the code.\n\n- A central gatekeeper who must approve every decision, which slows the train.\n\n- Neglecting enablers until technical debt blocks delivery.',
+  'topic.system-architect.who':
+    'The architect works with teams, Product Management and the RTE. On trains that belong to a Solution Train, the System Architect coordinates with the Solution Architect.',
+  'topic.system-architect.cadence':
+    'Joins PI Planning to explain architectural context and help resolve risks, attends system demos and Inspect and Adapt, and drops in on the ART sync when technical dependencies arise.',
+  'topic.scrum-master.title':
+    'Scrum Master / Team Coach',
+  'topic.scrum-master.summary':
+    'The servant leader who helps a team follow its working agreements and improve how it works.',
+  'topic.scrum-master.what':
+    'The Scrum Master, called Team Coach in some SAFe material, is a servant leader and coach for one Agile Team. The role is about helping the team become effective, not about assigning work or reporting on it.\n\nResponsibilities:\n\n- Facilitate the team events: planning, daily stand-up, review and retrospective.\n\n- Help the team make work visible and respect limits on work in progress.\n\n- Remove or escalate impediments that the team cannot clear alone.\n\n- Coach the team in Agile practices, and its members in collaboration and conflict.\n\n- Represent the team at the ART sync and with other Scrum Masters.\n\nCommon anti-patterns:\n\n- Acting as the team secretary or project manager who tracks tasks and hours.\n\n- Solving every problem for the team rather than coaching it to find its own answers.\n\n- Running events as rituals with the same agenda and no improvements.',
+  'topic.scrum-master.who':
+    'The Scrum Master works with the team and Product Owner every day, and meets other Scrum Masters and the RTE to share dependencies and improvement ideas across the train.',
+  'topic.scrum-master.cadence':
+    'Every iteration: iteration planning, daily stand-up, review and retrospective. Each Planning Interval: PI Planning and Inspect and Adapt. Also takes part in the ART sync.',
+  'topic.business-owners.title':
+    'Business Owners',
+  'topic.business-owners.summary':
+    'The senior sponsors who fund a train, judge whether it delivers value and sign off on its direction.',
+  'topic.business-owners.what':
+    'Business Owners are the senior stakeholders behind an Agile Release Train. They typically sponsor and fund its work and decide whether what the train produces is worth what it costs, so they sign off on direction and outcomes and make sure the train stays within the rules the organization has to follow. Many come from business, operations or technology leadership; some are customers or key internal sponsors.\n\nResponsibilities:\n\n- Take part in PI Planning, give business context and review the draft plans.\n\n- Assign business value to the PI objectives so everyone sees what matters most.\n\n- Take part in the confidence vote and agree to the plan, or request changes.\n\n- Attend system demos and give feedback on whether the solution fits business needs.\n\n- Join Inspect and Adapt, and help remove organizational impediments.\n\nCommon anti-patterns:\n\n- Appearing only at the end of an increment, then changing priorities.\n\n- Treating PI objectives as a commitment to extract from teams rather than a shared forecast.\n\n- Delegating the role so far down that nobody present can make decisions.',
+  'topic.business-owners.who':
+    'Business Owners work most directly with Product Management, the RTE and the System Architect, and meet the teams chiefly through PI Planning and demos.',
+  'topic.business-owners.cadence':
+    'Each Planning Interval: PI Planning, system demos, and Inspect and Adapt.',
+  'topic.epic-owners.title':
+    'Epic Owners',
+  'topic.epic-owners.summary':
+    'The people who shepherd a large initiative from an idea through analysis, approval and implementation.',
+  'topic.epic-owners.what':
+    'An Epic Owner takes responsibility for a single epic, which is a large, cross-cutting initiative that may span several trains and take months to deliver. Epics are funded and approved through the portfolio, so the Epic Owner acts as the link between the portfolio level and the teams who do the work.\n\nResponsibilities:\n\n- Develop the epic hypothesis and a lean business case.\n\n- Take the epic through the portfolio Kanban for review and approval.\n\n- Work with Product Management and architects to break an approved epic into features and capabilities.\n\n- Follow progress during implementation and check whether benefits are realized.\n\n- Recommend stopping or pivoting if the evidence says the epic is not worth continuing.\n\nCommon anti-patterns:\n\n- Treating an epic as a detailed project plan with a fixed scope.\n\n- Handing off to teams after approval and disappearing.\n\n- Being unwilling to stop an epic that no longer makes sense.',
+  'topic.epic-owners.who':
+    'Epic Owners collaborate with Lean Portfolio Management, Product Management, architects and Business Owners.',
+  'topic.epic-owners.cadence':
+    'Active at portfolio review points, then at PI Planning and Inspect and Adapt while an epic is being implemented.',
+  'topic.lpm.title':
+    'Lean Portfolio Management (LPM)',
+  'topic.lpm.summary':
+    'The group that connects strategy, funding and governance across the portfolio.',
+  'topic.lpm.what':
+    'Lean Portfolio Management, or LPM, is a responsibility shared by a group, not a job title. The people involved tend to be senior business and technology leaders, often with finance and enterprise architecture represented, and together they choose where the portfolio invests and how that spending is overseen.\n\nResponsibilities:\n\n- Strategy and investment funding: decide which value streams receive investment based on strategy, and fund stable teams and trains rather than one-off projects.\n\n- Agile portfolio operations: help trains coordinate with each other, nurture communities of practice and make portfolio work visible.\n\n- Lean governance: agree guardrails for spending, compliance and risk, and rely on lightweight checkpoints in place of heavyweight stage gates.\n\n- Review and decide on epics proposed by Epic Owners.\n\nCommon anti-patterns:\n\n- Funding individual projects with detailed budgets and treating the plan as the goal.\n\n- Demanding status reports and spreadsheets in place of observing real progress.\n\n- Keeping strategy private so teams cannot see how their work contributes.',
+  'topic.lpm.who':
+    'LPM works with Business Owners, Epic Owners and RTEs to see what the trains deliver, and with finance to keep funding flexible.',
+  'topic.lpm.cadence':
+    'Reviews the portfolio and adjusts investments on a regular rhythm, and joins events such as Inspect and Adapt where strategy and funding are discussed. The exact rhythm varies by organization.',
+  'topic.art.title':
+    'Agile Release Train (ART)',
+  'topic.art.summary':
+    'Several Agile teams that stay together, plan together and deliver for one value stream.',
+  'topic.art.what':
+    'An Agile Release Train is the main way SAFe delivers. Picture several Agile teams, plus the people who support them, who stay together over the long term and share one mission: building and evolving the solutions for a particular value stream. A train is not assembled for a project and then broken up; it keeps delivering.\n\nA typical train has about 50 to 125 people. Smaller groups often lack the range of skills, while larger ones become hard to coordinate and are usually split. The train contains everything needed to define, build, test and release: development and testing teams, system teams and, where relevant, shared services. Its leadership is formed by the RTE, Product Management, the System Architect and Business Owners.\n\nThe train works in Planning Intervals, commonly eight to twelve weeks, each made up of several iterations. Everyone plans together at PI Planning, syncs through the ART sync and PO sync, demonstrates integrated work at the system demo, and improves at Inspect and Adapt.\n\nCommon anti-patterns:\n\n- Forming a train around an org chart instead of a value stream.\n\n- Letting teams run on different cadences, which makes integration hard.\n\n- Running PI Planning without full participation, or without Business Owners.',
+  'topic.art.who':
+    'Everyone on the train takes part in some form: teams, Product Owners, Scrum Masters, and the leadership group. Business Owners and stakeholders join at key events.',
+  'topic.art.cadence':
+    'Planning Intervals of commonly eight to twelve weeks, broken into iterations. Events include PI Planning, ART sync, PO sync, system demo and Inspect and Adapt.',
+  'topic.solution-train.title':
+    'Solution Train',
+  'topic.solution-train.summary':
+    'How several Agile Release Trains and suppliers coordinate to build one large solution.',
+  'topic.solution-train.what':
+    'Some products are too large for a single Agile Release Train. Examples include systems combining hardware and software, or those built with many suppliers under strict regulation. In Large Solution SAFe, several ARTs are joined into a Solution Train that works toward one shared solution.\n\nThe Solution Train adds coordination without replacing the trains underneath. Each ART continues to plan and deliver in its own way, but the trains align on a common cadence and a shared solution vision.\n\nAdded roles:\n\n- Solution Train Engineer (STE): facilitates the Solution Train, like an RTE for the trains.\n\n- Solution Management: owns the solution vision, roadmap and capabilities, like Product Management for the whole solution.\n\n- Solution Architect and Engineering: guide the architecture across trains.\n\nUse a Solution Train only when the work truly spans trains and needs this coordination. Otherwise it adds overhead.\n\nCommon anti-patterns:\n\n- Creating a Solution Train for a product that one ART could build.\n\n- Letting the Solution Train become a layer of approval that slows the ARTs.\n\n- Aligning trains on cadence but not on a shared vision.',
+  'topic.solution-train.who':
+    'The STE, Solution Management and Solution Architect work with each train\'s RTE, Product Management and System Architect, and with suppliers.',
+  'topic.solution-train.cadence':
+    'Trains plan on a shared cadence, and Solution Train events line up with the trains\' PI events, for example a combined planning event and a solution demo. Details depend on your setup.',
   'topic.pi-planning.title': 'PI Planning',
   'topic.pi-planning.summary':
     'The two-day, face-to-face (or fully virtual) planning event where every team on a train plans the next Planning Interval together.',
@@ -359,7 +359,7 @@ export default {
   'topic.pi-planning.who':
     'Every team on the train, including the Product Owner and Scrum Master, plus the RTE who facilitates, Product Management, the System Architect and Business Owners. Epic Owners and Lean Portfolio Management representatives often join for context.',
   'topic.pi-planning.io':
-    'In: the product or solution vision, a prioritized ART Backlog of features, the architecture vision and each team\'s capacity. Out: PI Objectives for each team, a program board showing features, milestones and dependencies, a list of risks with their ROAM status, and a recorded confidence vote.',
+    'In: the product or solution vision, a prioritized ART Backlog of features, the architecture vision and each team\'s capacity. Out: PI Objectives for each team, an ART planning board showing features, milestones and dependencies, a list of risks with their ROAM status, and a recorded confidence vote.',
   'topic.pi-planning.cadence':
     'Two days, at the start of every Planning Interval. Planning Intervals usually run eight to twelve weeks, so most trains hold PI Planning four to six times a year.',
 
@@ -373,7 +373,7 @@ export default {
   'topic.iteration-planning.io':
     'In: a refined team backlog, the team\'s PI Objectives and its recent velocity or throughput. Out: an iteration goal and a committed set of stories the team expects to complete.',
   'topic.iteration-planning.cadence':
-    'At the start of every iteration. Teams often take one to two hours for each week of iteration length, though the exact time varies.',
+    'At the start of every iteration, commonly as a single time-boxed session. How long it takes depends on the iteration length and on how well the backlog was refined beforehand.',
 
   'topic.daily-standup.title': 'Daily Stand-up',
   'topic.daily-standup.summary':
@@ -397,7 +397,7 @@ export default {
   'topic.iteration-review-retro.io':
     'In: the completed stories and the iteration goal. Out: stakeholder feedback, backlog adjustments, and a short list of improvement actions for the team.',
   'topic.iteration-review-retro.cadence':
-    'At the end of each iteration, typically one to two hours for the review and about the same for the retrospective.',
+    'At the end of each iteration: the review comes first, then the retrospective. Teams commonly keep both short and time-boxed, and agree the exact length themselves.',
 
   'topic.system-demo.title': 'System Demo',
   'topic.system-demo.summary':
@@ -431,7 +431,7 @@ export default {
   'topic.art-sync.who':
     'The RTE, Scrum Masters, Product Owners and the System Architect. Other specialists join when a topic calls for them.',
   'topic.art-sync.io':
-    'In: team progress, the program board and the list of open risks and impediments. Out: refreshed dependencies, an escalation list and agreed follow-ups.',
+    'In: team progress, the ART planning board and the list of open risks and impediments. Out: refreshed dependencies, an escalation list and agreed follow-ups.',
   'topic.art-sync.cadence':
     'Usually weekly or once per iteration, depending on what the train agrees. Typically up to an hour.',
 
@@ -511,7 +511,7 @@ export default {
   'topic.pi-objectives.summary':
     'Short, business-readable statements of what each team intends to achieve in a Planning Interval.',
   'topic.pi-objectives.what':
-    'PI Objectives summarize, in plain language, what each team plans to accomplish during a Planning Interval. They translate the team\'s stories and features into outcomes that a business person can understand and assess.\n\nEach team drafts its objectives during PI Planning and presents them to everyone. Business Owners then rate each one on a scale of business value, which signals the planned importance. Teams also estimate their confidence, and the train combines them with the program board and risk list into a shared view.\n\nSome objectives are marked as stretch objectives. They are extra work beyond the capacity the team commits to, and give flexibility without putting the main plan at risk.\n\nDuring the PI the objectives are the yardstick for progress. At the end, teams and Business Owners compare planned value against actual value, and the results are reviewed at Inspect and Adapt.\n\nObjectives are a forecast, not a contract. If new information appears, adjust them openly.',
+    'PI Objectives summarize, in plain language, what each team plans to accomplish during a Planning Interval. They translate the team\'s stories and features into outcomes that a business person can understand and assess.\n\nEach team drafts its objectives during PI Planning and presents them to everyone. Business Owners then rate each one on a scale of business value, which signals the planned importance. Teams also estimate their confidence, and the train combines them with the ART planning board and risk list into a shared view.\n\nSome objectives are marked as stretch objectives. They are extra work beyond the capacity the team commits to, and give flexibility without putting the main plan at risk.\n\nDuring the PI the objectives are the yardstick for progress. At the end, teams and Business Owners compare planned value against actual value, and the results are reviewed at Inspect and Adapt.\n\nObjectives are a forecast, not a contract. If new information appears, adjust them openly.',
   'topic.pi-objectives.who':
     'Each Agile Team writes its own; Business Owners rate their value; the RTE and Product Management consolidate and track them.',
   'topic.pi-objectives.io':
@@ -543,13 +543,13 @@ export default {
     'Terms are listed alphabetically. The definitions here are brief and written in our own words, so for the authoritative wording consult the official SAFe glossary.',
   'topic.glossary.item.agile-release-train.title': 'Agile Release Train (ART)',
   'topic.glossary.item.agile-release-train.body':
-    'A standing group of Agile Teams, usually 50 to 125 people, that plans and delivers for one value stream on a shared rhythm.',
+    'Several Agile Teams, usually 50 to 125 people in all, that stay together and plan and deliver for one value stream on a shared rhythm.',
   'topic.glossary.item.agile-team.title': 'Agile Team',
   'topic.glossary.item.agile-team.body':
     'A small cross-functional group that can define, build, test and deliver working increments by itself.',
   'topic.glossary.item.architectural-runway.title': 'Architectural Runway',
   'topic.glossary.item.architectural-runway.body':
-    'Existing technical groundwork, such as shared components and platforms, that lets new features be built without major rework.',
+    'The technical groundwork already in place, such as platforms, shared services and infrastructure, that lets teams start on upcoming features without first stopping for major foundational work. Enablers extend it; feature work draws on it.',
   'topic.glossary.item.art-backlog.title': 'ART Backlog',
   'topic.glossary.item.art-backlog.body':
     'The prioritized list of features and enablers that one Agile Release Train intends to build, owned by Product Management.',
@@ -604,12 +604,12 @@ export default {
   'topic.glossary.item.product-owner.title': 'Product Owner',
   'topic.glossary.item.product-owner.body':
     'The team member who owns the team backlog and decides on priorities and acceptance.',
-  'topic.glossary.item.program-board.title': 'Program Board',
-  'topic.glossary.item.program-board.body':
+  'topic.glossary.item.art-planning-board.title': 'ART Planning Board',
+  'topic.glossary.item.art-planning-board.body':
     'A visual plan showing features, milestones and dependencies across teams for the Planning Interval.',
   'topic.glossary.item.rte.title': 'Release Train Engineer (RTE)',
   'topic.glossary.item.rte.body':
-    'The servant leader who facilitates the train\'s events and helps it deliver reliably.',
+    'The coach and facilitator of an Agile Release Train, who hosts its events, brings risks and impediments into the open and helps the teams deliver as one.',
   'topic.glossary.item.roam.title': 'ROAM',
   'topic.glossary.item.roam.body':
     'A way of sorting risks as resolved, owned, accepted or mitigated.',
@@ -639,8 +639,8 @@ export default {
   'topic.sources.summary': 'Official pages used as references, and a note on the status of this site.',
   'topic.sources.what':
     'This site is an unofficial, independent guide to SAFe 6.0. It is not affiliated with, sponsored by or endorsed by Scaled Agile, Inc. SAFe® and Scaled Agile Framework® are registered trademarks of Scaled Agile, Inc.\n\nThe text here is written in our own words to help newcomers get oriented. It may be incomplete or out of date, and details can differ between releases of the framework. For authoritative definitions, current guidance and training, consult the official SAFe website.',
-  'topic.sources.item.safe-framework.title': 'SAFe Framework (official site)',
-  'topic.sources.item.safe-framework.body':
+  'topic.sources.item.src-safe-framework.title': 'SAFe Framework (official site)',
+  'topic.sources.item.src-safe-framework.body':
     'The main home of the SAFe framework, with the Big Picture and links to each topic.\n\nhttps://framework.scaledagile.com/',
   'topic.sources.item.src-pi-planning.title': 'PI Planning',
   'topic.sources.item.src-pi-planning.body':
@@ -783,13 +783,14 @@ export default {
   'pi.out.objectives.desc':
     'Each team\'s summary of what it aims to achieve in the interval, with business value assigned by Business Owners. Some objectives are marked uncommitted.',
   'pi.out.objectives.link': 'Read about PI Objectives',
-  'pi.out.board.title': 'Program board',
+  'pi.out.board.title': 'ART planning board',
   'pi.out.board.desc':
     'A shared view of when features are planned to land, the milestones they serve and the dependencies between teams.',
   'pi.out.risks.title': 'Risks (ROAM)',
   'pi.out.risks.desc':
     'The list of train-level risks, each sorted as resolved, owned, accepted or mitigated, with an owner where follow-up is needed.',
-  'pi.out.glossary': 'See the glossary',
+  'pi.out.board.link': 'ART planning board in the glossary',
+  'pi.out.risks.link': 'ROAM in the glossary',
 
   'inspect.visual.title': 'The three parts of Inspect and Adapt',
   'inspect.visual.intro':

@@ -43,8 +43,8 @@ const out = (id, route, linkKey) => ({ id, route, linkKey, titleKey: `pi.out.${i
 
 export const OUTPUTS = [
   out('objectives', '/artifacts/pi-objectives', 'pi.out.objectives.link'),
-  out('board', '/reference/glossary', 'pi.out.glossary'),
-  out('risks', '/reference/glossary', 'pi.out.glossary'),
+  out('board', '/reference/glossary', 'pi.out.board.link'),
+  out('risks', '/reference/glossary', 'pi.out.risks.link'),
 ];
 
 // Event lanes in the calendar. `at` places the marker at the start or the end

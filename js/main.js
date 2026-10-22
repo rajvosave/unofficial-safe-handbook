@@ -82,6 +82,11 @@ function currentTheme() {
   return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 }
 
+document.querySelector('.skip-link').addEventListener('click', (e) => {
+  e.preventDefault();
+  $('app').focus();
+});
+
 $('theme').addEventListener('click', () => setTheme(currentTheme() === 'dark' ? 'light' : 'dark'));
 $('lang').addEventListener('change', (e) => {
   i18n.setLang(e.target.value);

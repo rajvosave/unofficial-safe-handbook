@@ -57,32 +57,31 @@ main.wide .home > :not(#infographic) { max-width: var(--measure); }
 .ig-heading { fill: var(--ig-line-essential); font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
 
 .hotspot { cursor: pointer; outline: none; }
+/* Each variant sets its own fill / hover fill / label / border via custom
+   properties, so state rules never compete on specificity. */
+.hotspot {
+  --hs-fill: var(--ig-node); --hs-fill-hover: var(--ig-node-hover);
+  --hs-text: var(--ig-node-text); --hs-stroke: none;
+}
+.hs-portfolio { --hs-stroke: var(--ig-line-portfolio); }
+.hs-solution { --hs-stroke: var(--ig-line-solution); }
+.hs-essential, .hs-team { --hs-stroke: var(--ig-line-essential); }
+.hs-event { --hs-stroke: var(--ig-line-event); }
+.hs-full { --hs-fill: var(--ig-line-full); --hs-fill-hover: var(--ig-line-full-hover); --hs-text: var(--ig-tab-text); --hs-stroke: none; }
+.hs-tab.hs-portfolio { --hs-fill: var(--ig-line-portfolio); --hs-fill-hover: var(--ig-line-portfolio-hover); --hs-text: var(--ig-tab-text); --hs-stroke: none; }
+.hs-tab.hs-solution { --hs-fill: var(--ig-line-solution); --hs-fill-hover: var(--ig-line-solution-hover); --hs-text: var(--ig-tab-text); --hs-stroke: none; }
+.hs-tab.hs-essential { --hs-fill: var(--ig-line-essential); --hs-fill-hover: var(--ig-line-essential-hover); --hs-text: var(--ig-tab-text); --hs-stroke: none; }
+.hs-competency { --hs-fill: var(--ig-pill); --hs-fill-hover: var(--ig-pill-hover); --hs-text: var(--ig-pill-text); --hs-stroke: none; }
+
 .hs-hit { fill: transparent; }
-.hs-shape { fill: var(--ig-node); stroke-width: 2.5; transition: fill 0.15s; }
-.ig-label { fill: var(--ig-node-text); font-weight: 600; pointer-events: none; }
+.hs-shape { fill: var(--hs-fill); stroke: var(--hs-stroke); stroke-width: 2.5; }
+.hotspot:hover .hs-shape, .hotspot:focus .hs-shape { fill: var(--hs-fill-hover); }
+.hotspot:focus-visible .hs-shape { stroke: var(--focus); stroke-width: 6; }
+.ig-label { fill: var(--hs-text); font-weight: 600; pointer-events: none; }
 .ig-label-strong { font-weight: 700; }
-.hs-portfolio .hs-shape { stroke: var(--ig-line-portfolio); }
-.hs-solution .hs-shape { stroke: var(--ig-line-solution); }
-.hs-essential .hs-shape, .hs-team .hs-shape { stroke: var(--ig-line-essential); }
-.hs-event .hs-shape { stroke: var(--ig-line-event); }
-.hotspot:hover .hs-shape, .hotspot:focus .hs-shape { fill: var(--ig-node-hover); }
 .ig-car { fill: none; stroke: currentColor; stroke-width: 2; opacity: 0.55; }
 .hs-solution .ig-car { color: var(--ig-line-solution); }
 .hs-essential .ig-car { color: var(--ig-line-essential); }
-
-.hs-tab .hs-shape, .hs-full .hs-shape { stroke: none; }
-.hs-tab .ig-label, .hs-full .ig-label { fill: var(--ig-tab-text); }
-.hs-full .hs-shape { fill: var(--ig-line-full); }
-.hs-tab.hs-portfolio .hs-shape { fill: var(--ig-line-portfolio); }
-.hs-tab.hs-solution .hs-shape { fill: var(--ig-line-solution); }
-.hs-tab.hs-essential .hs-shape { fill: var(--ig-line-essential); }
-.hs-tab:hover .hs-shape, .hs-tab:focus .hs-shape, .hs-full:hover .hs-shape, .hs-full:focus .hs-shape { opacity: 0.85; }
-
-.hs-competency .hs-shape { fill: var(--ig-pill); stroke: none; }
-.hs-competency .ig-label { fill: var(--ig-pill-text); }
-.hs-competency:hover .hs-shape, .hs-competency:focus .hs-shape { fill: var(--ig-pill-hover); }
-
-.hotspot:focus-visible .hs-shape { stroke: var(--focus); stroke-width: 6; opacity: 1; }
 
 .ig-tooltip {
   position: absolute; z-index: 5; max-width: min(20rem, 100%);

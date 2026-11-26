@@ -2,7 +2,7 @@
 // CSS hides the button (and keeps the nav visible) on wide screens and when
 // JavaScript is off (html.no-js), so only the narrow, scripted case collapses.
 
-export const NAV_NARROW_QUERY = '(max-width: 720px)';
+export const NAV_NARROW_QUERY = '(max-width: 900px)';
 
 // Pure state transition: `open` is whether the nav is expanded on a narrow screen.
 export function navReducer(open, event) {

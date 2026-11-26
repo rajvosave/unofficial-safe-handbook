@@ -2,8 +2,8 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { NAV_NARROW_QUERY, navReducer } from '../js/nav-toggle.js';
 
-test('narrow-screen query matches the 720px layout breakpoint', () => {
-  assert.equal(NAV_NARROW_QUERY, '(max-width: 720px)');
+test('narrow-screen query matches the 900px layout breakpoint', () => {
+  assert.equal(NAV_NARROW_QUERY, '(max-width: 900px)');
 });
 
 test('navReducer: toggle flips, navigate/escape/wide close, unknown keeps', () => {

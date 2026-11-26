@@ -217,10 +217,24 @@ export function renderHome(t) {
   return el(
     'article',
     { class: 'home' },
-    el('h1', {}, t('ui.home.title')),
-    el('p', { class: 'summary' }, t('ui.home.intro')),
-    el('div', { id: 'infographic' }),
+    el('header', { class: 'home-lead' },
+      el('div', { class: 'lead-copy' },
+        el('p', { class: 'edition' }, t('ui.home.edition')),
+        el('h1', {}, t('ui.home.title')),
+        el('p', { class: 'summary' }, t('ui.home.intro')),
+        el('a', { class: 'primary-link', href: '#/foundations/overview' }, t('ui.home.begin')),
+      ),
+      el('a', { class: 'configuration-cover', href: '#/foundations/configurations' },
+        el('span', { class: 'cover-art', 'aria-hidden': 'true' }, ...Array.from({ length: 4 }, () => el('i'))),
+        el('span', {}, t('topic.configurations.title')),
+      ),
+    ),
+    el('h2', { class: 'module-heading' }, t('ui.home.chapters')),
     cards,
+    el('section', { class: 'map-section' },
+      el('h2', { class: 'module-heading' }, t('infographic.title')),
+      el('div', { id: 'infographic' }),
+    ),
   );
 }
 

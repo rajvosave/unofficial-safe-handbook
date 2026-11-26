@@ -78,7 +78,14 @@ export function homeArticleHtml(t) {
     const first = TOPICS.find((x) => x.section === section);
     return `<li class="card"><h2><a href="${pathTo(first.route, '/')}">${esc(t(`nav.${section}`))}</a></h2><p>${esc(t(`ui.home.card.${section}`))}</p></li>`;
   }).join('');
-  return `<article class="home"><h1>${esc(t('ui.home.title'))}</h1><p class="summary">${esc(t('ui.home.intro'))}</p><div id="infographic"></div><ul class="cards">${cards}</ul></article>`;
+  const label = (key) => esc(t(key));
+  return `<article class="home"><header class="home-lead"><div class="lead-copy">
+    <p class="edition">${label('ui.home.edition')}</p><h1>${label('ui.home.title')}</h1>
+    <p class="summary">${label('ui.home.intro')}</p>
+    <a class="primary-link" href="${pathTo('/foundations/overview', '/')}">${label('ui.home.begin')}</a></div>
+    <a class="configuration-cover" href="${pathTo('/foundations/configurations', '/')}"><span class="cover-art" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>${label('topic.configurations.title')}</span></a></header>
+    <h2 class="module-heading">${label('ui.home.chapters')}</h2><ul class="cards">${cards}</ul>
+    <section class="map-section"><h2 class="module-heading">${label('infographic.title')}</h2><div id="infographic"></div></section></article>`;
 }
 
 export function navHtml(t, fromRoute) {

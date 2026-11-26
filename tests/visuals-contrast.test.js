@@ -12,10 +12,7 @@ const blockAfter = (css, marker) => {
   const start = css.indexOf('{', css.indexOf(marker)) + 1;
   return css.slice(start, css.indexOf('}', start));
 };
-const light = vars(blockAfter(tokensCss, ':root {'));
-const darkMedia = vars(blockAfter(tokensCss, ':root:not([data-theme="light"])'));
-const darkExplicit = vars(blockAfter(tokensCss, ':root[data-theme="dark"]'));
-const dark = { ...light, ...darkExplicit };
+const tokens = vars(blockAfter(tokensCss, ':root {'));
 
 const lum = (hex) => {
   const c = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255)
@@ -90,32 +87,16 @@ const PAIRS = [
 const PREFIXES = ['--ia-', '--av-', '--rv-', '--cl-'];
 const ours = (k) => PREFIXES.some((p) => k.startsWith(p));
 
-test('ia/av/rv tokens exist in light, media-dark and explicit-dark blocks identically', () => {
-  const keys = Object.keys(light).filter(ours);
-  assert.ok(keys.length >= 30, `expected visual tokens in :root, found ${keys.length}`);
-  for (const k of keys) {
-    assert.ok(k in darkMedia, `${k} missing in prefers-color-scheme dark block`);
-    assert.ok(k in darkExplicit, `${k} missing in [data-theme="dark"] block`);
-    assert.equal(darkMedia[k], darkExplicit[k], `${k} differs between dark blocks`);
-    assert.notEqual(light[k], darkExplicit[k], `${k} has no dark override`);
-  }
-  for (const k of [...Object.keys(darkMedia), ...Object.keys(darkExplicit)].filter(ours)) {
-    assert.ok(k in light, `${k} missing in :root`);
-  }
-});
-
 test('every pair token is defined and every new token is covered by a pair', () => {
   const used = new Set(PAIRS.flatMap(([a, b]) => [a, b]));
-  for (const k of Object.keys(light).filter(ours)) assert.ok(used.has(k), `${k} has no contrast pair`);
+  for (const k of Object.keys(tokens).filter(ours)) assert.ok(used.has(k), `${k} has no contrast pair`);
 });
 
-test('visual label/fill pairs meet WCAG AA in light and dark', () => {
-  for (const [theme, tok] of [['light', light], ['dark', dark]]) {
-    for (const [fg, bg, min] of PAIRS) {
-      assert.ok(tok[fg] && tok[bg], `${theme}: unresolved ${fg} or ${bg}`);
-      const r = ratio(tok[fg], tok[bg]);
-      assert.ok(r >= min, `${theme}: ${fg} ${tok[fg]} on ${bg} ${tok[bg]} = ${r.toFixed(2)} < ${min}`);
-    }
+test('visual label/fill pairs meet WCAG AA', () => {
+  for (const [fg, bg, min] of PAIRS) {
+    assert.ok(tokens[fg] && tokens[bg], `unresolved ${fg} or ${bg}`);
+    const r = ratio(tokens[fg], tokens[bg]);
+    assert.ok(r >= min, `${fg} ${tokens[fg]} on ${bg} ${tokens[bg]} = ${r.toFixed(2)} < ${min}`);
   }
 });
 
@@ -125,5 +106,5 @@ test('visual CSS uses tokens only and respects reduced motion', () => {
   const css = compCss.slice(start);
   assert.doesNotMatch(css, /#[0-9a-f]{3,8}\b|rgb\(|hsl\(/i);
   assert.match(css, /prefers-reduced-motion:\s*reduce/);
-  for (const v of css.matchAll(/var\((--(?:ia|av|rv)-[\w-]+)\)/g)) assert.ok(v[1] in light, `${v[1]} used but not defined`);
+  for (const v of css.matchAll(/var\((--(?:ia|av|rv)-[\w-]+)\)/g)) assert.ok(v[1] in tokens, `${v[1]} used but not defined`);
 });

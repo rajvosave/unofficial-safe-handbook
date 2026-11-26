@@ -9,7 +9,7 @@
 <meta property="og:title" content="Unofficial SAFe Handbook">
 <meta property="og:description" content="An unofficial, plain-language guide to SAFe 6.0: how the pieces fit, who does what, the key events and artifacts, and how to get started.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<script>document.documentElement.classList.replace('no-js','js');try{var th=localStorage.getItem('safe.theme');if(th==='light'||th==='dark')document.documentElement.dataset.theme=th;}catch(e){}</script>
+<script>document.documentElement.classList.replace('no-js','js');</script>
 <link rel="stylesheet" href="css/tokens.css">
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/components.css">
@@ -22,15 +22,14 @@
   <button id="nav-toggle" class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav"><span class="nav-toggle-icon" aria-hidden="true"></span><span data-i18n="ui.menu"></span></button>
   <div class="header-tools">
     <label class="visually-hidden" for="search" data-i18n="ui.search"></label>
-    <input id="search" type="search" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="search-results" autocomplete="off" data-i18n-placeholder="ui.search.placeholder">
+    <input id="search" type="search" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="search-results" autocomplete="off" placeholder="Search the handbook" data-i18n-placeholder="ui.search.placeholder">
     <div id="search-panel" class="search-panel" hidden>
       <ul id="search-results" role="listbox" data-i18n-aria-label="ui.search.results"></ul>
       <p id="search-empty" class="search-empty" hidden></p>
     </div>
     <div id="search-status" class="visually-hidden" role="status" aria-live="polite"></div>
     <label class="visually-hidden" for="lang" data-i18n="ui.language"></label>
-    <select id="lang"></select>
-    <button id="theme" type="button" aria-pressed="false" data-i18n="ui.theme"></button>
+    <select id="lang" hidden></select>
   </div>
 </header>
 <div class="layout">

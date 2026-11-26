@@ -11,7 +11,6 @@ export default {
   'ui.search.empty': 'No topics match your search. Try a shorter or different word.',
   'ui.search.count.one': '1 result found',
   'ui.search.count.other': '{n} results found',
-  'ui.theme': 'Dark theme',
   'ui.language': 'Language',
   'ui.newTab': 'opens in a new tab',
   // Language names stay in their own language in every dictionary.
@@ -22,7 +21,10 @@ export default {
   'ui.notFound.title': 'Page not found',
   'ui.notFound.body': 'This page does not exist. Pick a topic from the navigation or return to the home page.',
   'ui.home.link': 'Back to home',
-  'ui.home.title': 'Unofficial SAFe Handbook',
+  'ui.home.title': 'How SAFe fits together.',
+  'ui.home.edition': 'SAFe 6.0',
+  'ui.home.begin': 'Read the overview',
+  'ui.home.chapters': 'Handbook sections',
   'ui.home.intro':
     'A plain-language guide to the Scaled Agile Framework: how the pieces fit, who does what, and how to get started.',
   'ui.home.card.foundations': 'Core ideas, configurations and the Agile Release Train.',

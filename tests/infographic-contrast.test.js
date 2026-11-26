@@ -10,9 +10,7 @@ const blockAfter = (css, marker) => {
   const start = css.indexOf('{', css.indexOf(marker)) + 1;
   return css.slice(start, css.indexOf('}', start));
 };
-const light = vars(blockAfter(tokensCss, ':root {'));
-const darkMedia = vars(blockAfter(tokensCss, ':root:not([data-theme="light"])'));
-const dark = vars(blockAfter(tokensCss, ':root[data-theme="dark"]'));
+const tokens = vars(blockAfter(tokensCss, ':root {'));
 
 const lum = (hex) => {
   const c = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255)
@@ -37,22 +35,16 @@ function variants() {
   return [{ sel: '.hotspot', props: base }, ...out.map((v) => ({ sel: v.sel, props: { ...base, ...v.props } }))];
 }
 
-test('dark tokens are identical in the media-query block and the explicit theme block', () => {
-  assert.deepEqual(darkMedia, dark);
-});
-
-test('every hotspot variant label is >= 4.5:1 on its normal and hover/focus fill, light and dark', () => {
+test('every hotspot variant label is >= 4.5:1 on its normal and hover/focus fill', () => {
   const vs = variants();
   assert.ok(vs.length >= 6, 'expected base + variant rules');
-  for (const [theme, tok] of [['light', light], ['dark', { ...light, ...dark }]]) {
-    for (const { sel, props } of vs) {
-      for (const state of ['--hs-fill', '--hs-fill-hover']) {
-        const bg = tok[props[state]];
-        const fg = tok[props['--hs-text']];
-        assert.ok(bg && fg, `${theme} ${sel} ${state}: unresolved token`);
-        const r = ratio(fg, bg);
-        assert.ok(r >= 4.5, `${theme} ${sel} ${state}: ${fg} on ${bg} = ${r.toFixed(2)}`);
-      }
+  for (const { sel, props } of vs) {
+    for (const state of ['--hs-fill', '--hs-fill-hover']) {
+      const bg = tokens[props[state]];
+      const fg = tokens[props['--hs-text']];
+      assert.ok(bg && fg, `${sel} ${state}: unresolved token`);
+      const r = ratio(fg, bg);
+      assert.ok(r >= 4.5, `${sel} ${state}: ${fg} on ${bg} = ${r.toFixed(2)}`);
     }
   }
 });

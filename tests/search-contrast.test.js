@@ -10,9 +10,7 @@ const blockAfter = (css, marker) => {
   const start = css.indexOf('{', css.indexOf(marker)) + 1;
   return css.slice(start, css.indexOf('}', start));
 };
-const light = vars(blockAfter(tokensCss, ':root {'));
-const darkMedia = vars(blockAfter(tokensCss, ':root:not([data-theme="light"])'));
-const dark = { ...light, ...vars(blockAfter(tokensCss, ':root[data-theme="dark"]')) };
+const tokens = vars(blockAfter(tokensCss, ':root {'));
 
 const lum = (hex) => {
   const c = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255)
@@ -37,22 +35,11 @@ const PAIRS = [
   ['--focus', '--surface', 3],
 ];
 
-test('search tokens exist identically in light, media-dark and explicit-dark blocks', () => {
-  const keys = Object.keys(light).filter((k) => k.startsWith('--sr-'));
-  assert.ok(keys.length >= 8, 'expected --sr- tokens in :root');
-  for (const k of keys) {
-    assert.ok(k in darkMedia, `${k} missing in prefers-color-scheme dark block`);
-    assert.equal(darkMedia[k], dark[k], `${k} differs between dark blocks`);
-  }
-});
-
-test('search label/fill pairs meet WCAG AA in light and dark', () => {
-  for (const [theme, tok] of [['light', light], ['dark', dark]]) {
-    for (const [fg, bg, min] of PAIRS) {
-      assert.ok(tok[fg] && tok[bg], `${theme}: unresolved ${fg} or ${bg}`);
-      const r = ratio(tok[fg], tok[bg]);
-      assert.ok(r >= min, `${theme}: ${fg} ${tok[fg]} on ${bg} ${tok[bg]} = ${r.toFixed(2)} < ${min}`);
-    }
+test('search label/fill pairs meet WCAG AA', () => {
+  for (const [fg, bg, min] of PAIRS) {
+    assert.ok(tokens[fg] && tokens[bg], `unresolved ${fg} or ${bg}`);
+    const r = ratio(tokens[fg], tokens[bg]);
+    assert.ok(r >= min, `${fg} ${tokens[fg]} on ${bg} ${tokens[bg]} = ${r.toFixed(2)} < ${min}`);
   }
 });
 

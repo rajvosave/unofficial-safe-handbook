@@ -1,7 +1,5 @@
 *, *::before, *::after { box-sizing: border-box; }
-html { color-scheme: light dark; }
-:root[data-theme="light"] { color-scheme: light; }
-:root[data-theme="dark"] { color-scheme: dark; }
+html { color-scheme: dark; }
 body {
   margin: 0;
   background: var(--bg);

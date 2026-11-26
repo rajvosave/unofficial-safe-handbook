@@ -27,17 +27,17 @@ This runs `node --test` (Node.js 18 or newer) over `tests/`. The suite covers th
 router, i18n fallback, topic registry and content completeness (every topic has
 a title, summary and "What it is" text; every item has a title and body), the
 infographic hotspots, the PI calendar, search ranking and keyboard state, the
-visuals, and color contrast of the theme tokens in light and dark mode.
+visuals, and color contrast of the handbook’s dark palette.
 
 ## Project structure
 
 ```
 index.html          App shell: header, search, nav, main, footer
 favicon.svg         Site icon
-css/tokens.css      Design tokens for the light and dark themes
+css/tokens.css      Editorial palette, typography and spacing from Design.md
 css/base.css        Reset, typography, focus and utility styles
 css/components.css  Layout, navigation, infographic, visuals and search
-js/main.js          Boot: i18n, router, rendering, theme and language switch
+js/main.js          Boot: i18n, router, rendering and language selection
 js/router.js        Hash router (#/section/topic)
 js/i18n.js          Dictionary lookup with English fallback
 js/topics.js        Topic registry (sections, routes, related topics, items)

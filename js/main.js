@@ -90,31 +90,11 @@ function navigateTo(route) {
   location.hash = `#${route}`;
 }
 
-function setTheme(theme) {
-  document.documentElement.dataset.theme = theme;
-  try { localStorage.setItem('safe.theme', theme); } catch { /* ignore */ }
-  syncThemeButton();
-}
-
-// The button reads "Dark theme" and is pressed while the dark theme is active.
-function syncThemeButton() {
-  $('theme').setAttribute('aria-pressed', String(currentTheme() === 'dark'));
-}
-
-function currentTheme() {
-  const set = document.documentElement.dataset.theme;
-  if (set) return set;
-  return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-}
-
 document.querySelector('.skip-link').addEventListener('click', (e) => {
   e.preventDefault();
   $('app').focus();
 });
 
-$('theme').addEventListener('click', () => setTheme(currentTheme() === 'dark' ? 'light' : 'dark'));
-matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change', syncThemeButton);
-syncThemeButton();
 $('lang').addEventListener('change', (e) => {
   i18n.setLang(e.target.value);
   applyStatic();

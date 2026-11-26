@@ -9,8 +9,7 @@ const blockAfter = (marker) => {
   const start = css.indexOf('{', css.indexOf(marker)) + 1;
   return css.slice(start, css.indexOf('}', start));
 };
-const light = vars(blockAfter(':root {'));
-const dark = { ...light, ...vars(blockAfter(':root[data-theme="dark"]')) };
+const tokens = vars(blockAfter(':root {'));
 
 const lum = (hex) => {
   const c = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255)
@@ -37,15 +36,13 @@ const PAIRS = [
   ['--control-border', '--surface', 3],
 ];
 
-for (const [name, tok] of [['light', light], ['dark', dark]]) {
-  test(`base tokens meet contrast minimums in the ${name} theme`, () => {
-    for (const [fg, bg, min] of PAIRS) {
-      assert.ok(tok[fg] && tok[bg], `${name}: unresolved ${fg} or ${bg}`);
-      const r = ratio(tok[fg], tok[bg]);
-      assert.ok(r >= min, `${name} ${fg} ${tok[fg]} on ${bg} ${tok[bg]} = ${r.toFixed(2)} < ${min}`);
-    }
-  });
-}
+test('base handbook tokens meet contrast minimums', () => {
+  for (const [fg, bg, min] of PAIRS) {
+    assert.ok(tokens[fg] && tokens[bg], `unresolved ${fg} or ${bg}`);
+    const r = ratio(tokens[fg], tokens[bg]);
+    assert.ok(r >= min, `${fg} ${tokens[fg]} on ${bg} ${tokens[bg]} = ${r.toFixed(2)} < ${min}`);
+  }
+});
 
 test('tokens.css declares no custom property twice in one block', () => {
   for (const block of css.split('}')) {
